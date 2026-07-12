@@ -1,0 +1,2906 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "metadata": {
+    "title": "Universal Unit Conversion Database",
+    "description": "Comprehensive and extensible unit conversion database supporting unlimited units, categories, multilingual translation labels, and alias lists.",
+    "version": "1.1.0",
+    "lastUpdated": "2026",
+    "baseSystem": "SI (International System of Units)"
+  },
+  "categories": [
+    {
+      "id": "length",
+      "name": "Length",
+      "description": "การวัดระยะทาง ความยาว",
+      "translations": {
+        "en": "Length",
+        "th": "ความยาว/ระยะทาง"
+      },
+      "baseUnit": "meter",
+      "baseUnitSymbol": "m",
+      "icon": "📏",
+      "popularConversions": [
+        {
+          "from": "meter",
+          "to": "foot",
+          "slug": "meters-to-feet"
+        },
+        {
+          "from": "centimeter",
+          "to": "inch",
+          "slug": "cm-to-inches"
+        },
+        {
+          "from": "kilometer",
+          "to": "mile",
+          "slug": "km-to-miles"
+        },
+        {
+          "from": "inch",
+          "to": "centimeter",
+          "slug": "inches-to-cm"
+        },
+        {
+          "from": "foot",
+          "to": "meter",
+          "slug": "feet-to-meters"
+        },
+        {
+          "from": "millimeter",
+          "to": "inch",
+          "slug": "mm-to-inches"
+        }
+      ],
+      "units": [
+        {
+          "id": "meter",
+          "name": "meter",
+          "symbol": "m",
+          "factor": 1,
+          "plural": "meters",
+          "description": "SI base unit of length",
+          "aliases": [
+            "m",
+            "meter",
+            "meters",
+            "เมตร"
+          ],
+          "translations": {
+            "en": "meter",
+            "th": "เมตร"
+          }
+        },
+        {
+          "id": "kilometer",
+          "name": "kilometer",
+          "symbol": "km",
+          "factor": 1000,
+          "plural": "kilometers",
+          "description": "1,000 meters",
+          "aliases": [
+            "km",
+            "kilometer",
+            "kilometers",
+            "กิโลเมตร"
+          ],
+          "translations": {
+            "en": "kilometer",
+            "th": "กิโลเมตร"
+          }
+        },
+        {
+          "id": "centimeter",
+          "name": "centimeter",
+          "symbol": "cm",
+          "factor": 0.01,
+          "plural": "centimeters",
+          "description": "1/100 meter",
+          "aliases": [
+            "cm",
+            "centimeter",
+            "centimeters",
+            "เซนติเมตร"
+          ],
+          "translations": {
+            "en": "centimeter",
+            "th": "เซนติเมตร"
+          }
+        },
+        {
+          "id": "millimeter",
+          "name": "millimeter",
+          "symbol": "mm",
+          "factor": 0.001,
+          "plural": "millimeters",
+          "description": "1/1000 meter",
+          "aliases": [
+            "mm",
+            "millimeter",
+            "millimeters",
+            "มิลลิเมตร"
+          ],
+          "translations": {
+            "en": "millimeter",
+            "th": "มิลลิเมตร"
+          }
+        },
+        {
+          "id": "micrometer",
+          "name": "micrometer",
+          "symbol": "μm",
+          "factor": 0.000001,
+          "plural": "micrometers",
+          "description": "1/1,000,000 meter",
+          "aliases": [
+            "um",
+            "micrometer",
+            "micrometers",
+            "ไมโครเมตร"
+          ],
+          "translations": {
+            "en": "micrometer",
+            "th": "ไมโครเมตร"
+          }
+        },
+        {
+          "id": "nanometer",
+          "name": "nanometer",
+          "symbol": "nm",
+          "factor": 1e-9,
+          "plural": "nanometers",
+          "description": "1/1,000,000,000 meter",
+          "aliases": [
+            "nm",
+            "nanometer",
+            "nanometers",
+            "นาโนเมตร"
+          ],
+          "translations": {
+            "en": "nanometer",
+            "th": "นาโนเมตร"
+          }
+        },
+        {
+          "id": "mile",
+          "name": "mile",
+          "symbol": "mi",
+          "factor": 1609.344,
+          "plural": "miles",
+          "description": "Imperial unit of distance",
+          "aliases": [
+            "mi",
+            "mile",
+            "miles",
+            "ไมล์"
+          ],
+          "translations": {
+            "en": "mile",
+            "th": "ไมล์"
+          }
+        },
+        {
+          "id": "yard",
+          "name": "yard",
+          "symbol": "yd",
+          "factor": 0.9144,
+          "plural": "yards",
+          "description": "3 feet or 36 inches",
+          "aliases": [
+            "yd",
+            "yard",
+            "yards",
+            "หลา"
+          ],
+          "translations": {
+            "en": "yard",
+            "th": "หลา"
+          }
+        },
+        {
+          "id": "foot",
+          "name": "foot",
+          "symbol": "ft",
+          "factor": 0.3048,
+          "plural": "feet",
+          "description": "12 inches",
+          "aliases": [
+            "ft",
+            "foot",
+            "feet",
+            "ฟุต"
+          ],
+          "translations": {
+            "en": "foot",
+            "th": "ฟุต"
+          }
+        },
+        {
+          "id": "inch",
+          "name": "inch",
+          "symbol": "in",
+          "factor": 0.0254,
+          "plural": "inches",
+          "description": "1/12 foot",
+          "aliases": [
+            "in",
+            "inch",
+            "inches",
+            "นิ้ว"
+          ],
+          "translations": {
+            "en": "inch",
+            "th": "นิ้ว"
+          }
+        },
+        {
+          "id": "nautical_mile",
+          "name": "nautical mile",
+          "symbol": "nmi",
+          "factor": 1852,
+          "plural": "nautical miles",
+          "description": "Maritime and aviation unit of distance",
+          "aliases": [
+            "nmi",
+            "nautical mile",
+            "nautical miles",
+            "ไมล์ทะเล"
+          ],
+          "translations": {
+            "en": "nautical mile",
+            "th": "ไมล์ทะเล"
+          }
+        }
+      ]
+    },
+    {
+      "id": "weight",
+      "name": "Weight / Mass",
+      "description": "การวัดน้ำหนัก มวล",
+      "translations": {
+        "en": "Weight / Mass",
+        "th": "น้ำหนัก/มวล"
+      },
+      "baseUnit": "kilogram",
+      "baseUnitSymbol": "kg",
+      "icon": "⚖️",
+      "popularConversions": [
+        {
+          "from": "kilogram",
+          "to": "pound",
+          "slug": "kg-to-lbs"
+        },
+        {
+          "from": "pound",
+          "to": "kilogram",
+          "slug": "lbs-to-kg"
+        },
+        {
+          "from": "gram",
+          "to": "ounce",
+          "slug": "grams-to-oz"
+        },
+        {
+          "from": "ounce",
+          "to": "gram",
+          "slug": "oz-to-grams"
+        },
+        {
+          "from": "kilogram",
+          "to": "stone",
+          "slug": "kg-to-stones"
+        }
+      ],
+      "units": [
+        {
+          "id": "kilogram",
+          "name": "kilogram",
+          "symbol": "kg",
+          "factor": 1,
+          "plural": "kilograms",
+          "description": "SI base unit of mass",
+          "aliases": [
+            "kg",
+            "kilogram",
+            "kilograms",
+            "กิโลกรัม"
+          ],
+          "translations": {
+            "en": "kilogram",
+            "th": "กิโลกรัม"
+          }
+        },
+        {
+          "id": "gram",
+          "name": "gram",
+          "symbol": "g",
+          "factor": 0.001,
+          "plural": "grams",
+          "description": "1/1000 kilogram",
+          "aliases": [
+            "g",
+            "gram",
+            "grams",
+            "กรัม"
+          ],
+          "translations": {
+            "en": "gram",
+            "th": "กรัม"
+          }
+        },
+        {
+          "id": "milligram",
+          "name": "milligram",
+          "symbol": "mg",
+          "factor": 0.000001,
+          "plural": "millimeters",
+          "description": "1/1,000,000 kilogram",
+          "aliases": [
+            "mg",
+            "milligram",
+            "milligrams",
+            "มิลลิกรัม"
+          ],
+          "translations": {
+            "en": "milligram",
+            "th": "มิลลิกรัม"
+          }
+        },
+        {
+          "id": "microgram",
+          "name": "microgram",
+          "symbol": "μg",
+          "factor": 1e-9,
+          "plural": "micrograms",
+          "description": "1/1,000,000,000 kilogram",
+          "aliases": [
+            "ug",
+            "microgram",
+            "micrograms",
+            "ไมโครกรัม"
+          ],
+          "translations": {
+            "en": "microgram",
+            "th": "ไมโครกรัม"
+          }
+        },
+        {
+          "id": "metric_ton",
+          "name": "metric ton",
+          "symbol": "t",
+          "factor": 1000,
+          "plural": "metric tons",
+          "description": "1000 kilograms",
+          "aliases": [
+            "t",
+            "ton",
+            "metric ton",
+            "metric tons",
+            "ตัน",
+            "เมตริกตัน"
+          ],
+          "translations": {
+            "en": "metric ton",
+            "th": "เมตริกตัน"
+          }
+        },
+        {
+          "id": "pound",
+          "name": "pound",
+          "symbol": "lb",
+          "factor": 0.45359237,
+          "plural": "pounds",
+          "description": "Imperial unit of weight",
+          "aliases": [
+            "lb",
+            "lbs",
+            "pound",
+            "pounds",
+            "ปอนด์"
+          ],
+          "translations": {
+            "en": "pound",
+            "th": "ปอนด์"
+          }
+        },
+        {
+          "id": "ounce",
+          "name": "ounce",
+          "symbol": "oz",
+          "factor": 0.028349523125,
+          "plural": "ounces",
+          "description": "1/16 pound",
+          "aliases": [
+            "oz",
+            "ounce",
+            "ounces",
+            "ออนซ์"
+          ],
+          "translations": {
+            "en": "ounce",
+            "th": "ออนซ์"
+          }
+        },
+        {
+          "id": "stone",
+          "name": "stone",
+          "symbol": "st",
+          "factor": 6.35029318,
+          "plural": "stones",
+          "description": "14 pounds, used in UK",
+          "aliases": [
+            "st",
+            "stone",
+            "stones",
+            "สโตน"
+          ],
+          "translations": {
+            "en": "stone",
+            "th": "สโตน"
+          }
+        },
+        {
+          "id": "ton_us",
+          "name": "US ton",
+          "symbol": "ton",
+          "factor": 907.18474,
+          "plural": "US tons",
+          "description": "2000 pounds",
+          "aliases": [
+            "us ton",
+            "short ton",
+            "us tons",
+            "ตันสหรัฐ"
+          ],
+          "translations": {
+            "en": "US ton",
+            "th": "ตัน (สหรัฐ)"
+          }
+        },
+        {
+          "id": "ton_uk",
+          "name": "UK ton",
+          "symbol": "cwt",
+          "factor": 1016.0469088,
+          "plural": "UK tons",
+          "description": "2240 pounds",
+          "aliases": [
+            "uk ton",
+            "long ton",
+            "uk tons",
+            "ตันอังกฤษ"
+          ],
+          "translations": {
+            "en": "UK ton",
+            "th": "ตัน (อังกฤษ)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "area",
+      "name": "Area",
+      "description": "การวัดพื้นที่",
+      "translations": {
+        "en": "Area",
+        "th": "พื้นที่"
+      },
+      "baseUnit": "square meter",
+      "baseUnitSymbol": "m²",
+      "icon": "📐",
+      "popularConversions": [
+        {
+          "from": "square_meter",
+          "to": "square_foot",
+          "slug": "sq-meters-to-sq-feet"
+        },
+        {
+          "from": "square_foot",
+          "to": "square_meter",
+          "slug": "sq-feet-to-sq-meters"
+        },
+        {
+          "from": "hectare",
+          "to": "acre",
+          "slug": "hectares-to-acres"
+        },
+        {
+          "from": "acre",
+          "to": "hectare",
+          "slug": "acres-to-hectares"
+        }
+      ],
+      "units": [
+        {
+          "id": "square_meter",
+          "name": "square meter",
+          "symbol": "m²",
+          "factor": 1,
+          "plural": "square meters",
+          "description": "SI unit of area",
+          "aliases": [
+            "m2",
+            "m²",
+            "square meter",
+            "square meters",
+            "ตารางเมตร",
+            "sq-meters",
+            "sq_meters",
+            "sq-meter",
+            "sq_meter"
+          ],
+          "translations": {
+            "en": "square meter",
+            "th": "ตารางเมตร"
+          }
+        },
+        {
+          "id": "square_kilometer",
+          "name": "square kilometer",
+          "symbol": "km²",
+          "factor": 1000000,
+          "plural": "square kilometers",
+          "description": "1,000,000 square meters",
+          "aliases": [
+            "km2",
+            "km²",
+            "square kilometer",
+            "square kilometers",
+            "ตารางกิโลเมตร"
+          ],
+          "translations": {
+            "en": "square kilometer",
+            "th": "ตารางกิโลเมตร"
+          }
+        },
+        {
+          "id": "square_centimeter",
+          "name": "square centimeter",
+          "symbol": "cm²",
+          "factor": 0.0001,
+          "plural": "square centimeters",
+          "description": "0.0001 square meter",
+          "aliases": [
+            "cm2",
+            "cm²",
+            "square centimeter",
+            "square centimeters",
+            "ตารางเซนติเมตร"
+          ],
+          "translations": {
+            "en": "square centimeter",
+            "th": "ตารางเซนติเมตร"
+          }
+        },
+        {
+          "id": "square_millimeter",
+          "name": "square millimeter",
+          "symbol": "mm²",
+          "factor": 0.000001,
+          "plural": "square millimeters",
+          "description": "0.000001 square meter",
+          "aliases": [
+            "mm2",
+            "mm²",
+            "square millimeter",
+            "square millimeters",
+            "ตารางมิลลิเมตร"
+          ],
+          "translations": {
+            "en": "square millimeter",
+            "th": "ตารางมิลลิเมตร"
+          }
+        },
+        {
+          "id": "hectare",
+          "name": "hectare",
+          "symbol": "ha",
+          "factor": 10000,
+          "plural": "hectares",
+          "description": "10,000 square meters",
+          "aliases": [
+            "ha",
+            "hectare",
+            "hectares",
+            "เฮกตาร์"
+          ],
+          "translations": {
+            "en": "hectare",
+            "th": "เฮกตาร์"
+          }
+        },
+        {
+          "id": "acre",
+          "name": "acre",
+          "symbol": "ac",
+          "factor": 4046.8564224,
+          "plural": "acres",
+          "description": "Imperial unit of land area",
+          "aliases": [
+            "ac",
+            "acre",
+            "acres",
+            "เอเคอร์"
+          ],
+          "translations": {
+            "en": "acre",
+            "th": "เอเคอร์"
+          }
+        },
+        {
+          "id": "square_mile",
+          "name": "square mile",
+          "symbol": "mi²",
+          "factor": 2589988.110336,
+          "plural": "square miles",
+          "description": "640 acres",
+          "aliases": [
+            "mi2",
+            "mi²",
+            "square mile",
+            "square miles",
+            "ตารางไมล์"
+          ],
+          "translations": {
+            "en": "square mile",
+            "th": "ตารางไมล์"
+          }
+        },
+        {
+          "id": "square_yard",
+          "name": "square yard",
+          "symbol": "yd²",
+          "factor": 0.83612736,
+          "plural": "square yards",
+          "description": "9 square feet",
+          "aliases": [
+            "yd2",
+            "yd²",
+            "square yard",
+            "square yards",
+            "ตารางหลา"
+          ],
+          "translations": {
+            "en": "square yard",
+            "th": "ตารางหลา"
+          }
+        },
+        {
+          "id": "square_foot",
+          "name": "square foot",
+          "symbol": "ft²",
+          "factor": 0.09290304,
+          "plural": "square feet",
+          "description": "144 square inches",
+          "aliases": [
+            "ft2",
+            "ft²",
+            "square foot",
+            "square feet",
+            "ตารางฟุต",
+            "sq-feet",
+            "sq_feet",
+            "sq-foot",
+            "sq_foot"
+          ],
+          "translations": {
+            "en": "square foot",
+            "th": "ตารางฟุต"
+          }
+        },
+        {
+          "id": "square_inch",
+          "name": "square inch",
+          "symbol": "in²",
+          "factor": 0.00064516,
+          "plural": "square inches",
+          "description": "1/144 square foot",
+          "aliases": [
+            "in2",
+            "in²",
+            "square inch",
+            "square inches",
+            "ตารางนิ้ว"
+          ],
+          "translations": {
+            "en": "square inch",
+            "th": "ตารางนิ้ว"
+          }
+        }
+      ]
+    },
+    {
+      "id": "temperature",
+      "name": "Temperature",
+      "description": "การวัดอุณหภูมิ",
+      "translations": {
+        "en": "Temperature",
+        "th": "อุณหภูมิ"
+      },
+      "baseUnit": "celsius",
+      "baseUnitSymbol": "°C",
+      "icon": "🌡️",
+      "popularConversions": [
+        {
+          "from": "celsius",
+          "to": "fahrenheit",
+          "slug": "celsius-to-fahrenheit"
+        },
+        {
+          "from": "fahrenheit",
+          "to": "celsius",
+          "slug": "fahrenheit-to-celsius"
+        },
+        {
+          "from": "celsius",
+          "to": "kelvin",
+          "slug": "celsius-to-kelvin"
+        },
+        {
+          "from": "kelvin",
+          "to": "celsius",
+          "slug": "kelvin-to-celsius"
+        }
+      ],
+      "units": [
+        {
+          "id": "celsius",
+          "name": "Celsius",
+          "symbol": "°C",
+          "factor": 1,
+          "plural": "degrees Celsius",
+          "description": "SI unit of temperature",
+          "formula": "value",
+          "inverseFormula": "value",
+          "aliases": [
+            "c",
+            "°c",
+            "celsius",
+            "องศาเซลเซียส",
+            "เซลเซียส"
+          ],
+          "translations": {
+            "en": "Celsius",
+            "th": "เซลเซียส"
+          }
+        },
+        {
+          "id": "fahrenheit",
+          "name": "Fahrenheit",
+          "symbol": "°F",
+          "plural": "degrees Fahrenheit",
+          "description": "Imperial unit of temperature",
+          "formula": "(value - 32) * 5/9",
+          "inverseFormula": "value * 9/5 + 32",
+          "aliases": [
+            "f",
+            "°f",
+            "fahrenheit",
+            "องศาฟาเรนไฮต์",
+            "ฟาเรนไฮต์"
+          ],
+          "translations": {
+            "en": "Fahrenheit",
+            "th": "ฟาเรนไฮต์"
+          }
+        },
+        {
+          "id": "kelvin",
+          "name": "Kelvin",
+          "symbol": "K",
+          "plural": "kelvins",
+          "description": "Absolute temperature scale (SI)",
+          "formula": "value - 273.15",
+          "inverseFormula": "value + 273.15",
+          "aliases": [
+            "k",
+            "kelvin",
+            "เคลวิน"
+          ],
+          "translations": {
+            "en": "Kelvin",
+            "th": "เคลวิน"
+          }
+        },
+        {
+          "id": "rankine",
+          "name": "Rankine",
+          "symbol": "°R",
+          "plural": "degrees Rankine",
+          "description": "Absolute temperature scale (Imperial)",
+          "formula": "(value - 491.67) * 5/9",
+          "inverseFormula": "(value + 273.15) * 9/5",
+          "aliases": [
+            "r",
+            "°r",
+            "rankine",
+            "แรนคิน"
+          ],
+          "translations": {
+            "en": "Rankine",
+            "th": "แรนคิน"
+          }
+        }
+      ]
+    },
+    {
+      "id": "speed",
+      "name": "Speed",
+      "description": "การวัดความเร็ว",
+      "translations": {
+        "en": "Speed",
+        "th": "ความเร็ว"
+      },
+      "baseUnit": "meter per second",
+      "baseUnitSymbol": "m/s",
+      "icon": "🚗",
+      "popularConversions": [
+        {
+          "from": "kilometer_per_hour",
+          "to": "mile_per_hour",
+          "slug": "kmh-to-mph"
+        },
+        {
+          "from": "mile_per_hour",
+          "to": "kilometer_per_hour",
+          "slug": "mph-to-kmh"
+        },
+        {
+          "from": "meter_per_second",
+          "to": "kilometer_per_hour",
+          "slug": "mps-to-kmh"
+        }
+      ],
+      "units": [
+        {
+          "id": "meter_per_second",
+          "name": "meter per second",
+          "symbol": "m/s",
+          "factor": 1,
+          "plural": "meters per second",
+          "description": "SI unit of speed",
+          "aliases": [
+            "m/s",
+            "mps",
+            "meter per second",
+            "เมตรต่อวินาที"
+          ],
+          "translations": {
+            "en": "meter per second",
+            "th": "เมตรต่อวินาที"
+          }
+        },
+        {
+          "id": "kilometer_per_hour",
+          "name": "kilometer per hour",
+          "symbol": "km/h",
+          "factor": 0.27777777777778,
+          "plural": "kilometers per hour",
+          "description": "Metric unit of speed",
+          "aliases": [
+            "km/h",
+            "kmh",
+            "kilometer per hour",
+            "กิโลเมตรต่อชั่วโมง"
+          ],
+          "translations": {
+            "en": "kilometer per hour",
+            "th": "กิโลเมตรต่อชั่วโมง"
+          }
+        },
+        {
+          "id": "mile_per_hour",
+          "name": "mile per hour",
+          "symbol": "mph",
+          "factor": 0.44704,
+          "plural": "miles per hour",
+          "description": "Imperial unit of speed",
+          "aliases": [
+            "mph",
+            "mile per hour",
+            "ไมล์ต่อชั่วโมง"
+          ],
+          "translations": {
+            "en": "mile per hour",
+            "th": "ไมล์ต่อชั่วโมง"
+          }
+        },
+        {
+          "id": "knot",
+          "name": "knot",
+          "symbol": "kn",
+          "factor": 0.51444444444444,
+          "plural": "knots",
+          "description": "Nautical mile per hour",
+          "aliases": [
+            "kn",
+            "knot",
+            "knots",
+            "นอต"
+          ],
+          "translations": {
+            "en": "knot",
+            "th": "นอต"
+          }
+        },
+        {
+          "id": "foot_per_second",
+          "name": "foot per second",
+          "symbol": "ft/s",
+          "factor": 0.3048,
+          "plural": "feet per second",
+          "description": "Imperial unit of speed",
+          "aliases": [
+            "ft/s",
+            "fps",
+            "foot per second",
+            "ฟุตต่อวินาที"
+          ],
+          "translations": {
+            "en": "foot per second",
+            "th": "ฟุตต่อวินาที"
+          }
+        }
+      ]
+    },
+    {
+      "id": "volume",
+      "name": "Volume",
+      "description": "การวัดปริมาตร",
+      "translations": {
+        "en": "Volume",
+        "th": "ปริมาตร"
+      },
+      "baseUnit": "cubic meter",
+      "baseUnitSymbol": "m³",
+      "icon": "🧃",
+      "popularConversions": [
+        {
+          "from": "liter",
+          "to": "gallon_us",
+          "slug": "liters-to-gallons"
+        },
+        {
+          "from": "gallon_us",
+          "to": "liter",
+          "slug": "gallons-to-liters"
+        },
+        {
+          "from": "milliliter",
+          "to": "fluid_ounce_us",
+          "slug": "ml-to-oz"
+        },
+        {
+          "from": "fluid_ounce_us",
+          "to": "milliliter",
+          "slug": "oz-to-ml"
+        }
+      ],
+      "units": [
+        {
+          "id": "cubic_meter",
+          "name": "cubic meter",
+          "symbol": "m³",
+          "factor": 1,
+          "plural": "cubic meters",
+          "description": "SI unit of volume",
+          "aliases": [
+            "m3",
+            "m³",
+            "cubic meter",
+            "ลูกบาศก์เมตร"
+          ],
+          "translations": {
+            "en": "cubic meter",
+            "th": "ลูกบาศก์เมตร"
+          }
+        },
+        {
+          "id": "cubic_centimeter",
+          "name": "cubic centimeter",
+          "symbol": "cm³",
+          "factor": 0.000001,
+          "plural": "cubic centimeters",
+          "description": "Equivalent to milliliter",
+          "aliases": [
+            "cm3",
+            "cm³",
+            "cubic centimeter",
+            "ลูกบาศก์เซนติเมตร"
+          ],
+          "translations": {
+            "en": "cubic centimeter",
+            "th": "ลูกบาศก์เซนติเมตร"
+          }
+        },
+        {
+          "id": "liter",
+          "name": "liter",
+          "symbol": "L",
+          "factor": 0.001,
+          "plural": "liters",
+          "description": "Metric unit of volume",
+          "aliases": [
+            "l",
+            "liter",
+            "liters",
+            "ลิตร"
+          ],
+          "translations": {
+            "en": "liter",
+            "th": "ลิตร"
+          }
+        },
+        {
+          "id": "milliliter",
+          "name": "milliliter",
+          "symbol": "mL",
+          "factor": 0.000001,
+          "plural": "milliliters",
+          "description": "1/1000 liter",
+          "aliases": [
+            "ml",
+            "milliliter",
+            "milliliters",
+            "มิลลิลิตร"
+          ],
+          "translations": {
+            "en": "milliliter",
+            "th": "มิลลิลิตร"
+          }
+        },
+        {
+          "id": "cubic_inch",
+          "name": "cubic inch",
+          "symbol": "in³",
+          "factor": 0.000016387064,
+          "plural": "cubic inches",
+          "description": "Imperial unit of volume",
+          "aliases": [
+            "in3",
+            "in³",
+            "cubic inch",
+            "ลูกบาศก์นิ้ว"
+          ],
+          "translations": {
+            "en": "cubic inch",
+            "th": "ลูกบาศก์นิ้ว"
+          }
+        },
+        {
+          "id": "cubic_foot",
+          "name": "cubic foot",
+          "symbol": "ft³",
+          "factor": 0.028316846592,
+          "plural": "cubic feet",
+          "description": "1728 cubic inches",
+          "aliases": [
+            "ft3",
+            "ft³",
+            "cubic foot",
+            "ลูกบาศก์ฟุต"
+          ],
+          "translations": {
+            "en": "cubic foot",
+            "th": "ลูกบาศก์ฟุต"
+          }
+        },
+        {
+          "id": "fluid_ounce_us",
+          "name": "fluid ounce (US)",
+          "symbol": "fl oz",
+          "factor": 0.0000295735295625,
+          "plural": "fluid ounces",
+          "description": "US liquid measure",
+          "aliases": [
+            "fl oz",
+            "fluid ounce",
+            "ออนซ์ของเหลว",
+            "oz",
+            "fluid-ounce-us",
+            "fluid_ounce_us"
+          ],
+          "translations": {
+            "en": "fluid ounce (US)",
+            "th": "ออนซ์ของเหลว (US)"
+          }
+        },
+        {
+          "id": "gallon_us",
+          "name": "gallon (US)",
+          "symbol": "gal",
+          "factor": 0.003785411784,
+          "plural": "US gallons",
+          "description": "128 US fluid ounces",
+          "aliases": [
+            "gal",
+            "gallon",
+            "แกลลอน",
+            "gallons",
+            "gallon-us",
+            "gallon_us"
+          ],
+          "translations": {
+            "en": "gallon (US)",
+            "th": "แกลลอน (US)"
+          }
+        },
+        {
+          "id": "gallon_uk",
+          "name": "gallon (UK)",
+          "symbol": "gal (UK)",
+          "factor": 0.00454609,
+          "plural": "UK gallons",
+          "description": "160 UK fluid ounces",
+          "aliases": [
+            "gal uk",
+            "แกลลอนอังกฤษ"
+          ],
+          "translations": {
+            "en": "gallon (UK)",
+            "th": "แกลลอน (UK)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "energy",
+      "name": "Energy",
+      "description": "การวัดพลังงาน",
+      "translations": {
+        "en": "Energy",
+        "th": "พลังงาน"
+      },
+      "baseUnit": "joule",
+      "baseUnitSymbol": "J",
+      "icon": "⚡",
+      "popularConversions": [
+        {
+          "from": "joule",
+          "to": "calorie",
+          "slug": "joules-to-calories"
+        },
+        {
+          "from": "kilowatt_hour",
+          "to": "calorie",
+          "slug": "kwh-to-calories"
+        },
+        {
+          "from": "kilocalorie",
+          "to": "kilojoule",
+          "slug": "kcal-to-kj"
+        }
+      ],
+      "units": [
+        {
+          "id": "joule",
+          "name": "joule",
+          "symbol": "J",
+          "factor": 1,
+          "plural": "joules",
+          "description": "SI unit of energy",
+          "aliases": [
+            "j",
+            "joule",
+            "joules",
+            "จูล"
+          ],
+          "translations": {
+            "en": "joule",
+            "th": "จูล"
+          }
+        },
+        {
+          "id": "kilojoule",
+          "name": "kilojoule",
+          "symbol": "kJ",
+          "factor": 1000,
+          "plural": "kilojoules",
+          "description": "1000 joules",
+          "aliases": [
+            "kj",
+            "kilojoule",
+            "kilojoules",
+            "กิโลจูล"
+          ],
+          "translations": {
+            "en": "kilojoule",
+            "th": "กิโลจูล"
+          }
+        },
+        {
+          "id": "calorie",
+          "name": "calorie",
+          "symbol": "cal",
+          "factor": 4.184,
+          "plural": "calories",
+          "description": "Energy to heat 1 gram of water by 1°C",
+          "aliases": [
+            "cal",
+            "calorie",
+            "calories",
+            "แคลอรี"
+          ],
+          "translations": {
+            "en": "calorie",
+            "th": "แคลอรี"
+          }
+        },
+        {
+          "id": "kilocalorie",
+          "name": "kilocalorie",
+          "symbol": "kcal",
+          "factor": 4184,
+          "plural": "kilocalories",
+          "description": "Food energy unit",
+          "aliases": [
+            "kcal",
+            "kilocalorie",
+            "kilocalories",
+            "กิโลแคลอรี"
+          ],
+          "translations": {
+            "en": "kilocalorie",
+            "th": "กิโลแคลอรี"
+          }
+        },
+        {
+          "id": "watt_hour",
+          "name": "watt hour",
+          "symbol": "Wh",
+          "factor": 3600,
+          "plural": "watt hours",
+          "description": "3600 joules",
+          "aliases": [
+            "wh",
+            "watt hour",
+            "วัตต์ชั่วโมง"
+          ],
+          "translations": {
+            "en": "watt hour",
+            "th": "วัตต์ชั่วโมง"
+          }
+        },
+        {
+          "id": "kilowatt_hour",
+          "name": "kilowatt hour",
+          "symbol": "kWh",
+          "factor": 3600000,
+          "plural": "kilowatt hours",
+          "description": "Electrical energy unit",
+          "aliases": [
+            "kwh",
+            "kilowatt hour",
+            "กิโลวัตต์ชั่วโมง",
+            "ยูนิตไฟ"
+          ],
+          "translations": {
+            "en": "kilowatt hour",
+            "th": "กิโลวัตต์ชั่วโมง"
+          }
+        },
+        {
+          "id": "electronvolt",
+          "name": "electronvolt",
+          "symbol": "eV",
+          "factor": 1.602176634e-19,
+          "plural": "electronvolts",
+          "description": "Energy of one electron accelerated through 1 volt",
+          "aliases": [
+            "ev",
+            "electronvolt",
+            "อิเล็กตรอนโวลต์"
+          ],
+          "translations": {
+            "en": "electronvolt",
+            "th": "อิเล็กตรอนโวลต์"
+          }
+        },
+        {
+          "id": "british_thermal_unit",
+          "name": "British thermal unit",
+          "symbol": "BTU",
+          "factor": 1055.05585,
+          "plural": "BTU",
+          "description": "Imperial unit of energy",
+          "aliases": [
+            "btu",
+            "british thermal unit",
+            "บีทียู"
+          ],
+          "translations": {
+            "en": "British thermal unit",
+            "th": "บีทียู"
+          }
+        }
+      ]
+    },
+    {
+      "id": "time",
+      "name": "Time",
+      "description": "การวัดเวลา",
+      "translations": {
+        "en": "Time",
+        "th": "เวลา"
+      },
+      "baseUnit": "second",
+      "baseUnitSymbol": "s",
+      "icon": "⏱️",
+      "popularConversions": [
+        {
+          "from": "hour",
+          "to": "minute",
+          "slug": "hours-to-minutes"
+        },
+        {
+          "from": "day",
+          "to": "hour",
+          "slug": "days-to-hours"
+        },
+        {
+          "from": "minute",
+          "to": "second",
+          "slug": "minutes-to-seconds"
+        },
+        {
+          "from": "week",
+          "to": "day",
+          "slug": "weeks-to-days"
+        },
+        {
+          "from": "year",
+          "to": "day",
+          "slug": "years-to-days"
+        }
+      ],
+      "units": [
+        {
+          "id": "second",
+          "name": "second",
+          "symbol": "s",
+          "factor": 1,
+          "plural": "seconds",
+          "description": "SI base unit of time",
+          "aliases": [
+            "s",
+            "second",
+            "seconds",
+            "วินาที"
+          ],
+          "translations": {
+            "en": "second",
+            "th": "วินาที"
+          }
+        },
+        {
+          "id": "millisecond",
+          "name": "millisecond",
+          "symbol": "ms",
+          "factor": 0.001,
+          "plural": "milliseconds",
+          "description": "1/1000 of a second",
+          "aliases": [
+            "ms",
+            "millisecond",
+            "milliseconds",
+            "มิลลิวินาที"
+          ],
+          "translations": {
+            "en": "millisecond",
+            "th": "มิลลิวินาที"
+          }
+        },
+        {
+          "id": "microsecond",
+          "name": "microsecond",
+          "symbol": "μs",
+          "factor": 0.000001,
+          "plural": "microseconds",
+          "description": "1/1,000,000 of a second",
+          "aliases": [
+            "us",
+            "microsecond",
+            "microseconds",
+            "ไมโครวินาที"
+          ],
+          "translations": {
+            "en": "microsecond",
+            "th": "ไมโครวินาที"
+          }
+        },
+        {
+          "id": "nanosecond",
+          "name": "nanosecond",
+          "symbol": "ns",
+          "factor": 1e-9,
+          "plural": "nanoseconds",
+          "description": "1/1,000,000,000 of a second",
+          "aliases": [
+            "ns",
+            "nanosecond",
+            "nanoseconds",
+            "นาโนวินาที"
+          ],
+          "translations": {
+            "en": "nanosecond",
+            "th": "นาโนวินาที"
+          }
+        },
+        {
+          "id": "minute",
+          "name": "minute",
+          "symbol": "min",
+          "factor": 60,
+          "plural": "minutes",
+          "description": "60 seconds",
+          "aliases": [
+            "min",
+            "minute",
+            "minutes",
+            "นาที"
+          ],
+          "translations": {
+            "en": "minute",
+            "th": "นาที"
+          }
+        },
+        {
+          "id": "hour",
+          "name": "hour",
+          "symbol": "h",
+          "factor": 3600,
+          "plural": "hours",
+          "description": "60 minutes or 3600 seconds",
+          "aliases": [
+            "h",
+            "hr",
+            "hour",
+            "hours",
+            "ชั่วโมง"
+          ],
+          "translations": {
+            "en": "hour",
+            "th": "ชั่วโมง"
+          }
+        },
+        {
+          "id": "day",
+          "name": "day",
+          "symbol": "d",
+          "factor": 86400,
+          "plural": "days",
+          "description": "24 hours",
+          "aliases": [
+            "d",
+            "day",
+            "days",
+            "วัน"
+          ],
+          "translations": {
+            "en": "day",
+            "th": "วัน"
+          }
+        },
+        {
+          "id": "week",
+          "name": "week",
+          "symbol": "wk",
+          "factor": 604800,
+          "plural": "weeks",
+          "description": "7 days",
+          "aliases": [
+            "wk",
+            "week",
+            "weeks",
+            "สัปดาห์"
+          ],
+          "translations": {
+            "en": "week",
+            "th": "สัปดาห์"
+          }
+        },
+        {
+          "id": "month",
+          "name": "month",
+          "symbol": "mo",
+          "factor": 2592000,
+          "plural": "months",
+          "description": "Approximate month (30 days)",
+          "aliases": [
+            "mo",
+            "month",
+            "months",
+            "เดือน"
+          ],
+          "translations": {
+            "en": "month",
+            "th": "เดือน"
+          }
+        },
+        {
+          "id": "year",
+          "name": "year",
+          "symbol": "yr",
+          "factor": 31557600,
+          "plural": "years",
+          "description": "Calendar year (365.25 days)",
+          "aliases": [
+            "yr",
+            "year",
+            "years",
+            "ปี"
+          ],
+          "translations": {
+            "en": "year",
+            "th": "ปี"
+          }
+        }
+      ]
+    },
+    {
+      "id": "pressure",
+      "name": "Pressure",
+      "description": "การวัดความดัน",
+      "translations": {
+        "en": "Pressure",
+        "th": "ความดัน"
+      },
+      "baseUnit": "pascal",
+      "baseUnitSymbol": "Pa",
+      "icon": "💨",
+      "popularConversions": [
+        {
+          "from": "bar",
+          "to": "psi",
+          "slug": "bar-to-psi"
+        },
+        {
+          "from": "atmosphere",
+          "to": "bar",
+          "slug": "atmosphere-to-bar"
+        },
+        {
+          "from": "psi",
+          "to": "bar",
+          "slug": "psi-to-bar"
+        },
+        {
+          "from": "kilopascal",
+          "to": "psi",
+          "slug": "kilopascal-to-psi"
+        },
+        {
+          "from": "bar",
+          "to": "atmosphere",
+          "slug": "bar-to-atmosphere"
+        }
+      ],
+      "units": [
+        {
+          "id": "pascal",
+          "name": "pascal",
+          "symbol": "Pa",
+          "factor": 1,
+          "plural": "pascals",
+          "description": "SI unit of pressure",
+          "aliases": [
+            "pa",
+            "pascal",
+            "pascals",
+            "ปาสกาล"
+          ],
+          "translations": {
+            "en": "pascal",
+            "th": "ปาสกาล"
+          }
+        },
+        {
+          "id": "kilopascal",
+          "name": "kilopascal",
+          "symbol": "kPa",
+          "factor": 1000,
+          "plural": "kilopascals",
+          "description": "1,000 pascals",
+          "aliases": [
+            "kpa",
+            "kilopascal",
+            "kilopascals",
+            "กิโลปาสกาล"
+          ],
+          "translations": {
+            "en": "kilopascal",
+            "th": "กิโลปาสกาล"
+          }
+        },
+        {
+          "id": "megapascal",
+          "name": "megapascal",
+          "symbol": "MPa",
+          "factor": 1000000,
+          "plural": "megapascals",
+          "description": "1,000,000 pascals",
+          "aliases": [
+            "mpa",
+            "megapascal",
+            "megapascals",
+            "เมกะปาสกาล"
+          ],
+          "translations": {
+            "en": "megapascal",
+            "th": "เมกะปาสกาล"
+          }
+        },
+        {
+          "id": "bar",
+          "name": "bar",
+          "symbol": "bar",
+          "factor": 100000,
+          "plural": "bars",
+          "description": "Metric unit of pressure (100,000 Pa)",
+          "aliases": [
+            "bar",
+            "bars",
+            "บาร์"
+          ],
+          "translations": {
+            "en": "bar",
+            "th": "บาร์"
+          }
+        },
+        {
+          "id": "millibar",
+          "name": "millibar",
+          "symbol": "mbar",
+          "factor": 100,
+          "plural": "millibars",
+          "description": "1/1000 bar",
+          "aliases": [
+            "mbar",
+            "millibar",
+            "millibars",
+            "มิลลิบาร์"
+          ],
+          "translations": {
+            "en": "millibar",
+            "th": "มิลลิบาร์"
+          }
+        },
+        {
+          "id": "atmosphere",
+          "name": "atmosphere",
+          "symbol": "atm",
+          "factor": 101325,
+          "plural": "atmospheres",
+          "description": "Standard atmospheric pressure",
+          "aliases": [
+            "atm",
+            "atmosphere",
+            "atmospheres",
+            "บรรยากาศ"
+          ],
+          "translations": {
+            "en": "atmosphere",
+            "th": "บรรยากาศ"
+          }
+        },
+        {
+          "id": "torr",
+          "name": "torr",
+          "symbol": "Torr",
+          "factor": 133.322368,
+          "plural": "torr",
+          "description": "1/760 of an atmosphere",
+          "aliases": [
+            "torr",
+            "ทอร์"
+          ],
+          "translations": {
+            "en": "torr",
+            "th": "ทอร์"
+          }
+        },
+        {
+          "id": "mmhg",
+          "name": "millimeter of mercury",
+          "symbol": "mmHg",
+          "factor": 133.322387415,
+          "plural": "millimeters of mercury",
+          "description": "Pressure exerted by a 1 mm column of mercury",
+          "aliases": [
+            "mmhg",
+            "millimeters of mercury",
+            "มิลลิเมตรปรอท"
+          ],
+          "translations": {
+            "en": "millimeter of mercury",
+            "th": "มิลลิเมตรปรอท"
+          }
+        },
+        {
+          "id": "psi",
+          "name": "pound per square inch",
+          "symbol": "psi",
+          "factor": 6894.757293168,
+          "plural": "pounds per square inch",
+          "description": "Imperial unit of pressure",
+          "aliases": [
+            "psi",
+            "pound per square inch",
+            "pounds per square inch",
+            "ปอนด์ต่อตารางนิ้ว"
+          ],
+          "translations": {
+            "en": "pound per square inch",
+            "th": "ปอนด์ต่อตารางนิ้ว"
+          }
+        }
+      ]
+    },
+    {
+      "id": "force",
+      "name": "Force",
+      "description": "การวัดแรง",
+      "translations": {
+        "en": "Force",
+        "th": "แรง"
+      },
+      "baseUnit": "newton",
+      "baseUnitSymbol": "N",
+      "icon": "🏋️",
+      "popularConversions": [
+        {
+          "from": "newton",
+          "to": "pound_force",
+          "slug": "newtons-to-pound-force"
+        },
+        {
+          "from": "pound_force",
+          "to": "newton",
+          "slug": "pound-force-to-newtons"
+        },
+        {
+          "from": "kilogram_force",
+          "to": "newton",
+          "slug": "kilogram-force-to-newtons"
+        },
+        {
+          "from": "newton",
+          "to": "kilogram_force",
+          "slug": "newtons-to-kilogram-force"
+        },
+        {
+          "from": "kilonewton",
+          "to": "pound_force",
+          "slug": "kilonewton-to-pound-force"
+        }
+      ],
+      "units": [
+        {
+          "id": "newton",
+          "name": "newton",
+          "symbol": "N",
+          "factor": 1,
+          "plural": "newtons",
+          "description": "SI unit of force",
+          "aliases": [
+            "n",
+            "newton",
+            "newtons",
+            "นิวตัน"
+          ],
+          "translations": {
+            "en": "newton",
+            "th": "นิวตัน"
+          }
+        },
+        {
+          "id": "kilonewton",
+          "name": "kilonewton",
+          "symbol": "kN",
+          "factor": 1000,
+          "plural": "kilonewtons",
+          "description": "1,000 newtons",
+          "aliases": [
+            "kn",
+            "kilonewton",
+            "kilonewtons",
+            "กิโลนิวตัน"
+          ],
+          "translations": {
+            "en": "kilonewton",
+            "th": "กิโลนิวตัน"
+          }
+        },
+        {
+          "id": "meganewton",
+          "name": "meganewton",
+          "symbol": "MN",
+          "factor": 1000000,
+          "plural": "meganewtons",
+          "description": "1,000,000 newtons",
+          "aliases": [
+            "mn",
+            "meganewton",
+            "meganewtons",
+            "เมกะนิวตัน"
+          ],
+          "translations": {
+            "en": "meganewton",
+            "th": "เมกะนิวตัน"
+          }
+        },
+        {
+          "id": "dyne",
+          "name": "dyne",
+          "symbol": "dyn",
+          "factor": 0.00001,
+          "plural": "dynes",
+          "description": "CGS unit of force (10^-5 N)",
+          "aliases": [
+            "dyn",
+            "dyne",
+            "dynes",
+            "ดายน์"
+          ],
+          "translations": {
+            "en": "dyne",
+            "th": "ดายน์"
+          }
+        },
+        {
+          "id": "pound_force",
+          "name": "pound-force",
+          "symbol": "lbf",
+          "factor": 4.4482216152605,
+          "plural": "pounds-force",
+          "description": "Force exerted by standard gravity on one avoirdupois pound",
+          "aliases": [
+            "lbf",
+            "pound force",
+            "pounds force",
+            "ปอนด์แรง"
+          ],
+          "translations": {
+            "en": "pound-force",
+            "th": "ปอนด์แรง"
+          }
+        },
+        {
+          "id": "kilogram_force",
+          "name": "kilogram-force",
+          "symbol": "kgf",
+          "factor": 9.80665,
+          "plural": "kilograms-force",
+          "description": "Force exerted by one kilogram in standard gravity",
+          "aliases": [
+            "kgf",
+            "kilogram force",
+            "kilograms force",
+            "กิโลกรัมแรง"
+          ],
+          "translations": {
+            "en": "kilogram-force",
+            "th": "กิโลกรัมแรง"
+          }
+        },
+        {
+          "id": "kip",
+          "name": "kip",
+          "symbol": "kip",
+          "factor": 4448.2216152605,
+          "plural": "kips",
+          "description": "1,000 pounds-force",
+          "aliases": [
+            "kip",
+            "kips",
+            "คิป"
+          ],
+          "translations": {
+            "en": "kip",
+            "th": "คิป"
+          }
+        },
+        {
+          "id": "ounce_force",
+          "name": "ounce-force",
+          "symbol": "ozf",
+          "factor": 0.27801385095378,
+          "plural": "ounces-force",
+          "description": "1/16 of a pound-force",
+          "aliases": [
+            "ozf",
+            "ounce force",
+            "ounces force",
+            "ออนซ์แรง"
+          ],
+          "translations": {
+            "en": "ounce-force",
+            "th": "ออนซ์แรง"
+          }
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "name": "Data (Bits & Bytes)",
+      "description": "การวัดปริมาณข้อมูลดิจิทัล",
+      "translations": {
+        "en": "Data (Bits & Bytes)",
+        "th": "ข้อมูล/บิตและไบต์"
+      },
+      "baseUnit": "byte",
+      "baseUnitSymbol": "B",
+      "icon": "💾",
+      "popularConversions": [
+        {
+          "from": "gigabyte",
+          "to": "megabyte",
+          "slug": "gigabytes-to-megabytes"
+        },
+        {
+          "from": "megabyte",
+          "to": "kilobyte",
+          "slug": "megabytes-to-kilobytes"
+        },
+        {
+          "from": "terabyte",
+          "to": "gigabyte",
+          "slug": "terabytes-to-gigabytes"
+        },
+        {
+          "from": "gigabyte",
+          "to": "terabyte",
+          "slug": "gigabytes-to-terabytes"
+        },
+        {
+          "from": "megabyte",
+          "to": "gigabyte",
+          "slug": "megabytes-to-gigabytes"
+        }
+      ],
+      "units": [
+        {
+          "id": "bit",
+          "name": "bit",
+          "symbol": "bit",
+          "factor": 0.125,
+          "plural": "bits",
+          "description": "Basic unit of information (1/8 of a byte)",
+          "aliases": [
+            "bit",
+            "bits",
+            "b",
+            "บิต"
+          ],
+          "translations": {
+            "en": "bit",
+            "th": "บิต"
+          }
+        },
+        {
+          "id": "byte",
+          "name": "byte",
+          "symbol": "B",
+          "factor": 1,
+          "plural": "bytes",
+          "description": "8 bits",
+          "aliases": [
+            "B",
+            "byte",
+            "bytes",
+            "ไบต์"
+          ],
+          "translations": {
+            "en": "byte",
+            "th": "ไบต์"
+          }
+        },
+        {
+          "id": "kilobyte",
+          "name": "kilobyte (decimal)",
+          "symbol": "kB",
+          "factor": 1000,
+          "plural": "kilobytes",
+          "description": "1,000 bytes (SI decimal)",
+          "aliases": [
+            "kb",
+            "kilobyte",
+            "kilobytes",
+            "กิโลไบต์"
+          ],
+          "translations": {
+            "en": "kilobyte",
+            "th": "กิโลไบต์"
+          }
+        },
+        {
+          "id": "megabyte",
+          "name": "megabyte (decimal)",
+          "symbol": "MB",
+          "factor": 1000000,
+          "plural": "megabytes",
+          "description": "1,000,000 bytes (SI decimal)",
+          "aliases": [
+            "mb",
+            "megabyte",
+            "megabytes",
+            "เมกะไบต์"
+          ],
+          "translations": {
+            "en": "megabyte",
+            "th": "เมกะไบต์"
+          }
+        },
+        {
+          "id": "gigabyte",
+          "name": "gigabyte (decimal)",
+          "symbol": "GB",
+          "factor": 1000000000,
+          "plural": "gigabytes",
+          "description": "1,000,000,000 bytes (SI decimal)",
+          "aliases": [
+            "gb",
+            "gigabyte",
+            "gigabytes",
+            "กิกะไบต์"
+          ],
+          "translations": {
+            "en": "gigabyte",
+            "th": "กิกะไบต์"
+          }
+        },
+        {
+          "id": "terabyte",
+          "name": "terabyte (decimal)",
+          "symbol": "TB",
+          "factor": 1000000000000,
+          "plural": "terabytes",
+          "description": "1,000,000,000,000 bytes (SI decimal)",
+          "aliases": [
+            "tb",
+            "terabyte",
+            "terabytes",
+            "เทระไบต์"
+          ],
+          "translations": {
+            "en": "terabyte",
+            "th": "เทระไบต์"
+          }
+        },
+        {
+          "id": "petabyte",
+          "name": "petabyte (decimal)",
+          "symbol": "PB",
+          "factor": 1000000000000000,
+          "plural": "petabytes",
+          "description": "1,000,000,000,000,000 bytes (SI decimal)",
+          "aliases": [
+            "pb",
+            "petabyte",
+            "petabytes",
+            "เพตะไบต์"
+          ],
+          "translations": {
+            "en": "petabyte",
+            "th": "เพตะไบต์"
+          }
+        },
+        {
+          "id": "kibibyte",
+          "name": "kibibyte (binary)",
+          "symbol": "KiB",
+          "factor": 1024,
+          "plural": "kibibytes",
+          "description": "1,024 bytes (binary scale)",
+          "aliases": [
+            "kib",
+            "kibibyte",
+            "kibibytes",
+            "คิบิไบต์"
+          ],
+          "translations": {
+            "en": "kibibyte",
+            "th": "คิบิไบต์"
+          }
+        },
+        {
+          "id": "mebibyte",
+          "name": "mebibyte (binary)",
+          "symbol": "MiB",
+          "factor": 1048576,
+          "plural": "mebibytes",
+          "description": "1,024 KiB or 1,048,576 bytes",
+          "aliases": [
+            "mib",
+            "mebibyte",
+            "mebibytes",
+            "เมบิไบต์"
+          ],
+          "translations": {
+            "en": "mebibyte",
+            "th": "เมบิไบต์"
+          }
+        },
+        {
+          "id": "gibibyte",
+          "name": "gibibyte (binary)",
+          "symbol": "GiB",
+          "factor": 1073741824,
+          "plural": "gibibytes",
+          "description": "1,024 MiB or 1,073,741,824 bytes",
+          "aliases": [
+            "gib",
+            "gibibyte",
+            "gibibytes",
+            "กิบิไบต์"
+          ],
+          "translations": {
+            "en": "gibibyte",
+            "th": "กิบิไบต์"
+          }
+        },
+        {
+          "id": "tebibyte",
+          "name": "tebibyte (binary)",
+          "symbol": "TiB",
+          "factor": 1099511627776,
+          "plural": "tebibytes",
+          "description": "1,024 GiB or 1,099,511,627,776 bytes",
+          "aliases": [
+            "tib",
+            "tebibyte",
+            "tebibytes",
+            "เทบิไบต์"
+          ],
+          "translations": {
+            "en": "tebibyte",
+            "th": "เทบิไบต์"
+          }
+        }
+      ]
+    },
+    {
+      "id": "angle",
+      "name": "Angle",
+      "description": "การวัดมุม",
+      "translations": {
+        "en": "Angle",
+        "th": "มุม"
+      },
+      "baseUnit": "degree",
+      "baseUnitSymbol": "°",
+      "icon": "📐",
+      "popularConversions": [
+        {
+          "from": "degree",
+          "to": "radian",
+          "slug": "degrees-to-radians"
+        },
+        {
+          "from": "radian",
+          "to": "degree",
+          "slug": "radians-to-degrees"
+        },
+        {
+          "from": "gradian",
+          "to": "degree",
+          "slug": "gradians-to-degrees"
+        },
+        {
+          "from": "degree",
+          "to": "gradian",
+          "slug": "degrees-to-gradians"
+        },
+        {
+          "from": "turn",
+          "to": "degree",
+          "slug": "turns-to-degrees"
+        }
+      ],
+      "units": [
+        {
+          "id": "degree",
+          "name": "degree",
+          "symbol": "°",
+          "factor": 1,
+          "plural": "degrees",
+          "description": "1/360 of a full rotation",
+          "aliases": [
+            "deg",
+            "degree",
+            "degrees",
+            "องศา",
+            "°"
+          ],
+          "translations": {
+            "en": "degree",
+            "th": "องศา"
+          }
+        },
+        {
+          "id": "radian",
+          "name": "radian",
+          "symbol": "rad",
+          "factor": 57.295779513,
+          "plural": "radians",
+          "description": "Angle subtended by an arc equal to the radius",
+          "aliases": [
+            "rad",
+            "radian",
+            "radians",
+            "เรเดียน"
+          ],
+          "translations": {
+            "en": "radian",
+            "th": "เรเดียน"
+          }
+        },
+        {
+          "id": "gradian",
+          "name": "gradian",
+          "symbol": "grad",
+          "factor": 0.9,
+          "plural": "gradians",
+          "description": "1/400 of a full rotation",
+          "aliases": [
+            "grad",
+            "gradian",
+            "gradians",
+            "เกรเดียน"
+          ],
+          "translations": {
+            "en": "gradian",
+            "th": "เกรเดียน"
+          }
+        },
+        {
+          "id": "arcminute",
+          "name": "arcminute",
+          "symbol": "′",
+          "factor": 0.016666666667,
+          "plural": "arcminutes",
+          "description": "1/60 of a degree",
+          "aliases": [
+            "arcmin",
+            "arcminute",
+            "arcminutes",
+            "ลิปดา"
+          ],
+          "translations": {
+            "en": "arcminute",
+            "th": "ลิปดา"
+          }
+        },
+        {
+          "id": "arcsecond",
+          "name": "arcsecond",
+          "symbol": "″",
+          "factor": 0.00027777777778,
+          "plural": "arcseconds",
+          "description": "1/60 of an arcminute or 1/3600 of a degree",
+          "aliases": [
+            "arcsec",
+            "arcsecond",
+            "arcseconds",
+            "ฟิลิปดา",
+            "พิลิปดา"
+          ],
+          "translations": {
+            "en": "arcsecond",
+            "th": "พิลิปดา"
+          }
+        },
+        {
+          "id": "turn",
+          "name": "turn",
+          "symbol": "turn",
+          "factor": 360,
+          "plural": "turns",
+          "description": "Full rotation (360 degrees)",
+          "aliases": [
+            "turn",
+            "turns",
+            "rotation",
+            "รอบ"
+          ],
+          "translations": {
+            "en": "turn",
+            "th": "รอบ"
+          }
+        },
+        {
+          "id": "milliradian",
+          "name": "milliradian",
+          "symbol": "mrad",
+          "factor": 0.057295779513,
+          "plural": "milliradians",
+          "description": "1/1000 of a radian",
+          "aliases": [
+            "mrad",
+            "milliradian",
+            "milliradians",
+            "มิลลิเรเดียน"
+          ],
+          "translations": {
+            "en": "milliradian",
+            "th": "มิลลิเรเดียน"
+          }
+        }
+      ]
+    },
+    {
+      "id": "density",
+      "name": "Density",
+      "description": "การวัดความหนาแน่น",
+      "translations": {
+        "en": "Density",
+        "th": "ความหนาแน่น"
+      },
+      "baseUnit": "kilogram_per_cubic_meter",
+      "baseUnitSymbol": "kg/m³",
+      "icon": "🧊",
+      "popularConversions": [
+        {
+          "from": "kilogram_per_cubic_meter",
+          "to": "gram_per_cubic_centimeter",
+          "slug": "kg-per-m3-to-g-per-cm3"
+        },
+        {
+          "from": "gram_per_cubic_centimeter",
+          "to": "kilogram_per_cubic_meter",
+          "slug": "g-per-cm3-to-kg-per-m3"
+        },
+        {
+          "from": "pound_per_cubic_foot",
+          "to": "kilogram_per_cubic_meter",
+          "slug": "lb-per-ft3-to-kg-per-m3"
+        },
+        {
+          "from": "kilogram_per_cubic_meter",
+          "to": "pound_per_cubic_foot",
+          "slug": "kg-per-m3-to-lb-per-ft3"
+        },
+        {
+          "from": "kilogram_per_liter",
+          "to": "gram_per_milliliter",
+          "slug": "kg-per-l-to-g-per-ml"
+        }
+      ],
+      "units": [
+        {
+          "id": "kilogram_per_cubic_meter",
+          "name": "kilogram per cubic meter",
+          "symbol": "kg/m³",
+          "factor": 1,
+          "plural": "kilograms per cubic meter",
+          "description": "SI unit of density",
+          "aliases": [
+            "kg/m3",
+            "kg/m³",
+            "kilogram per cubic meter",
+            "กิโลกรัมต่อลูกบาศก์เมตร",
+            "kg-per-m3",
+            "kg_per_m3"
+          ],
+          "translations": {
+            "en": "kilogram per cubic meter",
+            "th": "กิโลกรัมต่อลูกบาศก์เมตร"
+          }
+        },
+        {
+          "id": "gram_per_cubic_centimeter",
+          "name": "gram per cubic centimeter",
+          "symbol": "g/cm³",
+          "factor": 1000,
+          "plural": "grams per cubic centimeter",
+          "description": "CGS unit of density",
+          "aliases": [
+            "g/cm3",
+            "g/cm³",
+            "gram per cubic centimeter",
+            "กรัมต่อลูกบาศก์เซนติเมตร",
+            "g-per-cm3",
+            "g_per_cm3"
+          ],
+          "translations": {
+            "en": "gram per cubic centimeter",
+            "th": "กรัมต่อลูกบาศก์เซนติเมตร"
+          }
+        },
+        {
+          "id": "gram_per_milliliter",
+          "name": "gram per milliliter",
+          "symbol": "g/mL",
+          "factor": 1000,
+          "plural": "grams per milliliter",
+          "description": "Equivalent to g/cm³",
+          "aliases": [
+            "g/ml",
+            "gram per milliliter",
+            "กรัมต่อมิลลิลิตร",
+            "g-per-ml",
+            "g_per_ml"
+          ],
+          "translations": {
+            "en": "gram per milliliter",
+            "th": "กรัมต่อมิลลิลิตร"
+          }
+        },
+        {
+          "id": "kilogram_per_liter",
+          "name": "kilogram per liter",
+          "symbol": "kg/L",
+          "factor": 1000,
+          "plural": "kilograms per liter",
+          "description": "Density relative to water",
+          "aliases": [
+            "kg/l",
+            "kilogram per liter",
+            "กิโลกรัมต่อลิตร",
+            "kg-per-l",
+            "kg_per_l"
+          ],
+          "translations": {
+            "en": "kilogram per liter",
+            "th": "กิโลกรัมต่อลิตร"
+          }
+        },
+        {
+          "id": "pound_per_cubic_foot",
+          "name": "pound per cubic foot",
+          "symbol": "lb/ft³",
+          "factor": 16.018463,
+          "plural": "pounds per cubic foot",
+          "description": "Imperial unit of density",
+          "aliases": [
+            "lb/ft3",
+            "lb/ft³",
+            "pound per cubic foot",
+            "ปอนด์ต่อลูกบาศก์ฟุต",
+            "lb-per-ft3",
+            "lb_per_ft3"
+          ],
+          "translations": {
+            "en": "pound per cubic foot",
+            "th": "ปอนด์ต่อลูกบาศก์ฟุต"
+          }
+        },
+        {
+          "id": "pound_per_cubic_inch",
+          "name": "pound per cubic inch",
+          "symbol": "lb/in³",
+          "factor": 27679.904,
+          "plural": "pounds per cubic inch",
+          "description": "Imperial unit of density",
+          "aliases": [
+            "lb/in3",
+            "lb/in³",
+            "pound per cubic inch",
+            "ปอนด์ต่อลูกบาศก์นิ้ว"
+          ],
+          "translations": {
+            "en": "pound per cubic inch",
+            "th": "ปอนด์ต่อลูกบาศก์นิ้ว"
+          }
+        },
+        {
+          "id": "pound_per_gallon_us",
+          "name": "pound per gallon (US)",
+          "symbol": "lb/gal",
+          "factor": 119.826427,
+          "plural": "pounds per gallon",
+          "description": "US liquid density unit",
+          "aliases": [
+            "lb/gal",
+            "pound per gallon",
+            "ปอนด์ต่อแกลลอน"
+          ],
+          "translations": {
+            "en": "pound per gallon (US)",
+            "th": "ปอนด์ต่อแกลลอน (US)"
+          }
+        },
+        {
+          "id": "ounce_per_cubic_inch",
+          "name": "ounce per cubic inch",
+          "symbol": "oz/in³",
+          "factor": 1729.994,
+          "plural": "ounces per cubic inch",
+          "description": "Imperial unit of density",
+          "aliases": [
+            "oz/in3",
+            "oz/in³",
+            "ounce per cubic inch",
+            "ออนซ์ต่อลูกบาศก์นิ้ว"
+          ],
+          "translations": {
+            "en": "ounce per cubic inch",
+            "th": "ออนซ์ต่อลูกบาศก์นิ้ว"
+          }
+        }
+      ]
+    },
+    {
+      "id": "electric_current",
+      "name": "Electric Current",
+      "description": "การวัดกระแสไฟฟ้า",
+      "translations": {
+        "en": "Electric Current",
+        "th": "กระแสไฟฟ้า"
+      },
+      "baseUnit": "ampere",
+      "baseUnitSymbol": "A",
+      "icon": "⚡",
+      "popularConversions": [
+        {
+          "from": "ampere",
+          "to": "milliampere",
+          "slug": "amperes-to-milliamperes"
+        },
+        {
+          "from": "milliampere",
+          "to": "ampere",
+          "slug": "milliamperes-to-amperes"
+        },
+        {
+          "from": "ampere",
+          "to": "kiloampere",
+          "slug": "amperes-to-kiloamperes"
+        },
+        {
+          "from": "microampere",
+          "to": "ampere",
+          "slug": "microamperes-to-amperes"
+        },
+        {
+          "from": "kiloampere",
+          "to": "ampere",
+          "slug": "kiloamperes-to-amperes"
+        }
+      ],
+      "units": [
+        {
+          "id": "ampere",
+          "name": "ampere",
+          "symbol": "A",
+          "factor": 1,
+          "plural": "amperes",
+          "description": "SI base unit of electric current",
+          "aliases": [
+            "a",
+            "amp",
+            "ampere",
+            "amperes",
+            "แอมแปร์"
+          ],
+          "translations": {
+            "en": "ampere",
+            "th": "แอมแปร์"
+          }
+        },
+        {
+          "id": "milliampere",
+          "name": "milliampere",
+          "symbol": "mA",
+          "factor": 0.001,
+          "plural": "milliamperes",
+          "description": "1/1000 of an ampere",
+          "aliases": [
+            "ma",
+            "milliampere",
+            "milliamperes",
+            "มิลลิแอมแปร์"
+          ],
+          "translations": {
+            "en": "milliampere",
+            "th": "มิลลิแอมแปร์"
+          }
+        },
+        {
+          "id": "microampere",
+          "name": "microampere",
+          "symbol": "μA",
+          "factor": 0.000001,
+          "plural": "microamperes",
+          "description": "1/1,000,000 of an ampere",
+          "aliases": [
+            "ua",
+            "microampere",
+            "microamperes",
+            "ไมโครแอมแปร์"
+          ],
+          "translations": {
+            "en": "microampere",
+            "th": "ไมโครแอมแปร์"
+          }
+        },
+        {
+          "id": "kiloampere",
+          "name": "kiloampere",
+          "symbol": "kA",
+          "factor": 1000,
+          "plural": "kiloamperes",
+          "description": "1,000 amperes",
+          "aliases": [
+            "ka",
+            "kiloampere",
+            "kiloamperes",
+            "กิโลแอมแปร์"
+          ],
+          "translations": {
+            "en": "kiloampere",
+            "th": "กิโลแอมแปร์"
+          }
+        },
+        {
+          "id": "abampere",
+          "name": "abampere",
+          "symbol": "abA",
+          "factor": 10,
+          "plural": "abamperes",
+          "description": "Electromagnetic unit of current",
+          "aliases": [
+            "aba",
+            "abampere",
+            "abamperes",
+            "แอบแอมแปร์"
+          ],
+          "translations": {
+            "en": "abampere",
+            "th": "แอบแอมแปร์"
+          }
+        },
+        {
+          "id": "statampere",
+          "name": "statampere",
+          "symbol": "statA",
+          "factor": 3.33564e-10,
+          "plural": "statamperes",
+          "description": "Electrostatic unit of current",
+          "aliases": [
+            "stata",
+            "statampere",
+            "statamperes",
+            "สแตทแอมแปร์"
+          ],
+          "translations": {
+            "en": "statampere",
+            "th": "สแตทแอมแปร์"
+          }
+        },
+        {
+          "id": "biot",
+          "name": "biot",
+          "symbol": "Bi",
+          "factor": 10,
+          "plural": "biots",
+          "description": "Equivalent to 10 amperes",
+          "aliases": [
+            "bi",
+            "biot",
+            "biots",
+            "ไบโอท"
+          ],
+          "translations": {
+            "en": "biot",
+            "th": "ไบโอท"
+          }
+        }
+      ]
+    },
+    {
+      "id": "fuel_consumption",
+      "name": "Fuel Consumption",
+      "description": "อัตราสิ้นเปลืองน้ำมันเชื้อเพลิง",
+      "translations": {
+        "en": "Fuel Consumption",
+        "th": "อัตราสิ้นเปลืองเชื้อเพลิง"
+      },
+      "baseUnit": "kilometer_per_liter",
+      "baseUnitSymbol": "km/L",
+      "icon": "⛽",
+      "popularConversions": [
+        {
+          "from": "miles_per_gallon_us",
+          "to": "liter_per_100km",
+          "slug": "mpg-us-to-liter-per-100km"
+        },
+        {
+          "from": "liter_per_100km",
+          "to": "miles_per_gallon_us",
+          "slug": "liter-per-100km-to-mpg-us"
+        },
+        {
+          "from": "kilometer_per_liter",
+          "to": "liter_per_100km",
+          "slug": "km-per-liter-to-liter-per-100km"
+        },
+        {
+          "from": "liter_per_100km",
+          "to": "kilometer_per_liter",
+          "slug": "liter-per-100km-to-km-per-liter"
+        },
+        {
+          "from": "miles_per_gallon_us",
+          "to": "miles_per_gallon_uk",
+          "slug": "mpg-us-to-mpg-uk"
+        }
+      ],
+      "units": [
+        {
+          "id": "kilometer_per_liter",
+          "name": "kilometer per liter",
+          "symbol": "km/L",
+          "factor": 1,
+          "plural": "kilometers per liter",
+          "description": "Distance in km per liter of fuel",
+          "aliases": [
+            "km/l",
+            "kml",
+            "kilometer per liter",
+            "กิโลเมตรต่อลิตร",
+            "km-per-liter",
+            "km_per_liter"
+          ],
+          "translations": {
+            "en": "kilometer per liter",
+            "th": "กิโลเมตรต่อลิตร"
+          }
+        },
+        {
+          "id": "miles_per_gallon_us",
+          "name": "miles per gallon (US)",
+          "symbol": "mpg",
+          "factor": 0.425143707,
+          "plural": "miles per gallon (US)",
+          "description": "US miles per US gallon",
+          "aliases": [
+            "mpg",
+            "mpg us",
+            "miles per gallon",
+            "ไมล์ต่อแกลลอน",
+            "mpg-us",
+            "mpg_us"
+          ],
+          "translations": {
+            "en": "miles per gallon (US)",
+            "th": "ไมล์ต่อแกลลอน (US)"
+          }
+        },
+        {
+          "id": "miles_per_gallon_uk",
+          "name": "miles per gallon (UK)",
+          "symbol": "mpg (UK)",
+          "factor": 0.35400619,
+          "plural": "miles per gallon (UK)",
+          "description": "UK miles per Imperial gallon",
+          "aliases": [
+            "mpg uk",
+            "miles per gallon uk",
+            "ไมล์ต่อแกลลอนอังกฤษ",
+            "mpg-uk",
+            "mpg_uk"
+          ],
+          "translations": {
+            "en": "miles per gallon (UK)",
+            "th": "ไมล์ต่อแกลลอน (UK)"
+          }
+        },
+        {
+          "id": "kilometer_per_gallon_us",
+          "name": "kilometer per gallon (US)",
+          "symbol": "km/gal",
+          "factor": 0.264172052,
+          "plural": "kilometers per gallon (US)",
+          "description": "Kilometers per US gallon",
+          "aliases": [
+            "km/gal",
+            "kilometer per gallon",
+            "กิโลเมตรต่อแกลลอน"
+          ],
+          "translations": {
+            "en": "kilometer per gallon (US)",
+            "th": "กิโลเมตรต่อแกลลอน (US)"
+          }
+        },
+        {
+          "id": "liter_per_100km",
+          "name": "liter per 100 km",
+          "symbol": "L/100km",
+          "plural": "liters per 100 km",
+          "description": "Volume of fuel in liters used to travel 100 km (inverse relationship)",
+          "formula": "100 / value",
+          "inverseFormula": "100 / value",
+          "aliases": [
+            "l/100km",
+            "liter per 100km",
+            "ลิตรต่อ 100 กม.",
+            "ลิตรต่อ100กม.",
+            "liter-per-100km",
+            "liter_per_100km"
+          ],
+          "translations": {
+            "en": "liter per 100 km",
+            "th": "ลิตรต่อ 100 กม."
+          }
+        }
+      ]
+    }
+  ],
+  "conversionRules": {
+    "basic": "value_in_base_unit = value * unit_factor",
+    "between_units": "target_value = (source_value * source_factor) / target_factor",
+    "temperature": "Use formula and inverseFormula fields relative to Celsius as the base unit"
+  },
+  "exampleConversions": [
+    {
+      "description": "Convert 5 kilometers to meters",
+      "source": {
+        "value": 5,
+        "unit": "kilometer",
+        "category": "length"
+      },
+      "target": {
+        "unit": "meter",
+        "category": "length"
+      },
+      "calculation": "5 * 1000 = 5000",
+      "result": 5000
+    },
+    {
+      "description": "Convert 2.5 kilograms to grams",
+      "source": {
+        "value": 2.5,
+        "unit": "kilogram",
+        "category": "weight"
+      },
+      "target": {
+        "unit": "gram",
+        "category": "weight"
+      },
+      "calculation": "2.5 * (1 / 0.001) = 2500",
+      "result": 2500
+    },
+    {
+      "description": "Convert 100 square meters to hectares",
+      "source": {
+        "value": 100,
+        "unit": "square_meter",
+        "category": "area"
+      },
+      "target": {
+        "unit": "hectare",
+        "category": "area"
+      },
+      "calculation": "100 / 10000 = 0.01",
+      "result": 0.01
+    },
+    {
+      "description": "Convert 0°C to Fahrenheit",
+      "source": {
+        "value": 0,
+        "unit": "celsius",
+        "category": "temperature"
+      },
+      "target": {
+        "unit": "fahrenheit",
+        "category": "temperature"
+      },
+      "formula": "0 * 9/5 + 32 = 32",
+      "result": 32
+    },
+    {
+      "description": "Convert 100 km/h to m/s",
+      "source": {
+        "value": 100,
+        "unit": "kilometer_per_hour",
+        "category": "speed"
+      },
+      "target": {
+        "unit": "meter_per_second",
+        "category": "speed"
+      },
+      "calculation": "100 * 0.27777777778 = 27.78",
+      "result": 27.78
+    }
+  ]
+}

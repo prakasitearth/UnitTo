@@ -1,0 +1,1002 @@
+[
+  {
+    "id": "time",
+    "name": "Time",
+    "description": "การวัดเวลา ระยะเวลา",
+    "translations": { "en": "Time", "th": "เวลา" },
+    "baseUnit": "second",
+    "baseUnitSymbol": "s",
+    "icon": "⏱️",
+    "popularConversions": [
+      { "from": "hour", "to": "minute", "slug": "hours-to-minutes" },
+      { "from": "day", "to": "hour", "slug": "days-to-hours" },
+      { "from": "minute", "to": "second", "slug": "minutes-to-seconds" },
+      { "from": "week", "to": "day", "slug": "weeks-to-days" },
+      { "from": "year", "to": "day", "slug": "years-to-days" }
+    ],
+    "units": [
+      {
+        "id": "second",
+        "name": "second",
+        "symbol": "s",
+        "factor": 1,
+        "plural": "seconds",
+        "description": "SI base unit of time",
+        "aliases": ["s", "sec", "second", "seconds", "วินาที"],
+        "translations": { "en": "second", "th": "วินาที" }
+      },
+      {
+        "id": "millisecond",
+        "name": "millisecond",
+        "symbol": "ms",
+        "factor": 0.001,
+        "plural": "milliseconds",
+        "description": "One thousandth of a second",
+        "aliases": ["ms", "millisecond", "milliseconds", "มิลลิวินาที"],
+        "translations": { "en": "millisecond", "th": "มิลลิวินาที" }
+      },
+      {
+        "id": "microsecond",
+        "name": "microsecond",
+        "symbol": "μs",
+        "factor": 0.000001,
+        "plural": "microseconds",
+        "description": "One millionth of a second",
+        "aliases": ["μs", "us", "microsecond", "microseconds", "ไมโครวินาที"],
+        "translations": { "en": "microsecond", "th": "ไมโครวินาที" }
+      },
+      {
+        "id": "nanosecond",
+        "name": "nanosecond",
+        "symbol": "ns",
+        "factor": 0.000000001,
+        "plural": "nanoseconds",
+        "description": "One billionth of a second",
+        "aliases": ["ns", "nanosecond", "nanoseconds", "นาโนวินาที"],
+        "translations": { "en": "nanosecond", "th": "นาโนวินาที" }
+      },
+      {
+        "id": "minute",
+        "name": "minute",
+        "symbol": "min",
+        "factor": 60,
+        "plural": "minutes",
+        "description": "60 seconds",
+        "aliases": ["min", "minute", "minutes", "นาที"],
+        "translations": { "en": "minute", "th": "นาที" }
+      },
+      {
+        "id": "hour",
+        "name": "hour",
+        "symbol": "h",
+        "factor": 3600,
+        "plural": "hours",
+        "description": "60 minutes or 3600 seconds",
+        "aliases": ["h", "hr", "hour", "hours", "ชั่วโมง"],
+        "translations": { "en": "hour", "th": "ชั่วโมง" }
+      },
+      {
+        "id": "day",
+        "name": "day",
+        "symbol": "d",
+        "factor": 86400,
+        "plural": "days",
+        "description": "24 hours or 86400 seconds",
+        "aliases": ["d", "day", "days", "วัน"],
+        "translations": { "en": "day", "th": "วัน" }
+      },
+      {
+        "id": "week",
+        "name": "week",
+        "symbol": "wk",
+        "factor": 604800,
+        "plural": "weeks",
+        "description": "7 days or 604800 seconds",
+        "aliases": ["wk", "week", "weeks", "สัปดาห์"],
+        "translations": { "en": "week", "th": "สัปดาห์" }
+      },
+      {
+        "id": "month",
+        "name": "month",
+        "symbol": "mo",
+        "factor": 2592000,
+        "plural": "months",
+        "description": "Approximately 30 days or 2592000 seconds",
+        "aliases": ["mo", "month", "months", "เดือน"],
+        "translations": { "en": "month", "th": "เดือน" }
+      },
+      {
+        "id": "year",
+        "name": "year",
+        "symbol": "yr",
+        "factor": 31557600,
+        "plural": "years",
+        "description": "365.25 days (Julian year) or 31557600 seconds",
+        "aliases": ["yr", "year", "years", "ปี"],
+        "translations": { "en": "year", "th": "ปี" }
+      }
+    ]
+  },
+  {
+    "id": "pressure",
+    "name": "Pressure",
+    "description": "การวัดความดัน แรงดัน",
+    "translations": { "en": "Pressure", "th": "ความดัน" },
+    "baseUnit": "pascal",
+    "baseUnitSymbol": "Pa",
+    "icon": "💨",
+    "popularConversions": [
+      { "from": "bar", "to": "psi", "slug": "bar-to-psi" },
+      { "from": "atmosphere", "to": "bar", "slug": "atmosphere-to-bar" },
+      { "from": "psi", "to": "bar", "slug": "psi-to-bar" },
+      { "from": "kilopascal", "to": "psi", "slug": "kilopascals-to-psi" },
+      { "from": "bar", "to": "atmosphere", "slug": "bar-to-atmosphere" }
+    ],
+    "units": [
+      {
+        "id": "pascal",
+        "name": "pascal",
+        "symbol": "Pa",
+        "factor": 1,
+        "plural": "pascals",
+        "description": "SI derived unit of pressure",
+        "aliases": ["Pa", "pascal", "pascals", "ปาสกาล"],
+        "translations": { "en": "pascal", "th": "ปาสกาล" }
+      },
+      {
+        "id": "kilopascal",
+        "name": "kilopascal",
+        "symbol": "kPa",
+        "factor": 1000,
+        "plural": "kilopascals",
+        "description": "1000 pascals",
+        "aliases": ["kPa", "kilopascal", "kilopascals", "กิโลปาสกาล"],
+        "translations": { "en": "kilopascal", "th": "กิโลปาสกาล" }
+      },
+      {
+        "id": "megapascal",
+        "name": "megapascal",
+        "symbol": "MPa",
+        "factor": 1000000,
+        "plural": "megapascals",
+        "description": "1000000 pascals",
+        "aliases": ["MPa", "megapascal", "megapascals", "เมกะปาสกาล"],
+        "translations": { "en": "megapascal", "th": "เมกะปาสกาล" }
+      },
+      {
+        "id": "bar",
+        "name": "bar",
+        "symbol": "bar",
+        "factor": 100000,
+        "plural": "bars",
+        "description": "100000 pascals",
+        "aliases": ["bar", "bars", "บาร์"],
+        "translations": { "en": "bar", "th": "บาร์" }
+      },
+      {
+        "id": "millibar",
+        "name": "millibar",
+        "symbol": "mbar",
+        "factor": 100,
+        "plural": "millibars",
+        "description": "One thousandth of a bar, equal to 100 pascals",
+        "aliases": ["mbar", "millibar", "millibars", "มิลลิบาร์"],
+        "translations": { "en": "millibar", "th": "มิลลิบาร์" }
+      },
+      {
+        "id": "atmosphere",
+        "name": "atmosphere",
+        "symbol": "atm",
+        "factor": 101325,
+        "plural": "atmospheres",
+        "description": "Standard atmospheric pressure, 101325 pascals",
+        "aliases": ["atm", "atmosphere", "atmospheres", "บรรยากาศ"],
+        "translations": { "en": "atmosphere", "th": "บรรยากาศ" }
+      },
+      {
+        "id": "torr",
+        "name": "torr",
+        "symbol": "Torr",
+        "factor": 133.322,
+        "plural": "torr",
+        "description": "Approximately 1/760 of an atmosphere",
+        "aliases": ["Torr", "torr", "ทอร์"],
+        "translations": { "en": "torr", "th": "ทอร์" }
+      },
+      {
+        "id": "mmhg",
+        "name": "millimeter of mercury",
+        "symbol": "mmHg",
+        "factor": 133.322,
+        "plural": "millimeters of mercury",
+        "description": "Pressure exerted by 1 mm column of mercury",
+        "aliases": ["mmHg", "mmhg", "millimeter of mercury", "มิลลิเมตรปรอท"],
+        "translations": { "en": "millimeter of mercury", "th": "มิลลิเมตรปรอท" }
+      },
+      {
+        "id": "psi",
+        "name": "pound per square inch",
+        "symbol": "psi",
+        "factor": 6894.757,
+        "plural": "pounds per square inch",
+        "description": "Imperial unit of pressure",
+        "aliases": ["psi", "pound per square inch", "pounds per square inch", "ปอนด์ต่อตารางนิ้ว"],
+        "translations": { "en": "pound per square inch", "th": "ปอนด์ต่อตารางนิ้ว" }
+      }
+    ]
+  },
+  {
+    "id": "power",
+    "name": "Power",
+    "description": "การวัดกำลังไฟฟ้า อัตราการทำงาน",
+    "translations": { "en": "Power", "th": "กำลังไฟฟ้า" },
+    "baseUnit": "watt",
+    "baseUnitSymbol": "W",
+    "icon": "🔌",
+    "popularConversions": [
+      { "from": "kilowatt", "to": "horsepower", "slug": "kilowatts-to-horsepower" },
+      { "from": "horsepower", "to": "kilowatt", "slug": "horsepower-to-kilowatts" },
+      { "from": "watt", "to": "kilowatt", "slug": "watts-to-kilowatts" },
+      { "from": "kilowatt", "to": "watt", "slug": "kilowatts-to-watts" },
+      { "from": "horsepower", "to": "watt", "slug": "horsepower-to-watts" }
+    ],
+    "units": [
+      {
+        "id": "watt",
+        "name": "watt",
+        "symbol": "W",
+        "factor": 1,
+        "plural": "watts",
+        "description": "SI derived unit of power",
+        "aliases": ["W", "watt", "watts", "วัตต์"],
+        "translations": { "en": "watt", "th": "วัตต์" }
+      },
+      {
+        "id": "kilowatt",
+        "name": "kilowatt",
+        "symbol": "kW",
+        "factor": 1000,
+        "plural": "kilowatts",
+        "description": "1000 watts",
+        "aliases": ["kW", "kilowatt", "kilowatts", "กิโลวัตต์"],
+        "translations": { "en": "kilowatt", "th": "กิโลวัตต์" }
+      },
+      {
+        "id": "megawatt",
+        "name": "megawatt",
+        "symbol": "MW",
+        "factor": 1000000,
+        "plural": "megawatts",
+        "description": "1000000 watts",
+        "aliases": ["MW", "megawatt", "megawatts", "เมกะวัตต์"],
+        "translations": { "en": "megawatt", "th": "เมกะวัตต์" }
+      },
+      {
+        "id": "gigawatt",
+        "name": "gigawatt",
+        "symbol": "GW",
+        "factor": 1000000000,
+        "plural": "gigawatts",
+        "description": "1000000000 watts",
+        "aliases": ["GW", "gigawatt", "gigawatts", "กิกะวัตต์"],
+        "translations": { "en": "gigawatt", "th": "กิกะวัตต์" }
+      },
+      {
+        "id": "horsepower",
+        "name": "horsepower",
+        "symbol": "hp",
+        "factor": 745.69987,
+        "plural": "horsepower",
+        "description": "Mechanical horsepower (imperial)",
+        "aliases": ["hp", "horsepower", "แรงม้า"],
+        "translations": { "en": "horsepower", "th": "แรงม้า" }
+      },
+      {
+        "id": "btu_per_hour",
+        "name": "BTU per hour",
+        "symbol": "BTU/h",
+        "factor": 0.29307107,
+        "plural": "BTU per hour",
+        "description": "British thermal units per hour",
+        "aliases": ["BTU/h", "btu/h", "btu per hour", "บีทียูต่อชั่วโมง"],
+        "translations": { "en": "BTU per hour", "th": "บีทียูต่อชั่วโมง" }
+      },
+      {
+        "id": "calorie_per_second",
+        "name": "calorie per second",
+        "symbol": "cal/s",
+        "factor": 4.184,
+        "plural": "calories per second",
+        "description": "Thermochemical calories per second",
+        "aliases": ["cal/s", "calorie per second", "calories per second", "แคลอรีต่อวินาที"],
+        "translations": { "en": "calorie per second", "th": "แคลอรีต่อวินาที" }
+      },
+      {
+        "id": "foot_pound_per_second",
+        "name": "foot-pound per second",
+        "symbol": "ft⋅lbf/s",
+        "factor": 1.35582,
+        "plural": "foot-pounds per second",
+        "description": "Imperial unit of power",
+        "aliases": ["ft⋅lbf/s", "ft·lbf/s", "foot-pound per second", "foot-pounds per second", "ฟุตปอนด์ต่อวินาที"],
+        "translations": { "en": "foot-pound per second", "th": "ฟุตปอนด์ต่อวินาที" }
+      }
+    ]
+  },
+  {
+    "id": "force",
+    "name": "Force",
+    "description": "การวัดแรง",
+    "translations": { "en": "Force", "th": "แรง" },
+    "baseUnit": "newton",
+    "baseUnitSymbol": "N",
+    "icon": "🏋️",
+    "popularConversions": [
+      { "from": "newton", "to": "pound_force", "slug": "newtons-to-pound_force" },
+      { "from": "pound_force", "to": "newton", "slug": "pound_force-to-newtons" },
+      { "from": "kilogram_force", "to": "newton", "slug": "kilogram_force-to-newtons" },
+      { "from": "newton", "to": "kilogram_force", "slug": "newtons-to-kilogram_force" },
+      { "from": "kilonewton", "to": "pound_force", "slug": "kilonewton-to-pound_force" }
+    ],
+    "units": [
+      {
+        "id": "newton",
+        "name": "newton",
+        "symbol": "N",
+        "factor": 1,
+        "plural": "newtons",
+        "description": "SI derived unit of force",
+        "aliases": ["N", "newton", "newtons", "นิวตัน"],
+        "translations": { "en": "newton", "th": "นิวตัน" }
+      },
+      {
+        "id": "kilonewton",
+        "name": "kilonewton",
+        "symbol": "kN",
+        "factor": 1000,
+        "plural": "kilonewtons",
+        "description": "1000 newtons",
+        "aliases": ["kN", "kilonewton", "kilonewtons", "กิโลนิวตัน"],
+        "translations": { "en": "kilonewton", "th": "กิโลนิวตัน" }
+      },
+      {
+        "id": "meganewton",
+        "name": "meganewton",
+        "symbol": "MN",
+        "factor": 1000000,
+        "plural": "meganewtons",
+        "description": "1000000 newtons",
+        "aliases": ["MN", "meganewton", "meganewtons", "เมกะนิวตัน"],
+        "translations": { "en": "meganewton", "th": "เมกะนิวตัน" }
+      },
+      {
+        "id": "dyne",
+        "name": "dyne",
+        "symbol": "dyn",
+        "factor": 0.00001,
+        "plural": "dynes",
+        "description": "CGS unit of force, equal to 10⁻⁵ newtons",
+        "aliases": ["dyn", "dyne", "dynes", "ดายน์"],
+        "translations": { "en": "dyne", "th": "ดายน์" }
+      },
+      {
+        "id": "pound_force",
+        "name": "pound-force",
+        "symbol": "lbf",
+        "factor": 4.44822,
+        "plural": "pounds-force",
+        "description": "Force exerted by one pound mass under standard gravity",
+        "aliases": ["lbf", "pound-force", "pounds-force", "pound force", "ปอนด์แรง"],
+        "translations": { "en": "pound-force", "th": "ปอนด์แรง" }
+      },
+      {
+        "id": "kilogram_force",
+        "name": "kilogram-force",
+        "symbol": "kgf",
+        "factor": 9.80665,
+        "plural": "kilograms-force",
+        "description": "Force exerted by one kilogram mass under standard gravity",
+        "aliases": ["kgf", "kilogram-force", "kilograms-force", "kilogram force", "กิโลกรัมแรง"],
+        "translations": { "en": "kilogram-force", "th": "กิโลกรัมแรง" }
+      },
+      {
+        "id": "kip",
+        "name": "kip",
+        "symbol": "kip",
+        "factor": 4448.22,
+        "plural": "kips",
+        "description": "1000 pounds-force",
+        "aliases": ["kip", "kips", "kilopound-force", "คิป"],
+        "translations": { "en": "kip", "th": "คิป" }
+      },
+      {
+        "id": "ounce_force",
+        "name": "ounce-force",
+        "symbol": "ozf",
+        "factor": 0.278014,
+        "plural": "ounces-force",
+        "description": "Force exerted by one ounce mass under standard gravity",
+        "aliases": ["ozf", "ounce-force", "ounces-force", "ounce force", "ออนซ์แรง"],
+        "translations": { "en": "ounce-force", "th": "ออนซ์แรง" }
+      }
+    ]
+  },
+  {
+    "id": "data",
+    "name": "Data",
+    "description": "การวัดข้อมูล บิตและไบต์",
+    "translations": { "en": "Data", "th": "ข้อมูล/บิตและไบต์" },
+    "baseUnit": "byte",
+    "baseUnitSymbol": "B",
+    "icon": "💾",
+    "popularConversions": [
+      { "from": "gigabyte", "to": "megabyte", "slug": "gigabytes-to-megabytes" },
+      { "from": "megabyte", "to": "kilobyte", "slug": "megabytes-to-kilobytes" },
+      { "from": "terabyte", "to": "gigabyte", "slug": "terabytes-to-gigabytes" },
+      { "from": "gigabyte", "to": "terabyte", "slug": "gigabytes-to-terabytes" },
+      { "from": "megabyte", "to": "gigabyte", "slug": "megabytes-to-gigabytes" }
+    ],
+    "units": [
+      {
+        "id": "bit",
+        "name": "bit",
+        "symbol": "b",
+        "factor": 0.125,
+        "plural": "bits",
+        "description": "Basic unit of information, 1/8 of a byte",
+        "aliases": ["b", "bit", "bits", "บิต"],
+        "translations": { "en": "bit", "th": "บิต" }
+      },
+      {
+        "id": "byte",
+        "name": "byte",
+        "symbol": "B",
+        "factor": 1,
+        "plural": "bytes",
+        "description": "8 bits, fundamental unit of digital data",
+        "aliases": ["B", "byte", "bytes", "ไบต์"],
+        "translations": { "en": "byte", "th": "ไบต์" }
+      },
+      {
+        "id": "kilobyte",
+        "name": "kilobyte",
+        "symbol": "kB",
+        "factor": 1000,
+        "plural": "kilobytes",
+        "description": "1000 bytes (SI)",
+        "aliases": ["kB", "KB", "kilobyte", "kilobytes", "กิโลไบต์"],
+        "translations": { "en": "kilobyte", "th": "กิโลไบต์" }
+      },
+      {
+        "id": "megabyte",
+        "name": "megabyte",
+        "symbol": "MB",
+        "factor": 1000000,
+        "plural": "megabytes",
+        "description": "1000000 bytes (SI)",
+        "aliases": ["MB", "megabyte", "megabytes", "เมกะไบต์"],
+        "translations": { "en": "megabyte", "th": "เมกะไบต์" }
+      },
+      {
+        "id": "gigabyte",
+        "name": "gigabyte",
+        "symbol": "GB",
+        "factor": 1000000000,
+        "plural": "gigabytes",
+        "description": "1000000000 bytes (SI)",
+        "aliases": ["GB", "gigabyte", "gigabytes", "กิกะไบต์"],
+        "translations": { "en": "gigabyte", "th": "กิกะไบต์" }
+      },
+      {
+        "id": "terabyte",
+        "name": "terabyte",
+        "symbol": "TB",
+        "factor": 1000000000000,
+        "plural": "terabytes",
+        "description": "1000000000000 bytes (SI)",
+        "aliases": ["TB", "terabyte", "terabytes", "เทระไบต์"],
+        "translations": { "en": "terabyte", "th": "เทระไบต์" }
+      },
+      {
+        "id": "petabyte",
+        "name": "petabyte",
+        "symbol": "PB",
+        "factor": 1000000000000000,
+        "plural": "petabytes",
+        "description": "1000000000000000 bytes (SI)",
+        "aliases": ["PB", "petabyte", "petabytes", "เพตะไบต์"],
+        "translations": { "en": "petabyte", "th": "เพตะไบต์" }
+      },
+      {
+        "id": "kibibyte",
+        "name": "kibibyte",
+        "symbol": "KiB",
+        "factor": 1024,
+        "plural": "kibibytes",
+        "description": "1024 bytes (IEC binary)",
+        "aliases": ["KiB", "kibibyte", "kibibytes", "คิบิไบต์"],
+        "translations": { "en": "kibibyte", "th": "คิบิไบต์" }
+      },
+      {
+        "id": "mebibyte",
+        "name": "mebibyte",
+        "symbol": "MiB",
+        "factor": 1048576,
+        "plural": "mebibytes",
+        "description": "1048576 bytes (IEC binary)",
+        "aliases": ["MiB", "mebibyte", "mebibytes", "เมบิไบต์"],
+        "translations": { "en": "mebibyte", "th": "เมบิไบต์" }
+      },
+      {
+        "id": "gibibyte",
+        "name": "gibibyte",
+        "symbol": "GiB",
+        "factor": 1073741824,
+        "plural": "gibibytes",
+        "description": "1073741824 bytes (IEC binary)",
+        "aliases": ["GiB", "gibibyte", "gibibytes", "กิบิไบต์"],
+        "translations": { "en": "gibibyte", "th": "กิบิไบต์" }
+      },
+      {
+        "id": "tebibyte",
+        "name": "tebibyte",
+        "symbol": "TiB",
+        "factor": 1099511627776,
+        "plural": "tebibytes",
+        "description": "1099511627776 bytes (IEC binary)",
+        "aliases": ["TiB", "tebibyte", "tebibytes", "เทบิไบต์"],
+        "translations": { "en": "tebibyte", "th": "เทบิไบต์" }
+      }
+    ]
+  },
+  {
+    "id": "angle",
+    "name": "Angle",
+    "description": "การวัดมุม",
+    "translations": { "en": "Angle", "th": "มุม" },
+    "baseUnit": "degree",
+    "baseUnitSymbol": "°",
+    "icon": "📐",
+    "popularConversions": [
+      { "from": "degree", "to": "radian", "slug": "degrees-to-radians" },
+      { "from": "radian", "to": "degree", "slug": "radians-to-degrees" },
+      { "from": "gradian", "to": "degree", "slug": "gradians-to-degrees" },
+      { "from": "degree", "to": "gradian", "slug": "degrees-to-gradians" },
+      { "from": "turn", "to": "degree", "slug": "turns-to-degrees" }
+    ],
+    "units": [
+      {
+        "id": "degree",
+        "name": "degree",
+        "symbol": "°",
+        "factor": 1,
+        "plural": "degrees",
+        "description": "1/360 of a full rotation",
+        "aliases": ["°", "deg", "degree", "degrees", "องศา"],
+        "translations": { "en": "degree", "th": "องศา" }
+      },
+      {
+        "id": "radian",
+        "name": "radian",
+        "symbol": "rad",
+        "factor": 57.29577951,
+        "plural": "radians",
+        "description": "SI unit of angular measure, equal to 180/π degrees",
+        "aliases": ["rad", "radian", "radians", "เรเดียน"],
+        "translations": { "en": "radian", "th": "เรเดียน" }
+      },
+      {
+        "id": "gradian",
+        "name": "gradian",
+        "symbol": "gon",
+        "factor": 0.9,
+        "plural": "gradians",
+        "description": "1/400 of a full rotation, also known as gon or grad",
+        "aliases": ["gon", "grad", "gradian", "gradians", "เกรเดียน"],
+        "translations": { "en": "gradian", "th": "เกรเดียน" }
+      },
+      {
+        "id": "arcminute",
+        "name": "arcminute",
+        "symbol": "′",
+        "factor": 0.01666667,
+        "plural": "arcminutes",
+        "description": "1/60 of a degree",
+        "aliases": ["′", "arcmin", "arcminute", "arcminutes", "ลิปดา"],
+        "translations": { "en": "arcminute", "th": "ลิปดา" }
+      },
+      {
+        "id": "arcsecond",
+        "name": "arcsecond",
+        "symbol": "″",
+        "factor": 0.00027778,
+        "plural": "arcseconds",
+        "description": "1/3600 of a degree",
+        "aliases": ["″", "arcsec", "arcsecond", "arcseconds", "พิลิปดา"],
+        "translations": { "en": "arcsecond", "th": "พิลิปดา" }
+      },
+      {
+        "id": "turn",
+        "name": "turn",
+        "symbol": "tr",
+        "factor": 360,
+        "plural": "turns",
+        "description": "One full rotation, equal to 360 degrees",
+        "aliases": ["tr", "turn", "turns", "revolution", "รอบ"],
+        "translations": { "en": "turn", "th": "รอบ" }
+      },
+      {
+        "id": "milliradian",
+        "name": "milliradian",
+        "symbol": "mrad",
+        "factor": 0.05729578,
+        "plural": "milliradians",
+        "description": "One thousandth of a radian",
+        "aliases": ["mrad", "milliradian", "milliradians", "มิลลิเรเดียน"],
+        "translations": { "en": "milliradian", "th": "มิลลิเรเดียน" }
+      }
+    ]
+  },
+  {
+    "id": "density",
+    "name": "Density",
+    "description": "การวัดความหนาแน่น",
+    "translations": { "en": "Density", "th": "ความหนาแน่น" },
+    "baseUnit": "kilogram_per_cubic_meter",
+    "baseUnitSymbol": "kg/m³",
+    "icon": "🧊",
+    "popularConversions": [
+      { "from": "kilogram_per_cubic_meter", "to": "gram_per_cubic_centimeter", "slug": "kg_per_m3-to-g_per_cm3" },
+      { "from": "gram_per_cubic_centimeter", "to": "kilogram_per_cubic_meter", "slug": "g_per_cm3-to-kg_per_m3" },
+      { "from": "pound_per_cubic_foot", "to": "kilogram_per_cubic_meter", "slug": "lb_per_ft3-to-kg_per_m3" },
+      { "from": "kilogram_per_cubic_meter", "to": "pound_per_cubic_foot", "slug": "kg_per_m3-to-lb_per_ft3" },
+      { "from": "kilogram_per_liter", "to": "gram_per_milliliter", "slug": "kg_per_l-to-g_per_ml" }
+    ],
+    "units": [
+      {
+        "id": "kilogram_per_cubic_meter",
+        "name": "kilogram per cubic meter",
+        "symbol": "kg/m³",
+        "factor": 1,
+        "plural": "kilograms per cubic meter",
+        "description": "SI derived unit of density",
+        "aliases": ["kg/m³", "kg/m3", "kilogram per cubic meter", "กิโลกรัมต่อลูกบาศก์เมตร"],
+        "translations": { "en": "kilogram per cubic meter", "th": "กิโลกรัมต่อลูกบาศก์เมตร" }
+      },
+      {
+        "id": "gram_per_cubic_centimeter",
+        "name": "gram per cubic centimeter",
+        "symbol": "g/cm³",
+        "factor": 1000,
+        "plural": "grams per cubic centimeter",
+        "description": "CGS unit of density, equal to 1000 kg/m³",
+        "aliases": ["g/cm³", "g/cm3", "gram per cubic centimeter", "กรัมต่อลูกบาศก์เซนติเมตร"],
+        "translations": { "en": "gram per cubic centimeter", "th": "กรัมต่อลูกบาศก์เซนติเมตร" }
+      },
+      {
+        "id": "gram_per_milliliter",
+        "name": "gram per milliliter",
+        "symbol": "g/mL",
+        "factor": 1000,
+        "plural": "grams per milliliter",
+        "description": "Equal to g/cm³, commonly used in chemistry",
+        "aliases": ["g/mL", "g/ml", "gram per milliliter", "กรัมต่อมิลลิลิตร"],
+        "translations": { "en": "gram per milliliter", "th": "กรัมต่อมิลลิลิตร" }
+      },
+      {
+        "id": "kilogram_per_liter",
+        "name": "kilogram per liter",
+        "symbol": "kg/L",
+        "factor": 1000,
+        "plural": "kilograms per liter",
+        "description": "Equal to g/cm³, commonly used in everyday measurements",
+        "aliases": ["kg/L", "kg/l", "kilogram per liter", "กิโลกรัมต่อลิตร"],
+        "translations": { "en": "kilogram per liter", "th": "กิโลกรัมต่อลิตร" }
+      },
+      {
+        "id": "pound_per_cubic_foot",
+        "name": "pound per cubic foot",
+        "symbol": "lb/ft³",
+        "factor": 16.01846,
+        "plural": "pounds per cubic foot",
+        "description": "Imperial unit of density",
+        "aliases": ["lb/ft³", "lb/ft3", "pound per cubic foot", "ปอนด์ต่อลูกบาศก์ฟุต"],
+        "translations": { "en": "pound per cubic foot", "th": "ปอนด์ต่อลูกบาศก์ฟุต" }
+      },
+      {
+        "id": "pound_per_cubic_inch",
+        "name": "pound per cubic inch",
+        "symbol": "lb/in³",
+        "factor": 27679.9,
+        "plural": "pounds per cubic inch",
+        "description": "Imperial unit of density",
+        "aliases": ["lb/in³", "lb/in3", "pound per cubic inch", "ปอนด์ต่อลูกบาศก์นิ้ว"],
+        "translations": { "en": "pound per cubic inch", "th": "ปอนด์ต่อลูกบาศก์นิ้ว" }
+      },
+      {
+        "id": "pound_per_gallon_us",
+        "name": "pound per US gallon",
+        "symbol": "lb/gal",
+        "factor": 119.826,
+        "plural": "pounds per US gallon",
+        "description": "US customary unit of density",
+        "aliases": ["lb/gal", "pound per gallon", "pounds per gallon", "ปอนด์ต่อแกลลอน"],
+        "translations": { "en": "pound per US gallon", "th": "ปอนด์ต่อแกลลอน" }
+      },
+      {
+        "id": "ounce_per_cubic_inch",
+        "name": "ounce per cubic inch",
+        "symbol": "oz/in³",
+        "factor": 1729.994,
+        "plural": "ounces per cubic inch",
+        "description": "Imperial unit of density",
+        "aliases": ["oz/in³", "oz/in3", "ounce per cubic inch", "ออนซ์ต่อลูกบาศก์นิ้ว"],
+        "translations": { "en": "ounce per cubic inch", "th": "ออนซ์ต่อลูกบาศก์นิ้ว" }
+      }
+    ]
+  },
+  {
+    "id": "electric_current",
+    "name": "Electric Current",
+    "description": "การวัดกระแสไฟฟ้า",
+    "translations": { "en": "Electric Current", "th": "กระแสไฟฟ้า" },
+    "baseUnit": "ampere",
+    "baseUnitSymbol": "A",
+    "icon": "⚡",
+    "popularConversions": [
+      { "from": "ampere", "to": "milliampere", "slug": "amperes-to-milliamperes" },
+      { "from": "milliampere", "to": "ampere", "slug": "milliamperes-to-amperes" },
+      { "from": "ampere", "to": "kiloampere", "slug": "amperes-to-kiloamperes" },
+      { "from": "microampere", "to": "ampere", "slug": "microamperes-to-amperes" },
+      { "from": "kiloampere", "to": "ampere", "slug": "kiloamperes-to-amperes" }
+    ],
+    "units": [
+      {
+        "id": "ampere",
+        "name": "ampere",
+        "symbol": "A",
+        "factor": 1,
+        "plural": "amperes",
+        "description": "SI base unit of electric current",
+        "aliases": ["A", "amp", "ampere", "amperes", "แอมแปร์"],
+        "translations": { "en": "ampere", "th": "แอมแปร์" }
+      },
+      {
+        "id": "milliampere",
+        "name": "milliampere",
+        "symbol": "mA",
+        "factor": 0.001,
+        "plural": "milliamperes",
+        "description": "One thousandth of an ampere",
+        "aliases": ["mA", "milliamp", "milliampere", "milliamperes", "มิลลิแอมแปร์"],
+        "translations": { "en": "milliampere", "th": "มิลลิแอมแปร์" }
+      },
+      {
+        "id": "microampere",
+        "name": "microampere",
+        "symbol": "μA",
+        "factor": 0.000001,
+        "plural": "microamperes",
+        "description": "One millionth of an ampere",
+        "aliases": ["μA", "uA", "microampere", "microamperes", "ไมโครแอมแปร์"],
+        "translations": { "en": "microampere", "th": "ไมโครแอมแปร์" }
+      },
+      {
+        "id": "kiloampere",
+        "name": "kiloampere",
+        "symbol": "kA",
+        "factor": 1000,
+        "plural": "kiloamperes",
+        "description": "1000 amperes",
+        "aliases": ["kA", "kiloampere", "kiloamperes", "กิโลแอมแปร์"],
+        "translations": { "en": "kiloampere", "th": "กิโลแอมแปร์" }
+      },
+      {
+        "id": "abampere",
+        "name": "abampere",
+        "symbol": "abA",
+        "factor": 10,
+        "plural": "abamperes",
+        "description": "CGS electromagnetic unit, equal to 10 amperes",
+        "aliases": ["abA", "abampere", "abamperes", "แอบแอมแปร์"],
+        "translations": { "en": "abampere", "th": "แอบแอมแปร์" }
+      },
+      {
+        "id": "statampere",
+        "name": "statampere",
+        "symbol": "statA",
+        "factor": 3.33564e-10,
+        "plural": "statamperes",
+        "description": "CGS electrostatic unit of current",
+        "aliases": ["statA", "statampere", "statamperes", "สแตทแอมแปร์"],
+        "translations": { "en": "statampere", "th": "สแตทแอมแปร์" }
+      },
+      {
+        "id": "biot",
+        "name": "biot",
+        "symbol": "Bi",
+        "factor": 10,
+        "plural": "biots",
+        "description": "CGS unit of current, equal to 10 amperes (same as abampere)",
+        "aliases": ["Bi", "biot", "biots", "ไบโอท"],
+        "translations": { "en": "biot", "th": "ไบโอท" }
+      }
+    ]
+  },
+  {
+    "id": "fuel_consumption",
+    "name": "Fuel Consumption",
+    "description": "การวัดอัตราสิ้นเปลืองเชื้อเพลิง",
+    "translations": { "en": "Fuel Consumption", "th": "อัตราสิ้นเปลืองเชื้อเพลิง" },
+    "baseUnit": "kilometer_per_liter",
+    "baseUnitSymbol": "km/L",
+    "icon": "⛽",
+    "popularConversions": [
+      { "from": "miles_per_gallon_us", "to": "kilometer_per_liter", "slug": "miles_per_gallon_us-to-kilometer_per_liter" },
+      { "from": "kilometer_per_liter", "to": "miles_per_gallon_us", "slug": "kilometer_per_liter-to-miles_per_gallon_us" },
+      { "from": "miles_per_gallon_us", "to": "miles_per_gallon_uk", "slug": "miles_per_gallon_us-to-miles_per_gallon_uk" },
+      { "from": "miles_per_gallon_uk", "to": "miles_per_gallon_us", "slug": "miles_per_gallon_uk-to-miles_per_gallon_us" },
+      { "from": "kilometer_per_liter", "to": "kilometer_per_gallon_us", "slug": "kilometer_per_liter-to-kilometer_per_gallon_us" }
+    ],
+    "units": [
+      {
+        "id": "kilometer_per_liter",
+        "name": "kilometer per liter",
+        "symbol": "km/L",
+        "factor": 1,
+        "plural": "kilometers per liter",
+        "description": "Distance traveled per liter of fuel",
+        "aliases": ["km/L", "km/l", "kilometer per liter", "กิโลเมตรต่อลิตร"],
+        "translations": { "en": "kilometer per liter", "th": "กิโลเมตรต่อลิตร" }
+      },
+      {
+        "id": "miles_per_gallon_us",
+        "name": "miles per gallon (US)",
+        "symbol": "mpg (US)",
+        "factor": 0.425144,
+        "plural": "miles per gallon (US)",
+        "description": "US fuel economy measure",
+        "aliases": ["mpg", "mpg (US)", "miles per gallon", "ไมล์ต่อแกลลอน(US)"],
+        "translations": { "en": "miles per gallon (US)", "th": "ไมล์ต่อแกลลอน(US)" }
+      },
+      {
+        "id": "miles_per_gallon_uk",
+        "name": "miles per gallon (UK)",
+        "symbol": "mpg (UK)",
+        "factor": 0.354006,
+        "plural": "miles per gallon (UK)",
+        "description": "UK (imperial) fuel economy measure",
+        "aliases": ["mpg (UK)", "miles per gallon UK", "ไมล์ต่อแกลลอน(UK)"],
+        "translations": { "en": "miles per gallon (UK)", "th": "ไมล์ต่อแกลลอน(UK)" }
+      },
+      {
+        "id": "kilometer_per_gallon_us",
+        "name": "kilometer per US gallon",
+        "symbol": "km/gal",
+        "factor": 0.264172,
+        "plural": "kilometers per US gallon",
+        "description": "Distance in kilometers per US gallon of fuel",
+        "aliases": ["km/gal", "kilometer per gallon", "กิโลเมตรต่อแกลลอน"],
+        "translations": { "en": "kilometer per US gallon", "th": "กิโลเมตรต่อแกลลอน" }
+      }
+    ]
+  },
+  {
+    "id": "currency",
+    "name": "Currency",
+    "description": "การแปลงสกุลเงิน (อัตราแลกเปลี่ยนโดยประมาณ)",
+    "translations": { "en": "Currency", "th": "สกุลเงิน" },
+    "baseUnit": "usd",
+    "baseUnitSymbol": "$",
+    "icon": "💱",
+    "popularConversions": [
+      { "from": "usd", "to": "thb", "slug": "usd-to-thb" },
+      { "from": "thb", "to": "usd", "slug": "thb-to-usd" },
+      { "from": "usd", "to": "eur", "slug": "usd-to-eur" },
+      { "from": "eur", "to": "usd", "slug": "eur-to-usd" },
+      { "from": "usd", "to": "jpy", "slug": "usd-to-jpy" }
+    ],
+    "units": [
+      {
+        "id": "usd",
+        "name": "US Dollar",
+        "symbol": "$",
+        "factor": 1,
+        "plural": "US Dollars",
+        "description": "United States Dollar. Exchange rates are approximate and may not reflect current market rates",
+        "aliases": ["$", "USD", "usd", "dollar", "dollars", "ดอลลาร์สหรัฐ"],
+        "translations": { "en": "US Dollar", "th": "ดอลลาร์สหรัฐ" }
+      },
+      {
+        "id": "eur",
+        "name": "Euro",
+        "symbol": "€",
+        "factor": 0.92,
+        "plural": "Euros",
+        "description": "Euro. Exchange rates are approximate and may not reflect current market rates",
+        "aliases": ["€", "EUR", "eur", "euro", "euros", "ยูโร"],
+        "translations": { "en": "Euro", "th": "ยูโร" }
+      },
+      {
+        "id": "gbp",
+        "name": "British Pound",
+        "symbol": "£",
+        "factor": 0.79,
+        "plural": "British Pounds",
+        "description": "British Pound Sterling. Exchange rates are approximate and may not reflect current market rates",
+        "aliases": ["£", "GBP", "gbp", "pound", "pounds", "ปอนด์อังกฤษ"],
+        "translations": { "en": "British Pound", "th": "ปอนด์อังกฤษ" }
+      },
+      {
+        "id": "jpy",
+        "name": "Japanese Yen",
+        "symbol": "¥",
+        "factor": 149.5,
+        "plural": "Japanese Yen",
+        "description": "Japanese Yen. Exchange rates are approximate and may not reflect current market rates",
+        "aliases": ["¥", "JPY", "jpy", "yen", "เยนญี่ปุ่น"],
+        "translations": { "en": "Japanese Yen", "th": "เยนญี่ปุ่น" }
+      },
+      {
+        "id": "thb",
+        "name": "Thai Baht",
+        "symbol": "฿",
+        "factor": 35.5,
+        "plural": "Thai Baht",
+        "description": "Thai Baht. Exchange rates are approximate and may not reflect current market rates",
+        "aliases": ["฿", "THB", "thb", "baht", "บาทไทย", "บาท"],
+        "translations": { "en": "Thai Baht", "th": "บาทไทย" }
+      },
+      {
+        "id": "cny",
+        "name": "Chinese Yuan",
+        "symbol": "¥",
+        "factor": 7.24,
+        "plural": "Chinese Yuan",
+        "description": "Chinese Yuan Renminbi. Exchange rates are approximate and may not reflect current market rates",
+        "aliases": ["CNY", "cny", "yuan", "renminbi", "หยวนจีน"],
+        "translations": { "en": "Chinese Yuan", "th": "หยวนจีน" }
+      },
+      {
+        "id": "krw",
+        "name": "South Korean Won",
+        "symbol": "₩",
+        "factor": 1320,
+        "plural": "South Korean Won",
+        "description": "South Korean Won. Exchange rates are approximate and may not reflect current market rates",
+        "aliases": ["₩", "KRW", "krw", "won", "วอนเกาหลี"],
+        "translations": { "en": "South Korean Won", "th": "วอนเกาหลี" }
+      },
+      {
+        "id": "inr",
+        "name": "Indian Rupee",
+        "symbol": "₹",
+        "factor": 83.1,
+        "plural": "Indian Rupees",
+        "description": "Indian Rupee. Exchange rates are approximate and may not reflect current market rates",
+        "aliases": ["₹", "INR", "inr", "rupee", "rupees", "รูปีอินเดีย"],
+        "translations": { "en": "Indian Rupee", "th": "รูปีอินเดีย" }
+      },
+      {
+        "id": "aud",
+        "name": "Australian Dollar",
+        "symbol": "A$",
+        "factor": 1.53,
+        "plural": "Australian Dollars",
+        "description": "Australian Dollar. Exchange rates are approximate and may not reflect current market rates",
+        "aliases": ["A$", "AUD", "aud", "ดอลลาร์ออสเตรเลีย"],
+        "translations": { "en": "Australian Dollar", "th": "ดอลลาร์ออสเตรเลีย" }
+      },
+      {
+        "id": "cad",
+        "name": "Canadian Dollar",
+        "symbol": "C$",
+        "factor": 1.36,
+        "plural": "Canadian Dollars",
+        "description": "Canadian Dollar. Exchange rates are approximate and may not reflect current market rates",
+        "aliases": ["C$", "CAD", "cad", "ดอลลาร์แคนาดา"],
+        "translations": { "en": "Canadian Dollar", "th": "ดอลลาร์แคนาดา" }
+      }
+    ]
+  }
+]

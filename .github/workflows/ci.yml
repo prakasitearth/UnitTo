@@ -1,0 +1,58 @@
+name: CI – UnitTo
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    name: Lint, Type-check, Build & Test
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      # ── Checkout ──────────────────────────────────────────────────────────
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # ── Node.js setup with npm cache ──────────────────────────────────────
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      # ── Install dependencies ───────────────────────────────────────────────
+      - name: Install dependencies
+        run: npm ci
+
+      # ── Security audit ────────────────────────────────────────────────────
+      - name: Security audit
+        run: npm audit --audit-level=high
+        continue-on-error: true   # Warn but don't fail on low/moderate advisories
+
+      # ── ESLint ────────────────────────────────────────────────────────────
+      - name: Lint
+        run: npm run lint
+
+      # ── TypeScript type-check ─────────────────────────────────────────────
+      - name: Type-check
+        run: npm run type-check
+
+      # ── Production build ──────────────────────────────────────────────────
+      - name: Build
+        run: npm run build
+        env:
+          NEXT_PUBLIC_SITE_URL: https://unitto.com
+          # Add NEXT_PUBLIC_GA_ID here when ready:
+          # NEXT_PUBLIC_GA_ID: ${{ secrets.NEXT_PUBLIC_GA_ID }}
+
+      # ── Unit tests ────────────────────────────────────────────────────────
+      - name: Run tests
+        run: npx vitest run --reporter=verbose
