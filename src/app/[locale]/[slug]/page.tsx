@@ -7,7 +7,7 @@ import { ConversionDatabase } from "@/types/converter";
 import { getCategoryMetadata, getConverterMetadata } from "@/lib/seo/metadata";
 
 const db = unitsDataRaw as unknown as ConversionDatabase;
-const baseUrl = "https://unitto.com";
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://unittogo.com";
 const locales = ["th", "en", "es", "zh", "hi", "fr", "pt", "ru", "ar", "bn", "ja"];
 
 interface PageProps {

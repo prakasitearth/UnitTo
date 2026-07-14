@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { MainLayout } from "@/components/layout/main-layout";
 import "../globals.css";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://unitto.com";
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://unittogo.com";
 
 // ===== Font Loading (font-display: swap prevents FOIT) =====
 const geistSans = Geist({

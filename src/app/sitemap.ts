@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import unitsDataRaw from "@/data/units.json";
 import { ConversionDatabase } from "@/types/converter";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://unit-converter.com";
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://unittogo.com";
 const db = unitsDataRaw as unknown as ConversionDatabase;
 const locales = ["th", "en", "es", "zh", "hi", "fr", "pt", "ru", "ar", "bn", "ja"];
 
