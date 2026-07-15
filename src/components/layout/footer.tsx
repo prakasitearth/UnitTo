@@ -35,7 +35,7 @@ export const Footer: React.FC = () => {
           {/* Column 1: Brand details */}
           <div className="col-span-2 md:col-span-1 space-y-3">
             <div className="text-xl font-black tracking-tight text-blue-600 dark:text-blue-500">
-              Unit<span className="text-gray-900 dark:text-gray-100">To</span>
+              Unitto<span className="text-gray-900 dark:text-gray-100">Go</span>
             </div>
             <p className="text-gray-500 dark:text-gray-400 text-xs leading-relaxed font-semibold max-w-xs">
               {t("brandDesc")}
