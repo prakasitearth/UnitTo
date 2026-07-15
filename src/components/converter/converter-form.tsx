@@ -222,7 +222,6 @@ export const ConverterForm: React.FC<ConverterFormProps> = ({
               id="from-value"
               type="text"
               inputMode="decimal"
-              pattern="[0-9]*"
               value={fromValue}
               onChange={(e) => {
                 const val = e.target.value;
