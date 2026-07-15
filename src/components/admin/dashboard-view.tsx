@@ -78,7 +78,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({ data, locale }) =>
                 [SYS-ADMIN]
               </span>
               <span className="font-black text-lg tracking-tight text-gray-900 dark:text-white font-mono">
-                UnitTo Board
+                UnittoGo Board
               </span>
             </div>
           </div>
@@ -137,7 +137,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({ data, locale }) =>
             ☰
           </button>
           <span className="font-mono text-sm font-bold text-gray-900 dark:text-white">
-            UnitTo Owner Board
+            UnittoGo Owner Board
           </span>
           <button
             onClick={handleLogout}

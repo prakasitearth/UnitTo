@@ -172,7 +172,7 @@ export const Footer: React.FC = () => {
         {/* Footer Legal Rules & Copyright */}
         <div className="border-t border-gray-200 dark:border-zinc-900 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 dark:text-gray-500 font-medium space-y-4 sm:space-y-0">
           <div>
-            © {currentYear} UnitTo.com. All rights reserved.
+            © {currentYear} UnittoGo.com. All rights reserved.
           </div>
           <div className="flex space-x-4">
             <Link 

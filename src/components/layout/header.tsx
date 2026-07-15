@@ -161,7 +161,7 @@ export const Header: React.FC<HeaderProps> = ({ categories, onSearchOpen }) => {
         {/* Brand Logo */}
         <Link href="/" className="flex items-center space-x-2 text-blue-600 dark:text-blue-500 hover:opacity-90 transition-opacity">
           <span className="text-2xl font-black tracking-tight font-sans">
-            Unit<span className="text-gray-900 dark:text-gray-100">To</span>
+            Unitto<span className="text-gray-900 dark:text-gray-100">Go</span>
           </span>
         </Link>
 

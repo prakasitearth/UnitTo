@@ -40,14 +40,14 @@ export default async function PrivacyPage({ params }: PageProps) {
         {isTh ? (
           <>
             <p>
-              เว็บไซต์ <strong>UnitTo</strong> ให้ความสำคัญกับความเป็นส่วนตัวของผู้ใช้งานเป็นอันดับแรก เราขอเรียนให้ทราบถึงนโยบายความเป็นส่วนตัวดังนี้:
+              เว็บไซต์ <strong>UnittoGo</strong> ให้ความสำคัญกับความเป็นส่วนตัวของผู้ใช้งานเป็นอันดับแรก เราขอเรียนให้ทราบถึงนโยบายความเป็นส่วนตัวดังนี้:
             </p>
             <div className="p-5 bg-sky-500/5 border border-sky-500/10 rounded-2xl space-y-2">
               <h3 className="font-bold text-gray-900 dark:text-gray-100 font-mono text-xs uppercase tracking-wider text-sky-600 dark:text-sky-400">
                 [DATA-CORE: 100% LOCAL & OFFLINE]
               </h3>
               <p className="text-xs leading-relaxed font-semibold">
-                การแปลงหน่วยวัดและสูตรคำนวณทั้งหมดบน UnitTo ทำงานแบบออฟไลน์และประมวลผลโดยตรงในเบราว์เซอร์ของคุณ 100% โดยไม่มีการส่งข้อมูลตัวเลขหรือคำค้นหาใดๆ ไปยังเซิร์ฟเวอร์ของเราภายนอกเลย
+                การแปลงหน่วยวัดและสูตรคำนวณทั้งหมดบน UnittoGo ทำงานแบบออฟไลน์และประมวลผลโดยตรงในเบราว์เซอร์ของคุณ 100% โดยไม่มีการส่งข้อมูลตัวเลขหรือคำค้นหาใดๆ ไปยังเซิร์ฟเวอร์ของเราภายนอกเลย
               </p>
             </div>
             <section className="space-y-2.5">
@@ -66,14 +66,14 @@ export default async function PrivacyPage({ params }: PageProps) {
         ) : (
           <>
             <p>
-              At <strong>UnitTo</strong>, we prioritize user privacy. This policy outlines how we handle information on our platform:
+              At <strong>UnittoGo</strong>, we prioritize user privacy. This policy outlines how we handle information on our platform:
             </p>
             <div className="p-5 bg-sky-500/5 border border-sky-500/10 rounded-2xl space-y-2">
               <h3 className="font-bold text-gray-900 dark:text-gray-100 font-mono text-xs uppercase tracking-wider text-sky-600 dark:text-sky-400">
                 [DATA-CORE: 100% LOCAL & OFFLINE]
               </h3>
               <p className="text-xs leading-relaxed font-semibold">
-                All unit conversions and calculation processes on UnitTo run fully offline and execute locally in your browser. We never transmit your conversion inputs or query parameters to any remote servers.
+                All unit conversions and calculation processes on UnittoGo run fully offline and execute locally in your browser. We never transmit your conversion inputs or query parameters to any remote servers.
               </p>
             </div>
             <section className="space-y-2.5">

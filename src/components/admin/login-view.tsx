@@ -63,7 +63,7 @@ export const LoginView: React.FC<LoginViewProps> = ({ locale }) => {
           </div>
 
           <h1 className="text-3xl font-black tracking-tight text-gray-900 dark:text-gray-50 font-mono">
-            UnitTo Owner Board
+            UnittoGo Owner Board
           </h1>
           <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-semibold">
             Unauthorised access to this directory is prohibited. Please authenticate using the master key.

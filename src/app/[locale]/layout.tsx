@@ -27,8 +27,8 @@ const RTL_LOCALES = new Set(["ar"]);
 // ===== Default Metadata (overridden per page via generateMetadata) =====
 export const metadata: Metadata = {
   title: {
-    default: "UnitTo | Fast, Accurate, and Free Unit Converter",
-    template: "%s | UnitTo",
+    default: "UnittoGo | Fast, Accurate, and Free Unit Converter",
+    template: "%s | UnittoGo",
   },
   description:
     "Convert any unit instantly. Free online converter for Length, Weight, Area, Temperature, Speed, Volume, Energy, and more. Fast, accurate, and 100% private.",
@@ -38,11 +38,11 @@ export const metadata: Metadata = {
   },
   // ===== Open Graph =====
   openGraph: {
-    title: "UnitTo | Fast, Accurate, and Free Unit Converter",
+    title: "UnittoGo | Fast, Accurate, and Free Unit Converter",
     description:
       "Convert any unit instantly. Free online converter for Length, Weight, Area, Temperature, Speed, Volume, Energy, and more.",
     url: BASE_URL,
-    siteName: "UnitTo",
+    siteName: "UnittoGo",
     type: "website",
     locale: "en_US",
     images: [
@@ -50,14 +50,14 @@ export const metadata: Metadata = {
         url: `${BASE_URL}/og-image.png`,
         width: 1200,
         height: 630,
-        alt: "UnitTo – Fast Unit Converter",
+        alt: "UnittoGo – Fast Unit Converter",
       },
     ],
   },
   // ===== Twitter Card =====
   twitter: {
     card: "summary_large_image",
-    title: "UnitTo | Fast, Accurate, and Free Unit Converter",
+    title: "UnittoGo | Fast, Accurate, and Free Unit Converter",
     description:
       "Convert any unit instantly. Free online converter for Length, Weight, Area, Temperature, Speed, Volume, Energy, and more.",
     images: [`${BASE_URL}/og-image.png`],

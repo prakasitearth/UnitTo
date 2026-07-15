@@ -20,7 +20,7 @@ export const SUPPORTED_LANGUAGES: Language[] = [
 
 export const UI_TRANSLATIONS: Record<string, Record<string, string>> = {
   th: {
-    heroTitle: "UnitTo | แปลงทุกหน่วยวัด ทันที.",
+    heroTitle: "UnittoGo | แปลงทุกหน่วยวัด ทันที.",
     heroDesc: "วิธีที่เร็วที่สุดในการแปลงหน่วยวัด คำนวณแบบ Real-time แม่นยำสูง และทำงานออฟไลน์ได้โดยตรงในเบราว์เซอร์ของคุณ",
     searchPlaceholder: "ลองพิมพ์ \"cm to m\", \"kg to lb\", \"USD to EUR\", \"C to F\"...",
     searchBoxDesc: "ค้นหาการแปลงตามธรรมชาติ: จากหน่วยวัด 'TO' อีกหน่วยวัดหนึ่ง",
@@ -84,7 +84,7 @@ export const UI_TRANSLATIONS: Record<string, Record<string, string>> = {
     resetAll: "รีเซ็ต",
   },
   en: {
-    heroTitle: "UnitTo | Convert Any Unit. Instantly.",
+    heroTitle: "UnittoGo | Convert Any Unit. Instantly.",
     heroDesc: "The fastest way to convert units. High-precision, real-time calculations running 100% locally in your browser.",
     searchPlaceholder: "Try \"cm to m\", \"kg to lb\", \"USD to EUR\", \"C to F\"...",
     searchBoxDesc: "Search naturally using the format: from unit 'TO' unit.",

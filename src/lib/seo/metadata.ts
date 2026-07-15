@@ -7,21 +7,21 @@ const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://unittogo.com";
  */
 export function getHomeMetadata() {
   return {
-    title: "UnitTo | Fast, Accurate, and Free Unit Converter",
+    title: "UnittoGo | Fast, Accurate, and Free Unit Converter",
     description: "Convert any unit instantly. Free online converter for Length, Weight, Area, Temperature, Speed, Volume, Energy, and more. Fast, accurate, and 100% private.",
     alternates: {
       canonical: BASE_URL,
     },
     openGraph: {
-      title: "UnitTo | Fast, Accurate, and Free Unit Converter",
+      title: "UnittoGo | Fast, Accurate, and Free Unit Converter",
       description: "Convert any unit instantly. Free online converter for Length, Weight, Area, Temperature, Speed, Volume, Energy, and more.",
       url: BASE_URL,
-      siteName: "UnitTo",
+      siteName: "UnittoGo",
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
-      title: "UnitTo | Fast, Accurate, and Free Unit Converter",
+      title: "UnittoGo | Fast, Accurate, and Free Unit Converter",
       description: "Convert any unit instantly. Free online converter for Length, Weight, Area, Temperature, Speed, Volume, Energy, and more.",
     }
   };
@@ -31,7 +31,7 @@ export function getHomeMetadata() {
  * สร้างข้อมูล Metadata สำหรับหน้าหมวดหมู่ (Category Page)
  */
 export function getCategoryMetadata(category: Category) {
-  const title = `${category.name} Converter | UnitTo`;
+  const title = `${category.name} Converter | UnittoGo`;
   const description = `Free online ${category.name.toLowerCase()} converter. Convert between all standard units including ${category.units.map(u => u.name).slice(0, 5).join(", ")}. Quick reference table and formulas included.`;
   const url = `${BASE_URL}/${category.id}`;
 
@@ -45,7 +45,7 @@ export function getCategoryMetadata(category: Category) {
       title,
       description,
       url,
-      siteName: "UnitTo",
+      siteName: "UnittoGo",
       type: "website",
     },
     twitter: {
@@ -64,7 +64,7 @@ export function getConverterMetadata(category: Category, fromUnit: Unit, toUnit:
   const toName = toUnit.plural || toUnit.name;
   const slug = `${fromName}-to-${toName}`.toLowerCase().replace(/\s+/g, "-");
   
-  const title = `Convert ${fromUnit.name} to ${toUnit.name} | UnitTo`;
+  const title = `Convert ${fromUnit.name} to ${toUnit.name} | UnittoGo`;
   const description = `Instant online conversion for ${fromUnit.name} to ${toUnit.name} (${fromUnit.symbol} to ${toUnit.symbol}). Learn how to convert with formula, step-by-step examples, and a quick conversion table.`;
   const url = `${BASE_URL}/${slug}`;
 
@@ -78,7 +78,7 @@ export function getConverterMetadata(category: Category, fromUnit: Unit, toUnit:
       title,
       description,
       url,
-      siteName: "UnitTo",
+      siteName: "UnittoGo",
       type: "website",
     },
     twitter: {
@@ -96,7 +96,7 @@ export function getWebSiteSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "UnitTo",
+    "name": "UnittoGo",
     "url": BASE_URL,
     "potentialAction": {
       "@type": "SearchAction",
@@ -113,7 +113,7 @@ export function getOrganizationSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "UnitTo",
+    "name": "UnittoGo",
     "url": BASE_URL,
     "logo": `${BASE_URL}/icon-192.png`,
     "description": "The fastest, most accurate online unit converter running 100% locally in your browser."
