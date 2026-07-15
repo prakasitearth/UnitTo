@@ -491,47 +491,47 @@ export default function Home() {
             
             {/* Card 1: Instant Conversion */}
             <div className="p-6 bg-white dark:bg-zinc-950 border border-slate-200/60 dark:border-zinc-900/70 rounded-xl space-y-3 shadow-2xs hover:shadow-xs transition-shadow duration-200 relative group">
-              <div className="absolute top-3 right-3 text-[7px] font-mono text-slate-355 dark:text-slate-600 opacity-0 group-hover:opacity-100 transition-opacity">[REF: INST_SYS]</div>
+              <div className="absolute top-3 right-3 text-[7px] font-mono text-slate-400 dark:text-slate-600 opacity-0 group-hover:opacity-100 transition-opacity">[REF: INST_SYS]</div>
               <span className="text-2xl" role="img" aria-label="lightning">⚡</span>
               <h3 className="text-sm font-mono font-bold text-gray-900 dark:text-gray-100 uppercase tracking-tight">{t("featInstantTitle")}</h3>
               <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-semibold">{t("featInstantDesc")}</p>
             </div>
 
             {/* Card 2: 200+ Units */}
-            <div className="p-6 bg-white dark:bg-zinc-955 border border-slate-200/60 dark:border-zinc-900/70 rounded-xl space-y-3 shadow-2xs hover:shadow-xs transition-shadow duration-200 relative group">
-              <div className="absolute top-3 right-3 text-[7px] font-mono text-slate-355 dark:text-slate-600 opacity-0 group-hover:opacity-100 transition-opacity">[REF: MASS_DB]</div>
+            <div className="p-6 bg-white dark:bg-zinc-950 border border-slate-200/60 dark:border-zinc-900/70 rounded-xl space-y-3 shadow-2xs hover:shadow-xs transition-shadow duration-200 relative group">
+              <div className="absolute top-3 right-3 text-[7px] font-mono text-slate-400 dark:text-slate-600 opacity-0 group-hover:opacity-100 transition-opacity">[REF: MASS_DB]</div>
               <span className="text-2xl" role="img" aria-label="globe">🌍</span>
               <h3 className="text-sm font-mono font-bold text-gray-900 dark:text-gray-100 uppercase tracking-tight">{t("featUnitsTitle")}</h3>
               <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-semibold">{t("featUnitsDesc")}</p>
             </div>
 
             {/* Card 3: Mobile Friendly */}
-            <div className="p-6 bg-white dark:bg-zinc-955 border border-slate-200/60 dark:border-zinc-900/70 rounded-xl space-y-3 shadow-2xs hover:shadow-xs transition-shadow duration-200 relative group">
-              <div className="absolute top-3 right-3 text-[7px] font-mono text-slate-355 dark:text-slate-600 opacity-0 group-hover:opacity-100 transition-opacity">[REF: MOB_RND]</div>
+            <div className="p-6 bg-white dark:bg-zinc-950 border border-slate-200/60 dark:border-zinc-900/70 rounded-xl space-y-3 shadow-2xs hover:shadow-xs transition-shadow duration-200 relative group">
+              <div className="absolute top-3 right-3 text-[7px] font-mono text-slate-400 dark:text-slate-600 opacity-0 group-hover:opacity-100 transition-opacity">[REF: MOB_RND]</div>
               <span className="text-2xl" role="img" aria-label="mobile phone">📱</span>
               <h3 className="text-sm font-mono font-bold text-gray-900 dark:text-gray-100 uppercase tracking-tight">{t("featMobileTitle")}</h3>
-              <p className="text-xs text-slate-555 dark:text-slate-400 leading-relaxed font-semibold">{t("featMobileDesc")}</p>
+              <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-semibold">{t("featMobileDesc")}</p>
             </div>
 
             {/* Card 4: High Precision */}
-            <div className="p-6 bg-white dark:bg-zinc-955 border border-slate-200/60 dark:border-zinc-900/70 rounded-xl space-y-3 shadow-2xs hover:shadow-xs transition-shadow duration-200 relative group">
-              <div className="absolute top-3 right-3 text-[7px] font-mono text-slate-355 dark:text-slate-600 opacity-0 group-hover:opacity-100 transition-opacity">[REF: PRE_ARITH]</div>
+            <div className="p-6 bg-white dark:bg-zinc-950 border border-slate-200/60 dark:border-zinc-900/70 rounded-xl space-y-3 shadow-2xs hover:shadow-xs transition-shadow duration-200 relative group">
+              <div className="absolute top-3 right-3 text-[7px] font-mono text-slate-400 dark:text-slate-600 opacity-0 group-hover:opacity-100 transition-opacity">[REF: PRE_ARITH]</div>
               <span className="text-2xl" role="img" aria-label="bullseye">🎯</span>
               <h3 className="text-sm font-mono font-bold text-gray-900 dark:text-gray-100 uppercase tracking-tight">{t("featPrecisionTitle")}</h3>
               <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-semibold">{t("featPrecisionDesc")}</p>
             </div>
 
             {/* Card 5: Privacy Friendly */}
-            <div className="p-6 bg-white dark:bg-zinc-955 border border-slate-200/60 dark:border-zinc-900/70 rounded-xl space-y-3 shadow-2xs hover:shadow-xs transition-shadow duration-200 relative group">
-              <div className="absolute top-3 right-3 text-[7px] font-mono text-slate-355 dark:text-slate-600 opacity-0 group-hover:opacity-100 transition-opacity">[REF: PRIV_LOC]</div>
+            <div className="p-6 bg-white dark:bg-zinc-950 border border-slate-200/60 dark:border-zinc-900/70 rounded-xl space-y-3 shadow-2xs hover:shadow-xs transition-shadow duration-200 relative group">
+              <div className="absolute top-3 right-3 text-[7px] font-mono text-slate-400 dark:text-slate-600 opacity-0 group-hover:opacity-100 transition-opacity">[REF: PRIV_LOC]</div>
               <span className="text-2xl" role="img" aria-label="shield">🔒</span>
               <h3 className="text-sm font-mono font-bold text-gray-900 dark:text-gray-100 uppercase tracking-tight">{t("featPrivacyTitle")}</h3>
               <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-semibold">{t("featPrivacyDesc")}</p>
             </div>
 
             {/* Card 6: Real-time Calculation */}
-            <div className="p-6 bg-white dark:bg-zinc-955 border border-slate-200/60 dark:border-zinc-900/70 rounded-xl space-y-3 shadow-2xs hover:shadow-xs transition-shadow duration-200 relative group">
-              <div className="absolute top-3 right-3 text-[7px] font-mono text-slate-355 dark:text-slate-600 opacity-0 group-hover:opacity-100 transition-opacity">[REF: RT_LOOP]</div>
+            <div className="p-6 bg-white dark:bg-zinc-950 border border-slate-200/60 dark:border-zinc-900/70 rounded-xl space-y-3 shadow-2xs hover:shadow-xs transition-shadow duration-200 relative group">
+              <div className="absolute top-3 right-3 text-[7px] font-mono text-slate-400 dark:text-slate-600 opacity-0 group-hover:opacity-100 transition-opacity">[REF: RT_LOOP]</div>
               <span className="text-2xl" role="img" aria-label="gear">⚙️</span>
               <h3 className="text-sm font-mono font-bold text-gray-900 dark:text-gray-100 uppercase tracking-tight">{t("featRealtimeTitle")}</h3>
               <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-semibold">{t("featRealtimeDesc")}</p>
