@@ -10,6 +10,7 @@ export interface Unit {
   note?: string;
   aliases?: string[]; // Synonyms, abbreviations, and native translation names for flexible search matching
   translations?: Record<string, string>; // Localized names (e.g. {"th": "เมตร"})
+  country?: string; // Traditional unit country metadata (e.g. "TH", "JP", "IN")
 }
 
 export interface PopularConversion {

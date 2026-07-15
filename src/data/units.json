@@ -249,6 +249,74 @@
             "en": "nautical mile",
             "th": "ไมล์ทะเล"
           }
+        },
+        {
+          "id": "khueb",
+          "name": "khueb",
+          "symbol": "คืบ",
+          "factor": 0.25,
+          "plural": "khueb",
+          "description": "Thai traditional unit of length (0.25 meters)",
+          "country": "TH",
+          "aliases": [
+            "khueb",
+            "คืบ"
+          ],
+          "translations": {
+            "en": "Khueb",
+            "th": "คืบ"
+          }
+        },
+        {
+          "id": "sok",
+          "name": "sok",
+          "symbol": "ศอก",
+          "factor": 0.5,
+          "plural": "sok",
+          "description": "Thai traditional unit of length (0.5 meters)",
+          "country": "TH",
+          "aliases": [
+            "sok",
+            "ศอก"
+          ],
+          "translations": {
+            "en": "Sok",
+            "th": "ศอก"
+          }
+        },
+        {
+          "id": "wa",
+          "name": "wa",
+          "symbol": "วา",
+          "factor": 2,
+          "plural": "wa",
+          "description": "Thai traditional unit of length (2 meters)",
+          "country": "TH",
+          "aliases": [
+            "wa",
+            "วา"
+          ],
+          "translations": {
+            "en": "Wa",
+            "th": "วา"
+          }
+        },
+        {
+          "id": "sen",
+          "name": "sen",
+          "symbol": "เส้น",
+          "factor": 40,
+          "plural": "sen",
+          "description": "Thai traditional unit of length (40 meters)",
+          "country": "TH",
+          "aliases": [
+            "sen",
+            "เส้น"
+          ],
+          "translations": {
+            "en": "Sen",
+            "th": "เส้น"
+          }
         }
       ]
     },
@@ -472,6 +540,131 @@
           "translations": {
             "en": "UK ton",
             "th": "ตัน (อังกฤษ)"
+          }
+        },
+        {
+          "id": "salung",
+          "name": "salung",
+          "symbol": "สลึง",
+          "factor": 0.003811,
+          "plural": "salung",
+          "description": "Thai traditional unit of gold weight (3.811 grams)",
+          "country": "TH",
+          "aliases": [
+            "salung",
+            "สลึง"
+          ],
+          "translations": {
+            "en": "Salung",
+            "th": "สลึง"
+          }
+        },
+        {
+          "id": "baht_gold",
+          "name": "baht gold",
+          "symbol": "บาททอง",
+          "factor": 0.015244,
+          "plural": "baht gold",
+          "description": "Thai traditional unit of gold weight (15.244 grams)",
+          "country": "TH",
+          "aliases": [
+            "baht_gold",
+            "บาททอง",
+            "บาททองคำ"
+          ],
+          "translations": {
+            "en": "Baht of Gold",
+            "th": "บาททองคำ"
+          }
+        },
+        {
+          "id": "chang",
+          "name": "chang",
+          "symbol": "ชั่ง",
+          "factor": 1.2,
+          "plural": "chang",
+          "description": "Thai traditional unit of weight (1.2 kilograms)",
+          "country": "TH",
+          "aliases": [
+            "chang",
+            "ชั่ง",
+            "ชั่งไทย"
+          ],
+          "translations": {
+            "en": "Chang",
+            "th": "ชั่งไทย"
+          }
+        },
+        {
+          "id": "hap",
+          "name": "hap",
+          "symbol": "หาบ",
+          "factor": 60,
+          "plural": "hap",
+          "description": "Thai traditional unit of weight (60 kilograms)",
+          "country": "TH",
+          "aliases": [
+            "hap",
+            "หาบ"
+          ],
+          "translations": {
+            "en": "Hap",
+            "th": "หาบ"
+          }
+        },
+        {
+          "id": "tola",
+          "name": "tola",
+          "symbol": "tola",
+          "factor": 0.0116638038,
+          "plural": "tola",
+          "description": "Indian traditional weight unit, especially for gold and silver (approx. 11.66 grams)",
+          "country": "IN",
+          "aliases": [
+            "tola",
+            "โทลา"
+          ],
+          "translations": {
+            "en": "Tola (โทลา)",
+            "th": "โทลา (tola)"
+          }
+        },
+        {
+          "id": "jin_china",
+          "name": "jin china",
+          "symbol": "斤",
+          "factor": 0.5,
+          "plural": "jin china",
+          "description": "Chinese traditional market unit of weight (500 grams)",
+          "country": "CN",
+          "aliases": [
+            "jin",
+            "斤",
+            "จิน",
+            "จินจีน"
+          ],
+          "translations": {
+            "en": "Jin (China - 500g)",
+            "th": "จิน (จีนตลาด - 500g)"
+          }
+        },
+        {
+          "id": "jin_taiwan",
+          "name": "catty taiwan",
+          "symbol": "台斤",
+          "factor": 0.6,
+          "plural": "catty taiwan",
+          "description": "Taiwanese traditional market unit of weight (600 grams)",
+          "country": "TW",
+          "aliases": [
+            "catty",
+            "taigin",
+            "台斤",
+            "จินไต้หวัน"
+          ],
+          "translations": {
+            "en": "Catty / Taigin (Taiwan - 600g)",
+            "th": "จิน / ไตีกิ๊น (ไต้หวัน - 600g)"
           }
         }
       ]
@@ -704,6 +897,98 @@
           "translations": {
             "en": "square inch",
             "th": "ตารางนิ้ว"
+          }
+        },
+        {
+          "id": "tarang_wa",
+          "name": "tarang wa",
+          "symbol": "ตร.ว.",
+          "factor": 4,
+          "plural": "tarang wa",
+          "description": "Thai traditional unit of area (4 square meters)",
+          "country": "TH",
+          "aliases": [
+            "tarang_wa",
+            "ตารางวา",
+            "ตร.ว."
+          ],
+          "translations": {
+            "en": "Tarang Wa",
+            "th": "ตารางวา"
+          }
+        },
+        {
+          "id": "ngan",
+          "name": "ngan",
+          "symbol": "งาน",
+          "factor": 400,
+          "plural": "ngan",
+          "description": "Thai traditional unit of area (400 square meters)",
+          "country": "TH",
+          "aliases": [
+            "ngan",
+            "งาน"
+          ],
+          "translations": {
+            "en": "Ngan",
+            "th": "งาน"
+          }
+        },
+        {
+          "id": "rai",
+          "name": "rai",
+          "symbol": "ไร่",
+          "factor": 1600,
+          "plural": "rai",
+          "description": "Thai traditional unit of area (1600 square meters)",
+          "country": "TH",
+          "aliases": [
+            "rai",
+            "ไร่"
+          ],
+          "translations": {
+            "en": "Rai",
+            "th": "ไร่"
+          }
+        },
+        {
+          "id": "tsubo_pyeong",
+          "name": "tsubo / pyeong",
+          "symbol": "坪",
+          "factor": 3.305785,
+          "plural": "tsubo / pyeong",
+          "description": "Japanese (Tsubo) and Korean (Pyeong) traditional unit of area (approx. 3.3058 sq meters)",
+          "country": "JP_KR",
+          "aliases": [
+            "tsubo",
+            "pyeong",
+            "坪",
+            "สึโบะ",
+            "พยอง"
+          ],
+          "translations": {
+            "en": "Tsubo / Pyeong (坪)",
+            "th": "สึโบะ / พยอง (坪)"
+          }
+        },
+        {
+          "id": "jo_tatami",
+          "name": "jo / tatami",
+          "symbol": "畳",
+          "factor": 1.62,
+          "plural": "jo / tatami",
+          "description": "Japanese traditional room area unit based on tatami mat sizes (approx. 1.62 sq meters)",
+          "country": "JP",
+          "aliases": [
+            "jo",
+            "tatami",
+            "畳",
+            "โจ",
+            "เสื่อทาทามิ"
+          ],
+          "translations": {
+            "en": "Jo / Tatami (畳)",
+            "th": "โจ / เสื่อทาทามิ (畳)"
           }
         }
       ]

@@ -9,6 +9,27 @@ import unitsDataRaw from "@/data/units.json";
 
 const converter = new UnitConverter(unitsDataRaw as unknown as ConversionDatabase);
 
+const getCountryBadge = (country: string, t: (key: string) => string) => {
+  switch (country) {
+    case "TH":
+      return { flag: "🇹🇭", label: t("regionTH") };
+    case "JP":
+      return { flag: "🇯🇵", label: t("regionJP") };
+    case "JP_KR":
+      return { flag: "🇯🇵🇰🇷", label: `${t("regionJP")} / ${t("regionKR")}` };
+    case "IN":
+      return { flag: "🇮🇳", label: t("regionIN") };
+    case "CN":
+      return { flag: "🇨🇳", label: t("regionCN") };
+    case "TW":
+      return { flag: "🇹🇼", label: t("regionTW") };
+    case "KR":
+      return { flag: "🇰🇷", label: t("regionKR") };
+    default:
+      return null;
+  }
+};
+
 interface MultiUnitConverterProps {
   category: Category;
 }
@@ -153,6 +174,7 @@ export const MultiUnitConverter: React.FC<MultiUnitConverterProps> = ({ category
           const value = results.get(unit.id) || "";
           const isCopied = copiedUnitId === unit.id;
           const localizedName = tUnit(unit.id, unit.name);
+          const badge = unit.country ? getCountryBadge(unit.country, t) : null;
 
           return (
             <div
@@ -165,10 +187,20 @@ export const MultiUnitConverter: React.FC<MultiUnitConverterProps> = ({ category
             >
               {/* Unit Info (Label + Symbol) */}
               <div className="flex-shrink-0 w-[140px] sm:w-[180px]">
-                <div className={`text-sm font-bold truncate transition-colors ${
-                  isActive ? "text-blue-700 dark:text-blue-400" : "text-gray-800 dark:text-gray-200"
-                }`}>
-                  {localizedName}
+                <div className="flex items-center space-x-1.5 flex-wrap">
+                  <span className={`text-sm font-bold truncate transition-colors ${
+                    isActive ? "text-blue-700 dark:text-blue-400" : "text-gray-800 dark:text-gray-200"
+                  }`}>
+                    {localizedName}
+                  </span>
+                  {badge && (
+                    <span 
+                      className="inline-flex items-center px-1.5 py-0.5 text-[9px] font-bold rounded bg-slate-100 dark:bg-zinc-800 text-slate-600 dark:text-slate-400 border border-slate-200/50 dark:border-zinc-700/50"
+                      title={badge.label}
+                    >
+                      <span>{badge.flag}</span>
+                    </span>
+                  )}
                 </div>
                 <div className="text-[11px] text-slate-400 dark:text-slate-500 font-semibold font-mono">
                   {unit.symbol}

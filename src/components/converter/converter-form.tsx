@@ -16,16 +16,18 @@ interface ConverterFormProps {
   category: Category;
   initialFromUnit: Unit;
   initialToUnit: Unit;
+  isWidget?: boolean;
 }
 
 export const ConverterForm: React.FC<ConverterFormProps> = ({
   category,
   initialFromUnit,
   initialToUnit,
+  isWidget = false,
 }) => {
   const { addConversion } = useRecentConversions();
   const { toggleFavorite, isFavorite } = useFavoriteConversions();
-  const { t, tUnit } = useLocale();
+  const { locale, t, tUnit } = useLocale();
 
   // State Management
   const [fromValue, setFromValue] = useState<string>("1");
@@ -98,6 +100,8 @@ export const ConverterForm: React.FC<ConverterFormProps> = ({
   }, []);
   
   const [copied, setCopied] = useState<boolean>(false);
+  const [isEmbedOpen, setIsEmbedOpen] = useState<boolean>(false);
+  const [isEmbedCopied, setIsEmbedCopied] = useState<boolean>(false);
   const [isSwapping, setIsSwapping] = useState<boolean>(false);
 
   // Derived State (Real-time Instant Calculation) computed during render to avoid cascading renders
@@ -333,6 +337,18 @@ export const ConverterForm: React.FC<ConverterFormProps> = ({
 
       {/* Copy Result Actions Bar */}
       <div className="mt-6 flex justify-end space-x-2">
+        {!isWidget && (
+          <button
+            onClick={() => setIsEmbedOpen(true)}
+            className="flex items-center space-x-1.5 px-4 py-2 bg-white dark:bg-zinc-800 hover:bg-slate-50 dark:hover:bg-zinc-750 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-zinc-700 rounded-xl text-sm font-bold transition-all duration-150 cursor-pointer active:scale-98 shadow-sm"
+            aria-label="Embed this converter tool"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+            </svg>
+            <span>{t("embedBtn")}</span>
+          </button>
+        )}
         <button
           onClick={handleCopy}
           disabled={!toValue || !!error}
@@ -362,6 +378,64 @@ export const ConverterForm: React.FC<ConverterFormProps> = ({
           )}
         </button>
       </div>
+
+      {/* Embed Modal Dialog */}
+      {isEmbedOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs transition-opacity">
+          <div className="bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-3xl shadow-xl max-w-md w-full p-6 space-y-4 animate-in fade-in zoom-in duration-200">
+            <div className="flex items-center justify-between border-b border-slate-100 dark:border-zinc-800/80 pb-3">
+              <h3 className="text-base font-bold text-gray-900 dark:text-gray-150 flex items-center space-x-2">
+                <svg className="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                </svg>
+                <span>{t("embedTitle")}</span>
+              </h3>
+              <button 
+                onClick={() => setIsEmbedOpen(false)}
+                className="text-slate-400 hover:text-slate-500 dark:text-slate-500 dark:hover:text-slate-400 p-1 hover:bg-slate-100 dark:hover:bg-zinc-800 rounded-lg cursor-pointer transition-colors"
+                aria-label="Close dialog"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            
+            <p className="text-xs text-slate-500 dark:text-slate-400 font-semibold leading-relaxed">
+              {t("embedDesc")}
+            </p>
+
+            <div className="relative">
+              <textarea
+                readOnly
+                value={`<iframe src="${typeof window !== 'undefined' ? window.location.origin : 'https://unittogo.com'}/${locale}/widget/${fromUnit.id}-to-${toUnit.id}" width="100%" height="280" style="border:1px solid #e2e8f0; border-radius:16px;"></iframe>`}
+                className="w-full h-24 bg-slate-50 dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 rounded-2xl p-3 font-mono text-[10px] text-slate-500 dark:text-slate-300 outline-none resize-none select-all"
+                onClick={(e) => (e.target as HTMLTextAreaElement).select()}
+              />
+            </div>
+
+            <div className="flex justify-end space-x-2.5 pt-2">
+              <button
+                onClick={async () => {
+                  const embedCode = `<iframe src="${window.location.origin}/${locale}/widget/${fromUnit.id}-to-${toUnit.id}" width="100%" height="280" style="border:1px solid #e2e8f0; border-radius:16px;"></iframe>`;
+                  try {
+                    await navigator.clipboard.writeText(embedCode);
+                    setIsEmbedCopied(true);
+                    setTimeout(() => setIsEmbedCopied(false), 2000);
+                  } catch (err) {
+                    console.error("Embed copy failed:", err);
+                  }
+                }}
+                className={`px-4 py-2 rounded-xl text-xs font-bold text-white transition-all cursor-pointer ${
+                  isEmbedCopied ? "bg-green-500" : "bg-blue-600 hover:bg-blue-700 active:scale-95"
+                }`}
+              >
+                {isEmbedCopied ? t("embedCopied") : t("copy")}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

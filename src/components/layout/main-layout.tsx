@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { Header } from "./header";
 import { Footer } from "./footer";
 import { BottomNav } from "./bottom-nav";
@@ -19,6 +20,7 @@ interface MainLayoutProps {
 
 export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   const [searchOpen, setSearchOpen] = useState(false);
+  const pathname = usePathname();
 
   // Bind custom global event to open search overlay
   useEffect(() => {
@@ -28,6 +30,18 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
       window.removeEventListener("open-search", handleOpenSearch);
     };
   }, []);
+
+  const isWidget = pathname?.includes("/widget/");
+
+  if (isWidget) {
+    return (
+      <div className="bg-transparent text-zinc-900 dark:text-zinc-100 min-h-screen">
+        <main className="w-full p-2">
+          {children}
+        </main>
+      </div>
+    );
+  }
 
   // Extract minimal category info for the header navigation bar
   const categories = sharedConverter.getCategories().map((c) => ({

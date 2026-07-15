@@ -405,6 +405,97 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 3.5. TRADITIONAL UNITS BY COUNTRY SECTION */}
+      <section className="bg-slate-50/50 dark:bg-zinc-900/10 border-b border-slate-100 dark:border-zinc-900/40 py-14 md:py-20" aria-labelledby="traditional-heading">
+        <div className="max-w-7xl mx-auto px-4 space-y-8">
+          <div className="flex flex-col md:flex-row items-baseline justify-between border-b border-slate-200/80 dark:border-zinc-900 pb-2">
+            <h2 id="traditional-heading" className="text-xl md:text-2xl font-black text-gray-900 dark:text-gray-50 font-sans tracking-tight">
+              {t("localUnitsTitle")}
+            </h2>
+            <span className="text-[10px] text-slate-400 dark:text-slate-500 font-mono font-bold uppercase tracking-wider mt-1 md:mt-0">
+              {locale === "th" ? "[หน่วยวัดท้องถิ่นแยกตามประเทศ]" : "[TRADITIONAL LOCAL UNITS BY COUNTRY]"}
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            {/* Thailand */}
+            <div className="p-6 bg-white dark:bg-zinc-950 border border-slate-200/70 dark:border-zinc-800/75 rounded-2xl space-y-4 shadow-2xs hover:shadow-xs transition-shadow duration-200">
+              <div className="flex items-center space-x-2.5">
+                <span className="text-2xl">🇹🇭</span>
+                <h3 className="text-base font-bold text-gray-900 dark:text-gray-100">{t("regionTH")}</h3>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                <Link href={`/${locale}/rai-to-square-meter`} className="text-xs font-bold px-2.5 py-1.5 bg-slate-50 hover:bg-blue-50 hover:text-blue-600 dark:bg-zinc-900 dark:hover:bg-zinc-800 rounded-xl border border-slate-200/60 dark:border-zinc-800 transition-all">{locale === "th" ? "ไร่ ➔ ตารางเมตร" : "Rai ➔ sq m"}</Link>
+                <Link href={`/${locale}/tarang-wa-to-square-meter`} className="text-xs font-bold px-2.5 py-1.5 bg-slate-50 hover:bg-blue-50 hover:text-blue-600 dark:bg-zinc-900 dark:hover:bg-zinc-800 rounded-xl border border-slate-200/60 dark:border-zinc-800 transition-all">{locale === "th" ? "ตารางวา ➔ ตารางเมตร" : "Tarang Wa ➔ sq m"}</Link>
+                <Link href={`/${locale}/ngan-to-square-meter`} className="text-xs font-bold px-2.5 py-1.5 bg-slate-50 hover:bg-blue-50 hover:text-blue-600 dark:bg-zinc-900 dark:hover:bg-zinc-800 rounded-xl border border-slate-200/60 dark:border-zinc-800 transition-all">{locale === "th" ? "งาน ➔ ตารางเมตร" : "Ngan ➔ sq m"}</Link>
+                <Link href={`/${locale}/wa-to-meter`} className="text-xs font-bold px-2.5 py-1.5 bg-slate-50 hover:bg-blue-50 hover:text-blue-600 dark:bg-zinc-900 dark:hover:bg-zinc-800 rounded-xl border border-slate-200/60 dark:border-zinc-800 transition-all">{locale === "th" ? "วา ➔ เมตร" : "Wa ➔ Meter"}</Link>
+                <Link href={`/${locale}/sok-to-meter`} className="text-xs font-bold px-2.5 py-1.5 bg-slate-50 hover:bg-blue-50 hover:text-blue-600 dark:bg-zinc-900 dark:hover:bg-zinc-800 rounded-xl border border-slate-200/60 dark:border-zinc-800 transition-all">{locale === "th" ? "ศอก ➔ เมตร" : "Sok ➔ Meter"}</Link>
+                <Link href={`/${locale}/baht-gold-to-gram`} className="text-xs font-bold px-2.5 py-1.5 bg-slate-50 hover:bg-blue-50 hover:text-blue-600 dark:bg-zinc-900 dark:hover:bg-zinc-800 rounded-xl border border-slate-200/60 dark:border-zinc-800 transition-all">{locale === "th" ? "บาททอง ➔ กรัม" : "Baht Gold ➔ Gram"}</Link>
+                <Link href={`/${locale}/salung-to-gram`} className="text-xs font-bold px-2.5 py-1.5 bg-slate-50 hover:bg-blue-50 hover:text-blue-600 dark:bg-zinc-900 dark:hover:bg-zinc-800 rounded-xl border border-slate-200/60 dark:border-zinc-800 transition-all">{locale === "th" ? "สลึง ➔ กรัม" : "Salung ➔ Gram"}</Link>
+              </div>
+            </div>
+
+            {/* Japan */}
+            <div className="p-6 bg-white dark:bg-zinc-950 border border-slate-200/70 dark:border-zinc-800/75 rounded-2xl space-y-4 shadow-2xs hover:shadow-xs transition-shadow duration-200">
+              <div className="flex items-center space-x-2.5">
+                <span className="text-2xl">🇯🇵</span>
+                <h3 className="text-base font-bold text-gray-900 dark:text-gray-100">{t("regionJP")}</h3>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                <Link href={`/${locale}/tsubo-pyeong-to-square-meter`} className="text-xs font-bold px-2.5 py-1.5 bg-slate-50 hover:bg-blue-50 hover:text-blue-600 dark:bg-zinc-900 dark:hover:bg-zinc-800 rounded-xl border border-slate-200/60 dark:border-zinc-800 transition-all">{locale === "th" ? "สึโบะ (坪) ➔ ตารางเมตร" : "Tsubo (坪) ➔ sq m"}</Link>
+                <Link href={`/${locale}/jo-tatami-to-square-meter`} className="text-xs font-bold px-2.5 py-1.5 bg-slate-50 hover:bg-blue-50 hover:text-blue-600 dark:bg-zinc-900 dark:hover:bg-zinc-800 rounded-xl border border-slate-200/60 dark:border-zinc-800 transition-all">{locale === "th" ? "ทาทามิ (畳) ➔ ตารางเมตร" : "Tatami (畳) ➔ sq m"}</Link>
+              </div>
+            </div>
+
+            {/* India */}
+            <div className="p-6 bg-white dark:bg-zinc-950 border border-slate-200/70 dark:border-zinc-800/75 rounded-2xl space-y-4 shadow-2xs hover:shadow-xs transition-shadow duration-200">
+              <div className="flex items-center space-x-2.5">
+                <span className="text-2xl">🇮🇳</span>
+                <h3 className="text-base font-bold text-gray-900 dark:text-gray-100">{t("regionIN")}</h3>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                <Link href={`/${locale}/tola-to-gram`} className="text-xs font-bold px-2.5 py-1.5 bg-slate-50 hover:bg-blue-50 hover:text-blue-600 dark:bg-zinc-900 dark:hover:bg-zinc-800 rounded-xl border border-slate-200/60 dark:border-zinc-800 transition-all">{locale === "th" ? "โทลา (tola) ➔ กรัม" : "Tola (tola) ➔ Gram"}</Link>
+              </div>
+            </div>
+
+            {/* China */}
+            <div className="p-6 bg-white dark:bg-zinc-950 border border-slate-200/70 dark:border-zinc-800/75 rounded-2xl space-y-4 shadow-2xs hover:shadow-xs transition-shadow duration-200">
+              <div className="flex items-center space-x-2.5">
+                <span className="text-2xl">🇨🇳</span>
+                <h3 className="text-base font-bold text-gray-900 dark:text-gray-100">{t("regionCN")}</h3>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                <Link href={`/${locale}/jin-china-to-gram`} className="text-xs font-bold px-2.5 py-1.5 bg-slate-50 hover:bg-blue-50 hover:text-blue-600 dark:bg-zinc-900 dark:hover:bg-zinc-800 rounded-xl border border-slate-200/60 dark:border-zinc-800 transition-all">{locale === "th" ? "จิน (斤) ➔ กรัม" : "Jin (斤) ➔ Gram"}</Link>
+              </div>
+            </div>
+
+            {/* Taiwan */}
+            <div className="p-6 bg-white dark:bg-zinc-950 border border-slate-200/70 dark:border-zinc-800/75 rounded-2xl space-y-4 shadow-2xs hover:shadow-xs transition-shadow duration-200">
+              <div className="flex items-center space-x-2.5">
+                <span className="text-2xl">🇹🇼</span>
+                <h3 className="text-base font-bold text-gray-900 dark:text-gray-100">{t("regionTW")}</h3>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                <Link href={`/${locale}/catty-taiwan-to-gram`} className="text-xs font-bold px-2.5 py-1.5 bg-slate-50 hover:bg-blue-50 hover:text-blue-600 dark:bg-zinc-900 dark:hover:bg-zinc-800 rounded-xl border border-slate-200/60 dark:border-zinc-800 transition-all">{locale === "th" ? "จินไต้หวัน (台斤) ➔ กรัม" : "Taigin / Catty ➔ Gram"}</Link>
+              </div>
+            </div>
+
+            {/* South Korea */}
+            <div className="p-6 bg-white dark:bg-zinc-950 border border-slate-200/70 dark:border-zinc-800/75 rounded-2xl space-y-4 shadow-2xs hover:shadow-xs transition-shadow duration-200">
+              <div className="flex items-center space-x-2.5">
+                <span className="text-2xl">🇰🇷</span>
+                <h3 className="text-base font-bold text-gray-900 dark:text-gray-100">{t("regionKR")}</h3>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                <Link href={`/${locale}/tsubo-pyeong-to-square-meter`} className="text-xs font-bold px-2.5 py-1.5 bg-slate-50 hover:bg-blue-50 hover:text-blue-600 dark:bg-zinc-900 dark:hover:bg-zinc-800 rounded-xl border border-slate-200/60 dark:border-zinc-800 transition-all">{locale === "th" ? "พยอง (평) ➔ ตารางเมตร" : "Pyeong (평) ➔ sq m"}</Link>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* 4. STATISTICS SECTION (Soft Blue blueprint alternating rhythm) */}
       <section className="relative z-10 bg-blue-50/15 dark:bg-blue-950/5 border-b border-slate-100 dark:border-zinc-900/40 py-16 bg-blueprint overflow-hidden">
         <div className="absolute inset-0 radial-glow pointer-events-none z-0" />
