@@ -55,6 +55,12 @@ export const ConverterForm: React.FC<ConverterFormProps> = ({
       if (source === "converter-form") return;
       if (unitId === fromUnit.id && value === fromValue) return;
 
+      // If the event is for the same unit, sync the value exactly as is (preserving dots/commas/zeros)
+      if (unitId === fromUnit.id) {
+        setFromValue(value);
+        return;
+      }
+
       const numVal = parseFloat(value);
       if (value.trim() === "" || isNaN(numVal)) {
         setFromValue(value);
@@ -225,7 +231,8 @@ export const ConverterForm: React.FC<ConverterFormProps> = ({
               inputMode="decimal"
               value={fromValue}
               onChange={(e) => {
-                const val = e.target.value;
+                // Normalize commas to dots for keyboards outputting commas as decimals
+                const val = e.target.value.replace(/,/g, ".");
                 setFromValue(val);
                 window.dispatchEvent(new CustomEvent("unit-value-updated", {
                   detail: { unitId: fromUnit.id, value: val, source: "converter-form" }
