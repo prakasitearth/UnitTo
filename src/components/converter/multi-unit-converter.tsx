@@ -28,9 +28,10 @@ export const MultiUnitConverter: React.FC<MultiUnitConverterProps> = ({ category
   // Listen for sync event from ConverterForm
   useEffect(() => {
     const handleSync = (e: Event) => {
-      const customEvent = e as CustomEvent<{ unitId: string; value: string }>;
-      const { unitId, value } = customEvent.detail;
+      const customEvent = e as CustomEvent<{ unitId: string; value: string; source?: string }>;
+      const { unitId, value, source } = customEvent.detail;
       
+      if (source === "multi-converter") return;
       if (unitId === activeUnitId && value === inputValue) return;
 
       setActiveUnitId(unitId);
@@ -81,7 +82,7 @@ export const MultiUnitConverter: React.FC<MultiUnitConverterProps> = ({ category
     setInputValue(value);
     trackEvent("multi_convert_input", "multi_converter", unit.id);
     window.dispatchEvent(new CustomEvent("unit-value-updated", {
-      detail: { unitId: unit.id, value: value }
+      detail: { unitId: unit.id, value: value, source: "multi-converter" }
     }));
   };
 
@@ -118,7 +119,7 @@ export const MultiUnitConverter: React.FC<MultiUnitConverterProps> = ({ category
     setInputValue("1");
     trackEvent("multi_convert_reset", "multi_converter", category.id);
     window.dispatchEvent(new CustomEvent("unit-value-updated", {
-      detail: { unitId: firstUnitId, value: "1" }
+      detail: { unitId: firstUnitId, value: "1", source: "multi-converter" }
     }));
   };
 

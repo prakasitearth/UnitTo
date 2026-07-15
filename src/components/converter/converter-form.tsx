@@ -49,9 +49,10 @@ export const ConverterForm: React.FC<ConverterFormProps> = ({
   // Listen for sync event from MultiUnitConverter
   useEffect(() => {
     const handleSync = (e: Event) => {
-      const customEvent = e as CustomEvent<{ unitId: string; value: string }>;
-      const { unitId, value } = customEvent.detail;
+      const customEvent = e as CustomEvent<{ unitId: string; value: string; source?: string }>;
+      const { unitId, value, source } = customEvent.detail;
       
+      if (source === "converter-form") return;
       if (unitId === fromUnit.id && value === fromValue) return;
 
       const numVal = parseFloat(value);
@@ -84,7 +85,7 @@ export const ConverterForm: React.FC<ConverterFormProps> = ({
         setFromValue(val);
         // Dispatch event so the bottom MultiUnitConverter syncs up
         window.dispatchEvent(new CustomEvent("unit-value-updated", {
-          detail: { unitId: fromUnit.id, value: val }
+          detail: { unitId: fromUnit.id, value: val, source: "converter-form" }
         }));
       }
     }
@@ -157,7 +158,7 @@ export const ConverterForm: React.FC<ConverterFormProps> = ({
     if (toValue && !error) {
       setFromValue(toValue);
       window.dispatchEvent(new CustomEvent("unit-value-updated", {
-        detail: { unitId: toUnit.id, value: toValue }
+        detail: { unitId: toUnit.id, value: toValue, source: "converter-form" }
       }));
     }
   };
@@ -227,7 +228,7 @@ export const ConverterForm: React.FC<ConverterFormProps> = ({
                 const val = e.target.value;
                 setFromValue(val);
                 window.dispatchEvent(new CustomEvent("unit-value-updated", {
-                  detail: { unitId: fromUnit.id, value: val }
+                  detail: { unitId: fromUnit.id, value: val, source: "converter-form" }
                 }));
               }}
               onFocus={handleInputFocus}
@@ -244,7 +245,7 @@ export const ConverterForm: React.FC<ConverterFormProps> = ({
                   setFromUnit(matched);
                   trackEvent("change_source_unit", "converter", matched.id);
                   window.dispatchEvent(new CustomEvent("unit-value-updated", {
-                    detail: { unitId: matched.id, value: fromValue }
+                    detail: { unitId: matched.id, value: fromValue, source: "converter-form" }
                   }));
                 }
               }}
