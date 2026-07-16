@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { resolveSlug } from "@/lib/converter/slug-resolver";
+import { resolveSlug, getAllConversionRoutes } from "@/lib/converter/slug-resolver";
 import { CategoryView } from "@/components/converter/category-view";
 import { ConverterView } from "@/components/converter/converter-view";
 import unitsDataRaw from "@/data/units.json";
@@ -16,22 +16,20 @@ interface PageProps {
 
 /**
  * กำหนดค่า Static Params สำหรับ SSG (Static Site Generation)
- * สร้างหน้าเว็บแปลงหน่วยสำหรับทุกภาษาร่วมกับทุกหมวดหมู่และคู่แปลงรวมกัน (11 ภาษา * 42 เส้นทาง = 462 หน้า)
  */
 export async function generateStaticParams() {
   const paths: Array<{ locale: string; slug: string }> = [];
+  const allConversions = getAllConversionRoutes(db);
 
-  db.categories.forEach((category) => {
-    locales.forEach((locale) => {
-      // เพิ่มเส้นทางสำหรับหมวดหมู่ (Category Paths)
+  locales.forEach((locale) => {
+    // 1. เพิ่มเส้นทางสำหรับหมวดหมู่ (Category Paths)
+    db.categories.forEach((category) => {
       paths.push({ locale, slug: category.id });
+    });
 
-      // เพิ่มเส้นทางสำหรับคู่หน่วยแปลงยอดนิยม (Popular Conversion Paths)
-      if (category.popularConversions) {
-        category.popularConversions.forEach((conv) => {
-          paths.push({ locale, slug: conv.slug });
-        });
-      }
+    // 2. เพิ่มคู่แปลงทั้งหมด (All Conversion Paths)
+    allConversions.forEach((conv) => {
+      paths.push({ locale, slug: conv.slug });
     });
   });
 

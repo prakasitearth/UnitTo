@@ -113,3 +113,54 @@ export function getSlugForConversion(fromUnit: Unit, toUnit: Unit): string {
   const toName = (toUnit.plural || toUnit.id).replace(/\s+/g, "-");
   return `${fromName}-to-${toName}`.toLowerCase();
 }
+
+/**
+ * ดึงข้อมูลเส้นทางคู่คำนวณทั้งหมดในระบบ (Programmatic SEO)
+ * รวมคู่ยอดนิยมและคู่คำนวณเข้าออกคู่กับ Base Unit ของทุกหน่วยที่มี
+ */
+export function getAllConversionRoutes(db: ConversionDatabase): Array<{ slug: string }> {
+  const routes: Array<{ slug: string }> = [];
+  const seenSlugs = new Set<string>();
+
+  db.categories.forEach((category) => {
+    const baseUnitId = category.baseUnit;
+    const baseUnit = category.units.find((u) => {
+      const uIdNormalized = u.id.replace(/_/g, " ").toLowerCase();
+      const baseNormalized = baseUnitId.replace(/_/g, " ").toLowerCase();
+      return uIdNormalized === baseNormalized;
+    });
+
+    // 1. เพิ่มคู่แปลงหน่วยยอดนิยม (Popular conversions)
+    if (category.popularConversions) {
+      category.popularConversions.forEach((conv) => {
+        if (!seenSlugs.has(conv.slug)) {
+          seenSlugs.add(conv.slug);
+          routes.push({ slug: conv.slug });
+        }
+      });
+    }
+
+    // 2. เพิ่มคู่แปลงของทุกหน่วยเข้าออกกับ Base Unit ของแต่ละหมวดหมู่
+    if (baseUnit) {
+      category.units.forEach((unit) => {
+        if (unit.id !== baseUnit.id) {
+          // From unit to base unit
+          const forwardSlug = getSlugForConversion(unit, baseUnit);
+          if (!seenSlugs.has(forwardSlug)) {
+            seenSlugs.add(forwardSlug);
+            routes.push({ slug: forwardSlug });
+          }
+
+          // From base unit to unit
+          const backwardSlug = getSlugForConversion(baseUnit, unit);
+          if (!seenSlugs.has(backwardSlug)) {
+            seenSlugs.add(backwardSlug);
+            routes.push({ slug: backwardSlug });
+          }
+        }
+      });
+    }
+  });
+
+  return routes;
+}

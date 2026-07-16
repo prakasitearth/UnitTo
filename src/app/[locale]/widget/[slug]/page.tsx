@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { resolveSlug } from "@/lib/converter/slug-resolver";
+import { resolveSlug, getAllConversionRoutes } from "@/lib/converter/slug-resolver";
 import { ConverterForm } from "@/components/converter/converter-form";
 import unitsDataRaw from "@/data/units.json";
 import { ConversionDatabase } from "@/types/converter";
@@ -13,14 +13,11 @@ interface PageProps {
 
 export async function generateStaticParams() {
   const paths: Array<{ locale: string; slug: string }> = [];
+  const allConversions = getAllConversionRoutes(db);
 
-  db.categories.forEach((category) => {
-    locales.forEach((locale) => {
-      if (category.popularConversions) {
-        category.popularConversions.forEach((conv) => {
-          paths.push({ locale, slug: conv.slug });
-        });
-      }
+  locales.forEach((locale) => {
+    allConversions.forEach((conv) => {
+      paths.push({ locale, slug: conv.slug });
     });
   });
 

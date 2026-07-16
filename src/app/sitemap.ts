@@ -1,6 +1,7 @@
 import { MetadataRoute } from "next";
 import unitsDataRaw from "@/data/units.json";
 import { ConversionDatabase } from "@/types/converter";
+import { getAllConversionRoutes } from "@/lib/converter/slug-resolver";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://unittogo.com";
 const db = unitsDataRaw as unknown as ConversionDatabase;
@@ -31,18 +32,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
         changeFrequency: "weekly",
         priority: 0.8,
       });
+    });
 
-      // 3. เพิ่มหน้าแปลงหน่วยย่อยยอดนิยม (Localized Popular Conversion Pages)
-      if (category.popularConversions) {
-        category.popularConversions.forEach((conv) => {
-          routes.push({
-            url: `${BASE_URL}/${locale}/${conv.slug}`,
-            lastModified: currentDate,
-            changeFrequency: "monthly",
-            priority: 0.6,
-          });
-        });
-      }
+    // 3. ดึงคู่คำนวณทั้งหมดแบบ Programmatic และจัดทำ Sitemap
+    const allConversions = getAllConversionRoutes(db);
+    allConversions.forEach((conv) => {
+      routes.push({
+        url: `${BASE_URL}/${locale}/${conv.slug}`,
+        lastModified: currentDate,
+        changeFrequency: "monthly",
+        priority: 0.6,
+      });
     });
   });
 
