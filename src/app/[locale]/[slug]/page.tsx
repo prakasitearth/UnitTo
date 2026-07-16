@@ -14,22 +14,25 @@ interface PageProps {
   params: Promise<{ locale: string; slug: string }>;
 }
 
+export const dynamicParams = true;
+
 /**
  * กำหนดค่า Static Params สำหรับ SSG (Static Site Generation)
  */
 export async function generateStaticParams() {
   const paths: Array<{ locale: string; slug: string }> = [];
-  const allConversions = getAllConversionRoutes(db);
 
   locales.forEach((locale) => {
     // 1. เพิ่มเส้นทางสำหรับหมวดหมู่ (Category Paths)
     db.categories.forEach((category) => {
       paths.push({ locale, slug: category.id });
-    });
 
-    // 2. เพิ่มคู่แปลงทั้งหมด (All Conversion Paths)
-    allConversions.forEach((conv) => {
-      paths.push({ locale, slug: conv.slug });
+      // 2. เพิ่มเส้นทางยอดนิยม (Popular Conversion Paths)
+      if (category.popularConversions) {
+        category.popularConversions.forEach((conv) => {
+          paths.push({ locale, slug: conv.slug });
+        });
+      }
     });
   });
 

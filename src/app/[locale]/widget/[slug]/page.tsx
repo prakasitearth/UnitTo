@@ -11,13 +11,18 @@ interface PageProps {
   params: Promise<{ locale: string; slug: string }>;
 }
 
+export const dynamicParams = true;
+
 export async function generateStaticParams() {
   const paths: Array<{ locale: string; slug: string }> = [];
-  const allConversions = getAllConversionRoutes(db);
 
-  locales.forEach((locale) => {
-    allConversions.forEach((conv) => {
-      paths.push({ locale, slug: conv.slug });
+  db.categories.forEach((category) => {
+    locales.forEach((locale) => {
+      if (category.popularConversions) {
+        category.popularConversions.forEach((conv) => {
+          paths.push({ locale, slug: conv.slug });
+        });
+      }
     });
   });
 
