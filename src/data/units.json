@@ -721,6 +721,74 @@
             "en": "Catty / Taigin (Taiwan - 600g)",
             "th": "จิน / ไตีกิ๊น (ไต้หวัน - 600g)"
           }
+        },
+        {
+          "id": "carat",
+          "name": "carat",
+          "symbol": "ct",
+          "factor": 0.0002,
+          "plural": "carats",
+          "description": "Metric carat used for measuring gemstones and pearls (0.2 grams)",
+          "aliases": [
+            "carat",
+            "ct",
+            "กะรัต"
+          ],
+          "translations": {
+            "en": "Carat (กะรัต)",
+            "th": "กะรัต (ct)"
+          }
+        },
+        {
+          "id": "tael_china",
+          "name": "tael china",
+          "symbol": "tael (CN)",
+          "factor": 0.05,
+          "plural": "taels china",
+          "description": "Modern Chinese market unit of weight (50 grams)",
+          "country": "CN",
+          "aliases": [
+            "tael CN",
+            "ตำลึงจีน"
+          ],
+          "translations": {
+            "en": "Tael (China - 50g)",
+            "th": "ตำลึงจีน (50g)"
+          }
+        },
+        {
+          "id": "tael_taiwan",
+          "name": "tael taiwan",
+          "symbol": "tael (TW)",
+          "factor": 0.0375,
+          "plural": "taels taiwan",
+          "description": "Taiwanese unit of weight (37.5 grams)",
+          "country": "TW",
+          "aliases": [
+            "tael TW",
+            "ตำลึงไต้หวัน"
+          ],
+          "translations": {
+            "en": "Tael (Taiwan - 37.5g)",
+            "th": "ตำลึงไต้หวัน (37.5g)"
+          }
+        },
+        {
+          "id": "tael_hongkong",
+          "name": "tael hongkong",
+          "symbol": "tael (HK)",
+          "factor": 0.037429,
+          "plural": "taels hongkong",
+          "description": "Hong Kong unit of weight (37.429 grams)",
+          "country": "HK",
+          "aliases": [
+            "tael HK",
+            "ตำลึงฮ่องกง"
+          ],
+          "translations": {
+            "en": "Tael (Hong Kong - 37.429g)",
+            "th": "ตำลึงฮ่องกง (37.429g)"
+          }
         }
       ]
     },
@@ -1069,6 +1137,60 @@
           "translations": {
             "en": "Jo / Tatami (畳)",
             "th": "โจ / เสื่อทาทามิ (畳)"
+          }
+        },
+        {
+          "id": "cent_india",
+          "name": "cent",
+          "symbol": "cent",
+          "factor": 40.4686,
+          "plural": "cents",
+          "description": "Indian land measurement unit, especially in South India (1/100 of an acre or 40.4686 square meters)",
+          "country": "IN",
+          "aliases": [
+            "cent",
+            "cents",
+            "เซนต์อินเดีย"
+          ],
+          "translations": {
+            "en": "Cent (India)",
+            "th": "เซนต์ (อินเดีย)"
+          }
+        },
+        {
+          "id": "guntha_india",
+          "name": "guntha",
+          "symbol": "guntha",
+          "factor": 101.171,
+          "plural": "gunthas",
+          "description": "Indian land measurement unit (1/40 of an acre or 101.171 square meters)",
+          "country": "IN",
+          "aliases": [
+            "guntha",
+            "gunthas",
+            "กุนธา"
+          ],
+          "translations": {
+            "en": "Guntha (India)",
+            "th": "กุนธา (อินเดีย)"
+          }
+        },
+        {
+          "id": "dunam",
+          "name": "dunam",
+          "symbol": "dunam",
+          "factor": 1000.0,
+          "plural": "dunam",
+          "description": "Traditional land measurement unit widely used in the Middle East and Balkans (1,000 square meters)",
+          "country": "TR",
+          "aliases": [
+            "dunam",
+            "donum",
+            "ดูนัม"
+          ],
+          "translations": {
+            "en": "Dunam / Donum",
+            "th": "ดูนัม / โดนัม"
           }
         }
       ]
