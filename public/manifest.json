@@ -1,0 +1,30 @@
+{
+  "name": "UnittoGo - Fast and Free Unit Converter",
+  "short_name": "UnittoGo",
+  "description": "Convert any unit instantly. Length, Weight, Area, Temperature, Speed, Volume, Energy, and more.",
+  "start_url": "/th",
+  "display": "standalone",
+  "background_color": "#0a1628",
+  "theme_color": "#0a1628",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

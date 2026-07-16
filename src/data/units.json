@@ -49,6 +49,26 @@
           "from": "millimeter",
           "to": "inch",
           "slug": "mm-to-inches"
+        },
+        {
+          "from": "wa",
+          "to": "meter",
+          "slug": "wa-to-meters"
+        },
+        {
+          "from": "sok",
+          "to": "meter",
+          "slug": "sok-to-meters"
+        },
+        {
+          "from": "khueb",
+          "to": "meter",
+          "slug": "khueb-to-meters"
+        },
+        {
+          "from": "sen",
+          "to": "meter",
+          "slug": "sen-to-meters"
         }
       ],
       "units": [
@@ -356,6 +376,31 @@
           "from": "kilogram",
           "to": "stone",
           "slug": "kg-to-stones"
+        },
+        {
+          "from": "baht_gold",
+          "to": "gram",
+          "slug": "baht-gold-to-grams"
+        },
+        {
+          "from": "salung",
+          "to": "gram",
+          "slug": "salung-to-grams"
+        },
+        {
+          "from": "tola",
+          "to": "gram",
+          "slug": "tola-to-grams"
+        },
+        {
+          "from": "jin_china",
+          "to": "gram",
+          "slug": "jin-china-to-grams"
+        },
+        {
+          "from": "jin_taiwan",
+          "to": "gram",
+          "slug": "catty-taiwan-to-grams"
         }
       ],
       "units": [
@@ -700,6 +745,31 @@
           "from": "acre",
           "to": "hectare",
           "slug": "acres-to-hectares"
+        },
+        {
+          "from": "rai",
+          "to": "square_meter",
+          "slug": "rai-to-square-meters"
+        },
+        {
+          "from": "tarang_wa",
+          "to": "square_meter",
+          "slug": "tarang-wa-to-square-meters"
+        },
+        {
+          "from": "ngan",
+          "to": "square_meter",
+          "slug": "ngan-to-square-meters"
+        },
+        {
+          "from": "tsubo_pyeong",
+          "to": "square_meter",
+          "slug": "tsubo-pyeong-to-square-meters"
+        },
+        {
+          "from": "jo_tatami",
+          "to": "square_meter",
+          "slug": "jo-tatami-to-square-meters"
         }
       ],
       "units": [

@@ -20,6 +20,7 @@ export default function robots(): MetadataRoute.Robots {
           "/_next/",   // Next.js build output – not useful for crawlers
           "/static/",  // Static asset dump (if ever used)
           "/api/",     // API routes (future-proof)
+          "/*/widget/", // Block widget routes in any language (e.g. /en/widget/, /th/widget/)
         ],
       },
     ],
