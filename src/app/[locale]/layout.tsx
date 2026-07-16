@@ -107,6 +107,12 @@ export default async function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
+        {/* Google AdSense Verification */}
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4484813294914608"
+          crossOrigin="anonymous"
+        />
         {/*
           Inline theme script – runs BEFORE first paint to prevent Flash Of
           Incorrect Theme (FOIT). Reads the stored preference from localStorage
