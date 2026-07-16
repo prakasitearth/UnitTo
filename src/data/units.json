@@ -3311,6 +3311,223 @@
           }
         }
       ]
+    },
+    {
+      "id": "cooking",
+      "name": "Cooking / Kitchen",
+      "description": "มาตรตวงทำอาหาร เบเกอรี่",
+      "translations": {
+        "en": "Cooking Measurements",
+        "th": "มาตรตวงทำอาหาร"
+      },
+      "baseUnit": "milliliter",
+      "baseUnitSymbol": "ml",
+      "icon": "🍳",
+      "popularConversions": [
+        {
+          "from": "cup_metric",
+          "to": "milliliter",
+          "slug": "cups-to-ml"
+        },
+        {
+          "from": "tablespoon_metric",
+          "to": "milliliter",
+          "slug": "tablespoons-to-ml"
+        },
+        {
+          "from": "teaspoon_metric",
+          "to": "milliliter",
+          "slug": "teaspoons-to-ml"
+        },
+        {
+          "from": "cup_us",
+          "to": "milliliter",
+          "slug": "us-cups-to-ml"
+        }
+      ],
+      "units": [
+        {
+          "id": "milliliter",
+          "name": "milliliter",
+          "symbol": "ml",
+          "factor": 1.0,
+          "plural": "milliliters",
+          "description": "Metric unit of volume (1 milliliter)",
+          "aliases": [
+            "ml",
+            "milliliter",
+            "milliliters",
+            "มิลลิลิตร"
+          ],
+          "translations": {
+            "en": "Milliliter (ml)",
+            "th": "มิลลิลิตร (ml)"
+          }
+        },
+        {
+          "id": "liter",
+          "name": "liter",
+          "symbol": "L",
+          "factor": 1000.0,
+          "plural": "liters",
+          "description": "Metric unit of volume (1 liter)",
+          "aliases": [
+            "l",
+            "liter",
+            "liters",
+            "ลิตร"
+          ],
+          "translations": {
+            "en": "Liter (L)",
+            "th": "ลิตร (L)"
+          }
+        },
+        {
+          "id": "cup_metric",
+          "name": "metric cup",
+          "symbol": "cup (metric)",
+          "factor": 250.0,
+          "plural": "metric cups",
+          "description": "Metric cup used in recipes (250 ml)",
+          "aliases": [
+            "cup",
+            "cups",
+            "ถ้วยตวง",
+            "ถ้วยตวงเมตริก"
+          ],
+          "translations": {
+            "en": "Cup (Metric - 250ml)",
+            "th": "ถ้วยตวง (เมตริก - 250ml)"
+          }
+        },
+        {
+          "id": "cup_us",
+          "name": "us cup",
+          "symbol": "cup (US)",
+          "factor": 236.5882365,
+          "plural": "us cups",
+          "description": "US cup used in recipes (approx. 236.59 ml)",
+          "aliases": [
+            "us cup",
+            "us cups",
+            "ถ้วยตวงอเมริกา"
+          ],
+          "translations": {
+            "en": "Cup (US - 236.59ml)",
+            "th": "ถ้วยตวง (สหรัฐฯ - 236.59ml)"
+          }
+        },
+        {
+          "id": "tablespoon_metric",
+          "name": "metric tablespoon",
+          "symbol": "tbsp (metric)",
+          "factor": 15.0,
+          "plural": "metric tablespoons",
+          "description": "Metric tablespoon used in recipes (15 ml)",
+          "aliases": [
+            "tbsp",
+            "tablespoon",
+            "tablespoons",
+            "ช้อนโต๊ะ",
+            "ช้อนโต๊ะเมตริก"
+          ],
+          "translations": {
+            "en": "Tablespoon (Metric - 15ml)",
+            "th": "ช้อนโต๊ะ (เมตริก - 15ml)"
+          }
+        },
+        {
+          "id": "tablespoon_us",
+          "name": "us tablespoon",
+          "symbol": "tbsp (US)",
+          "factor": 14.78676478,
+          "plural": "us tablespoons",
+          "description": "US tablespoon used in recipes (approx. 14.79 ml)",
+          "aliases": [
+            "us tbsp",
+            "us tablespoon",
+            "us tablespoons",
+            "ช้อนโต๊ะอเมริกา"
+          ],
+          "translations": {
+            "en": "Tablespoon (US - 14.79ml)",
+            "th": "ช้อนโต๊ะ (สหรัฐฯ - 14.79ml)"
+          }
+        },
+        {
+          "id": "teaspoon_metric",
+          "name": "metric teaspoon",
+          "symbol": "tsp (metric)",
+          "factor": 5.0,
+          "plural": "metric teaspoons",
+          "description": "Metric teaspoon used in recipes (5 ml)",
+          "aliases": [
+            "tsp",
+            "teaspoon",
+            "teaspoons",
+            "ช้อนชา",
+            "ช้อนชาเมตริก"
+          ],
+          "translations": {
+            "en": "Teaspoon (Metric - 5ml)",
+            "th": "ช้อนชา (เมตริก - 5ml)"
+          }
+        },
+        {
+          "id": "teaspoon_us",
+          "name": "us teaspoon",
+          "symbol": "tsp (US)",
+          "factor": 4.92892159,
+          "plural": "us teaspoons",
+          "description": "US teaspoon used in recipes (approx. 4.93 ml)",
+          "aliases": [
+            "us tsp",
+            "us teaspoon",
+            "us teaspoons",
+            "ช้อนชาอเมริกา"
+          ],
+          "translations": {
+            "en": "Teaspoon (US - 4.93ml)",
+            "th": "ช้อนชา (สหรัฐฯ - 4.93ml)"
+          }
+        },
+        {
+          "id": "fluid_ounce_us",
+          "name": "fluid ounce (US)",
+          "symbol": "fl oz (US)",
+          "factor": 29.57352956,
+          "plural": "US fluid ounces",
+          "description": "US fluid ounce (approx. 29.57 ml)",
+          "aliases": [
+            "fl oz",
+            "fluid ounce",
+            "fluid ounces",
+            "ออนซ์ของเหลว",
+            "ออนซ์ของเหลวสหรัฐ"
+          ],
+          "translations": {
+            "en": "Fluid Ounce (US)",
+            "th": "ออนซ์ของเหลว (US)"
+          }
+        },
+        {
+          "id": "fluid_ounce_uk",
+          "name": "fluid ounce (UK)",
+          "symbol": "fl oz (UK)",
+          "factor": 28.4130625,
+          "plural": "UK fluid ounces",
+          "description": "UK Imperial fluid ounce (approx. 28.41 ml)",
+          "aliases": [
+            "fl oz uk",
+            "fluid ounce uk",
+            "ออนซ์ของเหลวอังกฤษ"
+          ],
+          "translations": {
+            "en": "Fluid Ounce (UK)",
+            "th": "ออนซ์ของเหลว (UK)"
+          }
+        }
+      ]
     }
   ],
   "conversionRules": {

@@ -642,6 +642,19 @@ export const CATEGORY_TRANSLATIONS: Record<string, Record<string, { name: string
     bn: { name: "মুদ্রা", description: "প্রধান মুদ্রা বিনিময় হার USD, EUR, GBP, THB (আনুমানিক)" },
     ja: { name: "通貨", description: "主要通貨の換算レート USD, EUR, GBP, THB (近似値)" },
   },
+  cooking: {
+    th: { name: "การทำอาหาร / ในครัว", description: "แปลงหน่วยเครื่องตวงทำอาหาร เบเกอรี่ ถ้วยตวง ช้อนโต๊ะ ช้อนชา" },
+    en: { name: "Cooking Measurements", description: "Convert cooking units, baking cups, tablespoons, teaspoons, ounces" },
+    es: { name: "Medidas de Cocina", description: "Convierta tazas, cucharadas, cucharaditas, onzas líquidas" },
+    zh: { name: "烹饪计量", description: "换算烹饪杯、汤匙、茶匙、液量盎司" },
+    hi: { name: "खाना पकाने के माप", description: "कप, बड़ा चम्मच, छोटा चम्मच, औंस परिवर्तित करें" },
+    fr: { name: "Mesures de Cuisine", description: "Convertir tasses, cuillères à soupe, cuillères à café, onces" },
+    pt: { name: "Medidas de Culinária", description: "Converta xícaras, colheres de sopa, colheres de chá, onças" },
+    ru: { name: "Кулинарные Меры", description: "Конвертируйте стаканы, столовые и чайные ложки, унции" },
+    ar: { name: "مقاييس الطبخ", description: "تحويل أكواب الطبخ، الملاعق الكبيرة، الملاعق الصغيرة" },
+    bn: { name: "রান্নার পরিমাপ", description: "রান্নার কাপ, টেবিল চামচ, চা চামচ, তরল আউন্স রূপান্তর করুন" },
+    ja: { name: "料理の計量", description: "計量カップ、大さじ、小さじ、液量オンスを変換" },
+  },
 };
 
 // ตารางแปลชื่อหน่วยทั้งหมดสำหรับการแสดงผลบน UI
