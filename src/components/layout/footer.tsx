@@ -15,6 +15,8 @@ export const Footer: React.FC = () => {
     { slug: "cm-to-inches", from: "centimeter", to: "inch" },
     { slug: "kg-to-lbs", from: "kilogram", to: "pound" },
     { slug: "celsius-to-fahrenheit", from: "celsius", to: "fahrenheit" },
+    { slug: "rai-to-square-meters", from: "rai", to: "square_meter" },
+    { slug: "tsubo-pyeong-to-square-meters", from: "tsubo_pyeong", to: "square_meter" },
   ];
 
   // Whitelisted latest links with from/to unit IDs to fetch localized translation strings dynamically
@@ -22,7 +24,8 @@ export const Footer: React.FC = () => {
     { slug: "km-to-miles", from: "kilometer", to: "mile" },
     { slug: "lbs-to-kg", from: "pound", to: "kilogram" },
     { slug: "grams-to-oz", from: "gram", to: "ounce" },
-    { slug: "fahrenheit-to-celsius", from: "fahrenheit", to: "celsius" },
+    { slug: "baht-gold-to-grams", from: "baht_gold", to: "gram" },
+    { slug: "tola-to-grams", from: "tola", to: "gram" },
   ];
 
   return (
