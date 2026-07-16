@@ -3528,6 +3528,184 @@
           }
         }
       ]
+    },
+    {
+      "id": "gold_purity",
+      "name": "Gold Purity",
+      "description": "กะรัตทองคำ เปอร์เซ็นต์ทองคำ",
+      "translations": {
+        "en": "Gold Purity / Karat",
+        "th": "ความบริสุทธิ์ทองคำ / ทองกะรัต"
+      },
+      "baseUnit": "percent",
+      "baseUnitSymbol": "%",
+      "icon": "🏆",
+      "popularConversions": [
+        {
+          "from": "karat_18k",
+          "to": "percent",
+          "slug": "18k-to-percent"
+        },
+        {
+          "from": "karat_23k",
+          "to": "percent",
+          "slug": "23k-to-percent"
+        },
+        {
+          "from": "karat_9k",
+          "to": "percent",
+          "slug": "9k-to-percent"
+        },
+        {
+          "from": "karat_24k",
+          "to": "percent",
+          "slug": "24k-to-percent"
+        }
+      ],
+      "units": [
+        {
+          "id": "percent",
+          "name": "percent",
+          "symbol": "%",
+          "factor": 1.0,
+          "plural": "percent",
+          "description": "Percentage purity of gold (1%)",
+          "aliases": [
+            "%",
+            "percent",
+            "percentage",
+            "เปอร์เซ็นต์"
+          ],
+          "translations": {
+            "en": "Percent (%)",
+            "th": "เปอร์เซ็นต์ (%)"
+          }
+        },
+        {
+          "id": "karat_24k",
+          "name": "24K Gold",
+          "symbol": "24K",
+          "factor": 100.0,
+          "plural": "24K gold",
+          "description": "Pure gold (理論上 24/24 or 100%)",
+          "aliases": [
+            "24k",
+            "24 karat",
+            "ทอง 24k"
+          ],
+          "translations": {
+            "en": "24K Gold (99.99%)",
+            "th": "ทองคำ 24K (99.99%)"
+          }
+        },
+        {
+          "id": "karat_23k",
+          "name": "23K Gold",
+          "symbol": "23K",
+          "factor": 96.5,
+          "plural": "23K gold",
+          "description": "Standard Thai Gold purity (96.5%)",
+          "country": "TH",
+          "aliases": [
+            "23k",
+            "23 karat",
+            "ทองไทย",
+            "ทอง 23k",
+            "ทองเยาวราช"
+          ],
+          "translations": {
+            "en": "23K Gold (Thai Standard - 96.5%)",
+            "th": "ทองคำ 23K (มาตรฐานไทย - 96.5%)"
+          }
+        },
+        {
+          "id": "karat_22k",
+          "name": "22K Gold",
+          "symbol": "22K",
+          "factor": 91.67,
+          "plural": "22K gold",
+          "description": "Standard Indian Gold purity (approx. 91.6% or 22/24)",
+          "country": "IN",
+          "aliases": [
+            "22k",
+            "22 karat",
+            "ทอง 22k",
+            "ทองอินเดีย"
+          ],
+          "translations": {
+            "en": "22K Gold (Indian Standard - 91.6%)",
+            "th": "ทองคำ 22K (มาตรฐานอินเดีย - 91.6%)"
+          }
+        },
+        {
+          "id": "karat_18k",
+          "name": "18K Gold",
+          "symbol": "18K",
+          "factor": 75.0,
+          "plural": "18K gold",
+          "description": "Standard jewelry gold purity (75% or 18/24)",
+          "aliases": [
+            "18k",
+            "18 karat",
+            "ทอง 18k"
+          ],
+          "translations": {
+            "en": "18K Gold (75.0%)",
+            "th": "ทองคำ 18K (75.0%)"
+          }
+        },
+        {
+          "id": "karat_14k",
+          "name": "14K Gold",
+          "symbol": "14K",
+          "factor": 58.33,
+          "plural": "14K gold",
+          "description": "Standard jewelry gold purity (approx. 58.3% or 14/24)",
+          "aliases": [
+            "14k",
+            "14 karat",
+            "ทอง 14k"
+          ],
+          "translations": {
+            "en": "14K Gold (58.3%)",
+            "th": "ทองคำ 14K (58.3%)"
+          }
+        },
+        {
+          "id": "karat_10k",
+          "name": "10K Gold",
+          "symbol": "10K",
+          "factor": 41.67,
+          "plural": "10K gold",
+          "description": "Standard jewelry gold purity (approx. 41.7% or 10/24)",
+          "aliases": [
+            "10k",
+            "10 karat",
+            "ทอง 10k"
+          ],
+          "translations": {
+            "en": "10K Gold (41.7%)",
+            "th": "ทองคำ 10K (41.7%)"
+          }
+        },
+        {
+          "id": "karat_9k",
+          "name": "9K Gold",
+          "symbol": "9K",
+          "factor": 37.5,
+          "plural": "9K gold",
+          "description": "Standard jewelry gold purity (37.5% or 9/24)",
+          "aliases": [
+            "9k",
+            "9 karat",
+            "ทอง 9k"
+          ],
+          "translations": {
+            "en": "9K Gold (37.5%)",
+            "th": "ทองคำ 9K (37.5%)"
+          }
+        }
+      ]
     }
   ],
   "conversionRules": {

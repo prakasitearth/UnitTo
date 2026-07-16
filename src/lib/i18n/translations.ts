@@ -655,6 +655,19 @@ export const CATEGORY_TRANSLATIONS: Record<string, Record<string, { name: string
     bn: { name: "রান্নার পরিমাপ", description: "রান্নার কাপ, টেবিল চামচ, চা চামচ, তরল আউন্স রূপান্তর করুন" },
     ja: { name: "料理の計量", description: "計量カップ、大さじ、小さじ、液量オンスを変換" },
   },
+  gold_purity: {
+    th: { name: "กะรัตทองคำ / เปอร์เซ็นต์ทอง", description: "แปลงความบริสุทธิ์ทองคำ กะรัตทอง เปอร์เซ็นต์ทอง ทอง 18K ทอง 23K ทอง 24K" },
+    en: { name: "Gold Purity / Karat", description: "Convert gold purity, karat to percentage, 24K, 22K, 18K, 9K gold" },
+    es: { name: "Pureza de Oro / Quilates", description: "Convierta pureza de oro, quilates a porcentaje, 24K, 18K, 14K" },
+    zh: { name: "黄金纯度 / 开", description: "换算黄金纯度、开数（K）为百分比、24K、18K、14K、9K黄金" },
+    hi: { name: "सोने की शुद्धता / कैरेट", description: "सोने की शुद्धता, कैरेट को प्रतिशत, 24K, 22K, 18K, 9K सोने में परिवर्तित करें" },
+    fr: { name: "Pureté de l'Or / Carat", description: "Convertir pureté de l'or, carat en pourcentage, 24K, 18K, 14K, 9K" },
+    pt: { name: "Pureza do Ouro / Quilate", description: "Converta pureza do ouro, quilates em porcentagem, 24K, 18K, 14K, 9K" },
+    ru: { name: "Проба Золота / Карат", description: "Конвертируйте чистоту золота, караты в проценты, 24K, 18K, 14K, 9K" },
+    ar: { name: "نقاء الذهب / القيراط", description: "تحويل نقاء الذهب، القيراط إلى نسبة مئوية، 24 قيراط، 18 قيراط" },
+    bn: { name: "সোনার বিশুদ্ধতা / ক্যারেট", description: "সোনার বিশুদ্ধতা, ক্যারেট থেকে শতকরা হিসাব, 24K, 18K, 14K রূপান্তর করুন" },
+    ja: { name: "金の純度 / カラット", description: "金の純度、カラット（K）をパーセンテージ、24K、18K, 14K, 9Kに変換" },
+  },
 };
 
 // ตารางแปลชื่อหน่วยทั้งหมดสำหรับการแสดงผลบน UI
