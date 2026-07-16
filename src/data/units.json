@@ -401,6 +401,16 @@
           "from": "jin_taiwan",
           "to": "gram",
           "slug": "catty-taiwan-to-grams"
+        },
+        {
+          "from": "chang",
+          "to": "kilogram",
+          "slug": "chang-to-kilograms"
+        },
+        {
+          "from": "hap",
+          "to": "kilogram",
+          "slug": "hap-to-kilograms"
         }
       ],
       "units": [

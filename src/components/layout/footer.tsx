@@ -26,6 +26,8 @@ export const Footer: React.FC = () => {
     { slug: "grams-to-oz", from: "gram", to: "ounce" },
     { slug: "baht-gold-to-grams", from: "baht_gold", to: "gram" },
     { slug: "tola-to-grams", from: "tola", to: "gram" },
+    { slug: "jin-china-to-grams", from: "jin_china", to: "gram" },
+    { slug: "catty-taiwan-to-grams", from: "jin_taiwan", to: "gram" },
   ];
 
   return (
