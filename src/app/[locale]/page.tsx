@@ -426,13 +426,13 @@ export default function Home() {
                 <h3 className="text-base font-bold text-gray-900 dark:text-gray-100">{t("regionTH")}</h3>
               </div>
               <div className="flex flex-wrap gap-2">
-                <Link href={`/${locale}/rai-to-square-meter`} className="text-xs font-bold px-2.5 py-1.5 bg-slate-50 hover:bg-blue-50 hover:text-blue-600 dark:bg-zinc-900 dark:hover:bg-zinc-800 rounded-xl border border-slate-200/60 dark:border-zinc-800 transition-all">{locale === "th" ? "ไร่ ➔ ตารางเมตร" : "Rai ➔ sq m"}</Link>
-                <Link href={`/${locale}/tarang-wa-to-square-meter`} className="text-xs font-bold px-2.5 py-1.5 bg-slate-50 hover:bg-blue-50 hover:text-blue-600 dark:bg-zinc-900 dark:hover:bg-zinc-800 rounded-xl border border-slate-200/60 dark:border-zinc-800 transition-all">{locale === "th" ? "ตารางวา ➔ ตารางเมตร" : "Tarang Wa ➔ sq m"}</Link>
-                <Link href={`/${locale}/ngan-to-square-meter`} className="text-xs font-bold px-2.5 py-1.5 bg-slate-50 hover:bg-blue-50 hover:text-blue-600 dark:bg-zinc-900 dark:hover:bg-zinc-800 rounded-xl border border-slate-200/60 dark:border-zinc-800 transition-all">{locale === "th" ? "งาน ➔ ตารางเมตร" : "Ngan ➔ sq m"}</Link>
-                <Link href={`/${locale}/wa-to-meter`} className="text-xs font-bold px-2.5 py-1.5 bg-slate-50 hover:bg-blue-50 hover:text-blue-600 dark:bg-zinc-900 dark:hover:bg-zinc-800 rounded-xl border border-slate-200/60 dark:border-zinc-800 transition-all">{locale === "th" ? "วา ➔ เมตร" : "Wa ➔ Meter"}</Link>
-                <Link href={`/${locale}/sok-to-meter`} className="text-xs font-bold px-2.5 py-1.5 bg-slate-50 hover:bg-blue-50 hover:text-blue-600 dark:bg-zinc-900 dark:hover:bg-zinc-800 rounded-xl border border-slate-200/60 dark:border-zinc-800 transition-all">{locale === "th" ? "ศอก ➔ เมตร" : "Sok ➔ Meter"}</Link>
-                <Link href={`/${locale}/baht-gold-to-gram`} className="text-xs font-bold px-2.5 py-1.5 bg-slate-50 hover:bg-blue-50 hover:text-blue-600 dark:bg-zinc-900 dark:hover:bg-zinc-800 rounded-xl border border-slate-200/60 dark:border-zinc-800 transition-all">{locale === "th" ? "บาททอง ➔ กรัม" : "Baht Gold ➔ Gram"}</Link>
-                <Link href={`/${locale}/salung-to-gram`} className="text-xs font-bold px-2.5 py-1.5 bg-slate-50 hover:bg-blue-50 hover:text-blue-600 dark:bg-zinc-900 dark:hover:bg-zinc-800 rounded-xl border border-slate-200/60 dark:border-zinc-800 transition-all">{locale === "th" ? "สลึง ➔ กรัม" : "Salung ➔ Gram"}</Link>
+                <Link href={`/${locale}/rai-to-square-meters`} className="text-xs font-bold px-2.5 py-1.5 bg-slate-50 hover:bg-blue-50 hover:text-blue-600 dark:bg-zinc-900 dark:hover:bg-zinc-800 rounded-xl border border-slate-200/60 dark:border-zinc-800 transition-all">{locale === "th" ? "ไร่ ➔ ตารางเมตร" : "Rai ➔ sq m"}</Link>
+                <Link href={`/${locale}/tarang-wa-to-square-meters`} className="text-xs font-bold px-2.5 py-1.5 bg-slate-50 hover:bg-blue-50 hover:text-blue-600 dark:bg-zinc-900 dark:hover:bg-zinc-800 rounded-xl border border-slate-200/60 dark:border-zinc-800 transition-all">{locale === "th" ? "ตารางวา ➔ ตารางเมตร" : "Tarang Wa ➔ sq m"}</Link>
+                <Link href={`/${locale}/ngan-to-square-meters`} className="text-xs font-bold px-2.5 py-1.5 bg-slate-50 hover:bg-blue-50 hover:text-blue-600 dark:bg-zinc-900 dark:hover:bg-zinc-800 rounded-xl border border-slate-200/60 dark:border-zinc-800 transition-all">{locale === "th" ? "งาน ➔ ตารางเมตร" : "Ngan ➔ sq m"}</Link>
+                <Link href={`/${locale}/wa-to-meters`} className="text-xs font-bold px-2.5 py-1.5 bg-slate-50 hover:bg-blue-50 hover:text-blue-600 dark:bg-zinc-900 dark:hover:bg-zinc-800 rounded-xl border border-slate-200/60 dark:border-zinc-800 transition-all">{locale === "th" ? "วา ➔ เมตร" : "Wa ➔ Meter"}</Link>
+                <Link href={`/${locale}/sok-to-meters`} className="text-xs font-bold px-2.5 py-1.5 bg-slate-50 hover:bg-blue-50 hover:text-blue-600 dark:bg-zinc-900 dark:hover:bg-zinc-800 rounded-xl border border-slate-200/60 dark:border-zinc-800 transition-all">{locale === "th" ? "ศอก ➔ เมตร" : "Sok ➔ Meter"}</Link>
+                <Link href={`/${locale}/baht-gold-to-grams`} className="text-xs font-bold px-2.5 py-1.5 bg-slate-50 hover:bg-blue-50 hover:text-blue-600 dark:bg-zinc-900 dark:hover:bg-zinc-800 rounded-xl border border-slate-200/60 dark:border-zinc-800 transition-all">{locale === "th" ? "บาททอง ➔ กรัม" : "Baht Gold ➔ Gram"}</Link>
+                <Link href={`/${locale}/salung-to-grams`} className="text-xs font-bold px-2.5 py-1.5 bg-slate-50 hover:bg-blue-50 hover:text-blue-600 dark:bg-zinc-900 dark:hover:bg-zinc-800 rounded-xl border border-slate-200/60 dark:border-zinc-800 transition-all">{locale === "th" ? "สลึง ➔ กรัม" : "Salung ➔ Gram"}</Link>
               </div>
             </div>
 
@@ -443,8 +443,8 @@ export default function Home() {
                 <h3 className="text-base font-bold text-gray-900 dark:text-gray-100">{t("regionJP")}</h3>
               </div>
               <div className="flex flex-wrap gap-2">
-                <Link href={`/${locale}/tsubo-pyeong-to-square-meter`} className="text-xs font-bold px-2.5 py-1.5 bg-slate-50 hover:bg-blue-50 hover:text-blue-600 dark:bg-zinc-900 dark:hover:bg-zinc-800 rounded-xl border border-slate-200/60 dark:border-zinc-800 transition-all">{locale === "th" ? "สึโบะ (坪) ➔ ตารางเมตร" : "Tsubo (坪) ➔ sq m"}</Link>
-                <Link href={`/${locale}/jo-tatami-to-square-meter`} className="text-xs font-bold px-2.5 py-1.5 bg-slate-50 hover:bg-blue-50 hover:text-blue-600 dark:bg-zinc-900 dark:hover:bg-zinc-800 rounded-xl border border-slate-200/60 dark:border-zinc-800 transition-all">{locale === "th" ? "ทาทามิ (畳) ➔ ตารางเมตร" : "Tatami (畳) ➔ sq m"}</Link>
+                <Link href={`/${locale}/tsubo-pyeong-to-square-meters`} className="text-xs font-bold px-2.5 py-1.5 bg-slate-50 hover:bg-blue-50 hover:text-blue-600 dark:bg-zinc-900 dark:hover:bg-zinc-800 rounded-xl border border-slate-200/60 dark:border-zinc-800 transition-all">{locale === "th" ? "สึโบะ (坪) ➔ ตารางเมตร" : "Tsubo (坪) ➔ sq m"}</Link>
+                <Link href={`/${locale}/jo-tatami-to-square-meters`} className="text-xs font-bold px-2.5 py-1.5 bg-slate-50 hover:bg-blue-50 hover:text-blue-600 dark:bg-zinc-900 dark:hover:bg-zinc-800 rounded-xl border border-slate-200/60 dark:border-zinc-800 transition-all">{locale === "th" ? "ทาทามิ (畳) ➔ ตารางเมตร" : "Tatami (畳) ➔ sq m"}</Link>
               </div>
             </div>
 
@@ -455,7 +455,7 @@ export default function Home() {
                 <h3 className="text-base font-bold text-gray-900 dark:text-gray-100">{t("regionIN")}</h3>
               </div>
               <div className="flex flex-wrap gap-2">
-                <Link href={`/${locale}/tola-to-gram`} className="text-xs font-bold px-2.5 py-1.5 bg-slate-50 hover:bg-blue-50 hover:text-blue-600 dark:bg-zinc-900 dark:hover:bg-zinc-800 rounded-xl border border-slate-200/60 dark:border-zinc-800 transition-all">{locale === "th" ? "โทลา (tola) ➔ กรัม" : "Tola (tola) ➔ Gram"}</Link>
+                <Link href={`/${locale}/tola-to-grams`} className="text-xs font-bold px-2.5 py-1.5 bg-slate-50 hover:bg-blue-50 hover:text-blue-600 dark:bg-zinc-900 dark:hover:bg-zinc-800 rounded-xl border border-slate-200/60 dark:border-zinc-800 transition-all">{locale === "th" ? "โทลา (tola) ➔ กรัม" : "Tola (tola) ➔ Gram"}</Link>
               </div>
             </div>
 
@@ -466,7 +466,7 @@ export default function Home() {
                 <h3 className="text-base font-bold text-gray-900 dark:text-gray-100">{t("regionCN")}</h3>
               </div>
               <div className="flex flex-wrap gap-2">
-                <Link href={`/${locale}/jin-china-to-gram`} className="text-xs font-bold px-2.5 py-1.5 bg-slate-50 hover:bg-blue-50 hover:text-blue-600 dark:bg-zinc-900 dark:hover:bg-zinc-800 rounded-xl border border-slate-200/60 dark:border-zinc-800 transition-all">{locale === "th" ? "จิน (斤) ➔ กรัม" : "Jin (斤) ➔ Gram"}</Link>
+                <Link href={`/${locale}/jin-china-to-grams`} className="text-xs font-bold px-2.5 py-1.5 bg-slate-50 hover:bg-blue-50 hover:text-blue-600 dark:bg-zinc-900 dark:hover:bg-zinc-800 rounded-xl border border-slate-200/60 dark:border-zinc-800 transition-all">{locale === "th" ? "จิน (斤) ➔ กรัม" : "Jin (斤) ➔ Gram"}</Link>
               </div>
             </div>
 
@@ -477,7 +477,7 @@ export default function Home() {
                 <h3 className="text-base font-bold text-gray-900 dark:text-gray-100">{t("regionTW")}</h3>
               </div>
               <div className="flex flex-wrap gap-2">
-                <Link href={`/${locale}/catty-taiwan-to-gram`} className="text-xs font-bold px-2.5 py-1.5 bg-slate-50 hover:bg-blue-50 hover:text-blue-600 dark:bg-zinc-900 dark:hover:bg-zinc-800 rounded-xl border border-slate-200/60 dark:border-zinc-800 transition-all">{locale === "th" ? "จินไต้หวัน (台斤) ➔ กรัม" : "Taigin / Catty ➔ Gram"}</Link>
+                <Link href={`/${locale}/catty-taiwan-to-grams`} className="text-xs font-bold px-2.5 py-1.5 bg-slate-50 hover:bg-blue-50 hover:text-blue-600 dark:bg-zinc-900 dark:hover:bg-zinc-800 rounded-xl border border-slate-200/60 dark:border-zinc-800 transition-all">{locale === "th" ? "จินไต้หวัน (台斤) ➔ กรัม" : "Taigin / Catty ➔ Gram"}</Link>
               </div>
             </div>
 
@@ -488,7 +488,7 @@ export default function Home() {
                 <h3 className="text-base font-bold text-gray-900 dark:text-gray-100">{t("regionKR")}</h3>
               </div>
               <div className="flex flex-wrap gap-2">
-                <Link href={`/${locale}/tsubo-pyeong-to-square-meter`} className="text-xs font-bold px-2.5 py-1.5 bg-slate-50 hover:bg-blue-50 hover:text-blue-600 dark:bg-zinc-900 dark:hover:bg-zinc-800 rounded-xl border border-slate-200/60 dark:border-zinc-800 transition-all">{locale === "th" ? "พยอง (평) ➔ ตารางเมตร" : "Pyeong (평) ➔ sq m"}</Link>
+                <Link href={`/${locale}/tsubo-pyeong-to-square-meters`} className="text-xs font-bold px-2.5 py-1.5 bg-slate-50 hover:bg-blue-50 hover:text-blue-600 dark:bg-zinc-900 dark:hover:bg-zinc-800 rounded-xl border border-slate-200/60 dark:border-zinc-800 transition-all">{locale === "th" ? "พยอง (평) ➔ ตารางเมตร" : "Pyeong (평) ➔ sq m"}</Link>
               </div>
             </div>
 
