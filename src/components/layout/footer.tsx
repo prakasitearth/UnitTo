@@ -148,7 +148,7 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2 text-xs font-semibold">
               <li>
                 <Link 
-                  href={`/${locale}/tools/widget-generator`} 
+                  href={`/${locale}#homepage-widget-heading`} 
                   onClick={() => trackEvent("click_footer_link", "footer", "widget-generator")}
                   className="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                 >

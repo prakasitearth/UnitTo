@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { getWebSiteSchema } from "@/lib/seo/metadata";
 import { RecentConversions } from "@/components/converter/recent-conversions";
@@ -147,12 +147,28 @@ const CATEGORY_STYLES: Record<string, CategoryStyle> = {
     textClass: "group-hover:text-indigo-600 dark:group-hover:text-indigo-400"
   }
 };
-
 export default function Home() {
   const { locale, t, tUnit, tCategory } = useLocale();
   const { history, isMounted: recentMounted } = useRecentConversions();
   const { favorites, isMounted: favMounted } = useFavoriteConversions();
   const websiteSchema = getWebSiteSchema();
+
+  // States for homepage widget creator
+  const [widgetCatId, setWidgetCatId] = useState<string>("length");
+  const [widgetFromId, setWidgetFromId] = useState<string>("meter");
+  const [widgetToId, setWidgetToId] = useState<string>("foot");
+  const [widgetCopied, setWidgetCopied] = useState<boolean>(false);
+
+  const activeWidgetCat = db.categories.find(c => c.id === widgetCatId) || db.categories[0];
+
+  useEffect(() => {
+    if (activeWidgetCat) {
+      setWidgetFromId(activeWidgetCat.units[0].id);
+      setWidgetToId(activeWidgetCat.units[1]?.id || activeWidgetCat.units[0].id);
+    }
+  }, [widgetCatId, activeWidgetCat]);
+
+  const baseUrl = typeof window !== "undefined" ? window.location.origin : "https://unittogo.com";
 
   const handleSearchTrigger = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -420,8 +436,8 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             
             {/* Tool 1: Widget Generator */}
-            <Link
-              href={`/${locale}/tools/widget-generator`}
+            <a
+              href="#homepage-widget-heading"
               className="p-6 bg-white dark:bg-zinc-950 border border-slate-200/70 dark:border-zinc-800/75 rounded-2xl space-y-3 shadow-2xs hover:shadow-md hover:border-blue-500 transition-all duration-200"
             >
               <div className="text-3xl">⚙️</div>
@@ -433,7 +449,7 @@ export default function Home() {
                   ? "ปรับแต่งกล่องคำนวณและก็อปปี้โค้ด iframe ไปวางบนเว็บของคุณฟรี" 
                   : "Customize and embed our calculator widgets on your website or blog."}
               </p>
-            </Link>
+            </a>
 
             {/* Tool 2: Baking Recipe Scaler */}
             <Link
@@ -485,6 +501,136 @@ export default function Home() {
               </p>
             </a>
 
+          </div>
+        </div>
+      </section>
+
+      {/* 2.6 INTERACTIVE WIDGET GENERATOR SECTION */}
+      <section className="py-14 md:py-20 border-b border-slate-100 dark:border-zinc-900/40 bg-zinc-50/30 dark:bg-zinc-950/20" aria-labelledby="homepage-widget-heading">
+        <div className="max-w-7xl mx-auto px-4 space-y-8">
+          <div className="flex flex-col md:flex-row items-baseline justify-between border-b border-slate-200/80 dark:border-zinc-900 pb-2">
+            <h2 id="homepage-widget-heading" className="text-xl md:text-2xl font-black text-gray-900 dark:text-gray-50 font-sans tracking-tight">
+              {locale === "th" ? "เครื่องมือสร้างกล่องคำนวณฝังเว็บฟรี (Embeddable Widget)" : "Free Embeddable Widget Generator"}
+            </h2>
+            <span className="text-[10px] text-slate-400 dark:text-slate-500 font-mono font-bold uppercase tracking-wider mt-1 md:mt-0">
+              {locale === "th" ? "[แจกฟรีโค้ด iframe ติดบล็อก/เว็บไซต์]" : "[FREE WIDGET CREATOR]"}
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-white dark:bg-zinc-950 border border-slate-200/80 dark:border-zinc-800/80 rounded-3xl p-6 md:p-8 shadow-sm">
+            {/* Left Column: Controls */}
+            <div className="lg:col-span-6 space-y-5">
+              <div className="space-y-1.5">
+                <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100">
+                  {locale === "th" ? "เพิ่มเครื่องมือคำนวณในเว็บของคุณ" : "Add a Converter to Your Website"}
+                </h3>
+                <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-semibold">
+                  {locale === "th" 
+                    ? "ก็อปปี้โค้ดไปวางในบล็อกสูตรอาหาร เว็บรีวิวสินค้า หรือเว็บบล็อกอสังหาริมทรัพย์ของคุณได้ฟรี เพื่อความสะดวกของผู้อ่าน" 
+                    : "Copy and paste the HTML code to embed this converter tool on your website, recipe blog, or forum for free."}
+                </p>
+              </div>
+
+              {/* Selectors */}
+              <div className="space-y-4">
+                <div className="space-y-1.5">
+                  <label className="block text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">
+                    {locale === "th" ? "เลือกหมวดหมู่การแปลง" : "Category"}
+                  </label>
+                  <select
+                    value={widgetCatId}
+                    onChange={(e) => setWidgetCatId(e.target.value)}
+                    className="w-full bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-xl px-4 py-2.5 text-xs font-semibold text-slate-700 dark:text-slate-350 outline-none cursor-pointer focus:border-blue-500"
+                  >
+                    {db.categories.map(cat => (
+                      <option key={cat.id} value={cat.id}>
+                        {cat.icon} {locale === "th" ? cat.translations?.th || cat.name : cat.translations?.en || cat.name}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="space-y-1.5">
+                    <label className="block text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">
+                      {locale === "th" ? "หน่วยเริ่มต้น" : "From Unit"}
+                    </label>
+                    <select
+                      value={widgetFromId}
+                      onChange={(e) => setWidgetFromId(e.target.value)}
+                      className="w-full bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-xl px-4 py-2.5 text-xs font-semibold text-slate-700 dark:text-slate-350 outline-none cursor-pointer focus:border-blue-500"
+                    >
+                      {activeWidgetCat.units.map(unit => (
+                        <option key={unit.id} value={unit.id}>
+                          {unit.symbol} ({locale === "th" ? unit.translations?.th || unit.name : unit.translations?.en || unit.name})
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+
+                  <div className="space-y-1.5">
+                    <label className="block text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">
+                      {locale === "th" ? "หน่วยปลายทาง" : "To Unit"}
+                    </label>
+                    <select
+                      value={widgetToId}
+                      onChange={(e) => setWidgetToId(e.target.value)}
+                      className="w-full bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-xl px-4 py-2.5 text-xs font-semibold text-slate-700 dark:text-slate-355 outline-none cursor-pointer focus:border-blue-500"
+                    >
+                      {activeWidgetCat.units.map(unit => (
+                        <option key={unit.id} value={unit.id}>
+                          {unit.symbol} ({locale === "th" ? unit.translations?.th || unit.name : unit.translations?.en || unit.name})
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              {/* Action and Embed code */}
+              <div className="space-y-3 pt-2">
+                <textarea
+                  readOnly
+                  value={`<iframe src="${baseUrl}/${locale}/widget/${widgetFromId}-to-${widgetToId}" width="100%" height="280" style="border:1px solid #e2e8f0; border-radius:16px;"></iframe>`}
+                  onClick={(e) => (e.target as HTMLTextAreaElement).select()}
+                  className="w-full h-16 bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-xl p-2.5 font-mono text-[9px] text-slate-550 dark:text-slate-350 outline-none resize-none select-all"
+                />
+
+                <button
+                  onClick={async () => {
+                    const code = `<iframe src="${baseUrl}/${locale}/widget/${widgetFromId}-to-${widgetToId}" width="100%" height="280" style="border:1px solid #e2e8f0; border-radius:16px;"></iframe>`;
+                    try {
+                      await navigator.clipboard.writeText(code);
+                      setWidgetCopied(true);
+                      setTimeout(() => setWidgetCopied(false), 2000);
+                    } catch (err) {
+                      console.error("Failed to copy:", err);
+                    }
+                  }}
+                  className={`w-full py-2.5 rounded-xl text-xs font-bold text-white transition-all cursor-pointer ${
+                    widgetCopied ? "bg-green-500" : "bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 active:scale-98 shadow-sm"
+                  }`}
+                >
+                  {widgetCopied ? (locale === "th" ? "คัดลอกสำเร็จแล้ว! ⚡" : "Copied! ⚡") : (locale === "th" ? "คัดลอกโค้ดฝังเว็บ" : "Copy Embed Code")}
+                </button>
+              </div>
+            </div>
+
+            {/* Right Column: Live Iframe Preview */}
+            <div className="lg:col-span-6 space-y-3">
+              <h4 className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">
+                {locale === "th" ? "👁️ ตัวอย่างการแสดงผลจริง" : "👁️ Live Preview"}
+              </h4>
+              <div className="border border-slate-200 dark:border-zinc-800 rounded-2xl bg-slate-50 dark:bg-zinc-950 overflow-hidden shadow-2xs">
+                <iframe
+                  key={`${widgetFromId}:${widgetToId}`}
+                  src={`${baseUrl}/${locale}/widget/${widgetFromId}-to-${widgetToId}`}
+                  width="100%"
+                  height="280"
+                  style={{ border: "none" }}
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
