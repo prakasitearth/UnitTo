@@ -146,15 +146,7 @@ export const Footer: React.FC = () => {
               {locale === "th" ? "เครื่องมือเพิ่มเติม" : "Tools & Extension"}
             </h4>
             <ul className="space-y-2 text-xs font-semibold">
-              <li>
-                <Link 
-                  href={`/${locale}#homepage-widget-heading`} 
-                  onClick={() => trackEvent("click_footer_link", "footer", "widget-generator")}
-                  className="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                >
-                  ⚙️ Widget Generator
-                </Link>
-              </li>
+
               <li>
                 <Link 
                   href={`/${locale}/tools/recipe-scaler`} 

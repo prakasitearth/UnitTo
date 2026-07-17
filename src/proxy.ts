@@ -1,13 +1,18 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import crypto from "crypto";
 
 const locales = ["th", "en", "es", "zh", "hi", "fr", "pt", "ru", "ar", "bn", "ja"];
 const defaultLocale = "en";
 
 // Simple and secure session check based on hash of the password
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "Keysersoz3";
-const expectedSessionToken = crypto.createHash("sha256").update(ADMIN_PASSWORD).digest("hex");
+
+async function sha256(message: string): Promise<string> {
+  const msgBuffer = new TextEncoder().encode(message);
+  const hashBuffer = await crypto.subtle.digest("SHA-256", msgBuffer);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  return hashArray.map((b) => b.toString(16).padStart(2, "0")).join("");
+}
 
 
 interface DeviceInfo {
@@ -111,10 +116,12 @@ function getBrowserLocale(request: NextRequest): string {
 /**
  * Next.js 16 Proxy Convention - Handles request interception, redirects, and preference cookies.
  */
-export function proxy(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const ua = request.headers.get("User-Agent");
   const device = parseUserAgent(ua);
+
+  const expectedSessionToken = await sha256(ADMIN_PASSWORD);
 
   // ตั้งค่าหัวข้อสตรีมข้อมูลอุปกรณ์สำหรับส่งต่อไปยัง Layout / Server Components
   const requestHeaders = new Headers(request.headers);
