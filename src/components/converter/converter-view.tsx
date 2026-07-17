@@ -14,6 +14,7 @@ import {
 } from "@/lib/seo/metadata";
 import { ConverterForm } from "./converter-form";
 import { MultiUnitConverter } from "./multi-unit-converter";
+import { SeoContentSection } from "./seo-content-section";
 
 // Initialize a static converter instance for static data calculations (like conversion tables)
 const staticConverter = new UnitConverter(unitsDataRaw as unknown as ConversionDatabase);
@@ -231,30 +232,15 @@ export const ConverterView: React.FC<ConverterViewProps> = ({ category, fromUnit
         </div>
       </section>
 
-      {/* SEO FAQ Section */}
-      <section className="bg-white dark:bg-zinc-900 border border-gray-100 dark:border-zinc-800 rounded-2xl p-6 mb-8" aria-labelledby="faq-heading">
-        <h2 id="faq-heading" className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4">
-          {t("faq")}
-        </h2>
-        <div className="space-y-4">
-          <div>
-            <h3 className="font-bold text-gray-800 dark:text-gray-200 text-sm mb-1">
-              {"How do you convert " + localizedFrom + " to " + localizedTo + "?"}
-            </h3>
-            <p className="text-sm text-gray-600 dark:text-gray-400">
-              {"To convert " + localizedFrom + " to " + localizedTo + ", follow the standard formula: " + formulaText + ". For example, 1 " + fromUnit.name + " is equal to " + conversions[0].result + " " + (toUnit.plural || toUnit.name) + "."}
-            </p>
-          </div>
-          <div>
-            <h3 className="font-bold text-gray-800 dark:text-gray-200 text-sm mb-1">
-              {"What is the formula to convert " + fromUnit.name + " to " + toUnit.name + "?"}
-            </h3>
-            <p className="text-sm text-gray-600 dark:text-gray-400">
-              The conversion formula is: {formulaText}.
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* Rich Programmatic SEO Content Section */}
+      <SeoContentSection
+        category={category}
+        fromUnit={fromUnit}
+        toUnit={toUnit}
+        locale={locale}
+        tUnit={tUnit}
+        tCategory={tCategory}
+      />
     </div>
   );
 };
