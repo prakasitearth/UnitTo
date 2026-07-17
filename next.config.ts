@@ -46,7 +46,7 @@ const widgetCsp = [
 
 // ===== Security Headers Config Builder =====
 const getSecurityHeaders = (isWidget: boolean) => {
-  const headers = [
+  return [
     // Enable DNS prefetch
     { key: "X-DNS-Prefetch-Control", value: "on" },
     // Force HTTPS for 2 years (only in production)
@@ -70,30 +70,29 @@ const getSecurityHeaders = (isWidget: boolean) => {
       key: "Content-Security-Policy", 
       value: isWidget ? widgetCsp : generalCsp 
     },
+    // X-Frame-Options clickjacking protection (DENY for normal pages, ALLOWALL for widgets to allow embedding)
+    {
+      key: "X-Frame-Options",
+      value: isWidget ? "ALLOWALL" : "DENY"
+    }
   ];
-
-  if (!isWidget) {
-    headers.push({ key: "X-Frame-Options", value: "DENY" });
-  }
-
-  return headers;
 };
 
 const nextConfig: NextConfig = {
-  // Apply security headers selectively
+  // Apply security headers via sequential overrides
   async headers() {
     return [
-      // 1. Headers for normal pages (blocking all iframe embedding)
+      // 1. Headers for ALL pages by default (deny embedding)
       {
-        source: "/((?!.*widget).*)",
+        source: "/:path*",
         headers: getSecurityHeaders(false),
       },
-      // 2. Headers for widget pages with locale path (allowing framing)
+      // 2. Overwrite headers for widget pages with locale path (allow embedding)
       {
         source: "/:locale/widget/:slug*",
         headers: getSecurityHeaders(true),
       },
-      // 3. Headers for widget pages without locale path (allowing framing)
+      // 3. Overwrite headers for widget pages without locale path (allow embedding)
       {
         source: "/widget/:slug*",
         headers: getSecurityHeaders(true),
