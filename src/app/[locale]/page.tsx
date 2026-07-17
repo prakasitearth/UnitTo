@@ -290,11 +290,11 @@ export default function Home() {
             <div className="absolute -bottom-1 -left-1 w-3 h-3 border-b-2 border-l-2 border-sky-500/25 dark:border-sky-400/20 group-hover:border-sky-500/60 dark:group-hover:border-sky-400/50 transition-colors pointer-events-none hidden sm:block" />
             <div className="absolute -bottom-1 -right-1 w-3 h-3 border-b-2 border-r-2 border-sky-500/25 dark:border-sky-400/20 group-hover:border-sky-500/60 dark:group-hover:border-sky-400/50 transition-colors pointer-events-none hidden sm:block" />
 
-            <div className="bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md border border-slate-200/80 dark:border-zinc-800/80 rounded-2xl p-6 md:p-8 shadow-xl space-y-6 md:space-y-8 text-left">
+            <div className="bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md border border-slate-200/80 dark:border-zinc-800/80 rounded-2xl p-4 sm:p-6 md:p-8 shadow-xl space-y-6 md:space-y-8 text-left">
               
               {/* Category Dropdown (Super easy to select & works across all screen sizes) */}
               <div className="space-y-2">
-                <label className="block text-[11px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">
+                <label className="block text-[11px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider text-center md:text-left">
                   {locale === "th" ? "หมวดหมู่การวัด" : "Measurement Category"}
                 </label>
                 <div className="relative">
@@ -321,7 +321,7 @@ export default function Home() {
               <div className="grid grid-cols-1 md:grid-cols-11 gap-6 items-center">
                 {/* Left side: From block */}
                 <div className="md:col-span-5 space-y-3">
-                  <label className="block text-[11px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">
+                  <label className="block text-[11px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider text-center md:text-left">
                     {locale === "th" ? "ค่าเริ่มต้น (แปลงจาก)" : "From"}
                   </label>
                   <div className="space-y-2">
@@ -330,7 +330,7 @@ export default function Home() {
                       inputMode="decimal"
                       value={heroValFrom}
                       onChange={(e) => setHeroValFrom(e.target.value)}
-                      className="w-full text-3xl md:text-4xl font-black text-slate-900 dark:text-slate-55 bg-transparent border-b border-slate-200/80 dark:border-zinc-800 pb-2 focus:border-blue-500 outline-none transition-colors"
+                      className="w-full text-3xl md:text-4xl font-black text-slate-900 dark:text-slate-55 bg-transparent border-b border-slate-200/80 dark:border-zinc-800 pb-2 focus:border-blue-500 outline-none transition-colors text-center md:text-left"
                       placeholder="0"
                     />
                     <div className="relative">
@@ -358,7 +358,7 @@ export default function Home() {
                 <div className="md:col-span-1 flex justify-center pt-2 md:pt-6">
                   <button
                     onClick={handleHeroSwap}
-                    className={`p-3.5 rounded-full bg-slate-100 hover:bg-slate-200 dark:bg-zinc-900 dark:hover:bg-zinc-800 border border-slate-200/80 dark:border-zinc-800/80 text-slate-650 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 cursor-pointer active:scale-95 transition-all shadow-md ${
+                    className={`p-3.5 rounded-full bg-slate-100 hover:bg-slate-200 dark:bg-zinc-900 dark:hover:bg-zinc-800 border border-slate-200/80 dark:border-zinc-800/80 text-slate-655 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 cursor-pointer active:scale-95 transition-all shadow-md ${
                       isHeroSwapping ? "rotate-180" : ""
                     } duration-300`}
                   >
@@ -370,7 +370,7 @@ export default function Home() {
 
                 {/* Right side: To block */}
                 <div className="md:col-span-5 space-y-3">
-                  <label className="block text-[11px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">
+                  <label className="block text-[11px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider text-center md:text-left">
                     {locale === "th" ? "ผลลัพธ์ (แปลงเป็น)" : "To"}
                   </label>
                   <div className="space-y-2">
@@ -378,7 +378,7 @@ export default function Home() {
                       type="text"
                       readOnly
                       value={heroValTo}
-                      className="w-full text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 bg-transparent border-b border-slate-200/80 dark:border-zinc-800 pb-2 outline-none select-all"
+                      className="w-full text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-450 bg-transparent border-b border-slate-200/80 dark:border-zinc-800 pb-2 outline-none select-all text-center md:text-left"
                       placeholder="0"
                     />
                     <div className="relative">
@@ -404,18 +404,18 @@ export default function Home() {
               </div>
 
               {/* Error or Actions Footer */}
-              <div className="flex flex-col sm:flex-row justify-between items-center pt-2 gap-3 text-xs border-t border-slate-100 dark:border-zinc-900 pt-4">
+              <div className="flex flex-col md:flex-row justify-between items-center pt-2 gap-4 text-xs border-t border-slate-100 dark:border-zinc-900 pt-4">
                 {heroError ? (
-                  <div className="text-red-500 font-bold">⚠️ {heroError}</div>
+                  <div className="text-red-500 font-bold text-center md:text-left w-full md:w-auto">⚠️ {heroError}</div>
                 ) : (
-                  <div className="text-slate-400 dark:text-slate-500 font-semibold font-mono text-sm">
+                  <div className="text-slate-400 dark:text-slate-500 font-semibold font-mono text-sm text-center md:text-left w-full md:w-auto">
                     {heroValFrom} {activeHeroFrom.symbol} = {heroValTo || "0"} {activeHeroTo.symbol}
                   </div>
                 )}
                 
                 <Link
                   href={`/${locale}/${activeHeroFrom.plural || activeHeroFrom.id}-to-${activeHeroTo.plural || activeHeroTo.id}?val=${heroValFrom}`.toLowerCase().replace(/\s+/g, "-")}
-                  className="px-5 py-2.5 bg-slate-100 hover:bg-slate-200 dark:bg-zinc-900 dark:hover:bg-zinc-850 text-blue-650 dark:text-blue-400 rounded-xl font-extrabold flex items-center gap-1.5 hover:underline active:scale-98 text-sm"
+                  className="w-full md:w-auto px-5 py-2.5 bg-slate-100 hover:bg-slate-200 dark:bg-zinc-900 dark:hover:bg-zinc-850 text-blue-650 dark:text-blue-400 rounded-xl font-extrabold flex items-center justify-center gap-1.5 hover:underline active:scale-98 text-sm"
                 >
                   {locale === "th" ? "ดูสูตรและวิธีคำนวณอย่างละเอียด" : "View Formulas & Steps"} ➔
                 </Link>
