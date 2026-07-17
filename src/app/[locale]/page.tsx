@@ -283,104 +283,122 @@ export default function Home() {
           </p>
 
           {/* Universal Hero Converter Card */}
-          <div className="max-w-3xl mx-auto pt-4 relative group">
+          <div className="max-w-4xl mx-auto pt-4 relative group">
             {/* Corner blueprint guidelines */}
             <div className="absolute -top-1 -left-1 w-3 h-3 border-t-2 border-l-2 border-sky-500/25 dark:border-sky-400/20 group-hover:border-sky-500/60 dark:group-hover:border-sky-400/50 transition-colors pointer-events-none hidden sm:block" />
             <div className="absolute -top-1 -right-1 w-3 h-3 border-t-2 border-r-2 border-sky-500/25 dark:border-sky-400/20 group-hover:border-sky-500/60 dark:group-hover:border-sky-400/50 transition-colors pointer-events-none hidden sm:block" />
             <div className="absolute -bottom-1 -left-1 w-3 h-3 border-b-2 border-l-2 border-sky-500/25 dark:border-sky-400/20 group-hover:border-sky-500/60 dark:group-hover:border-sky-400/50 transition-colors pointer-events-none hidden sm:block" />
             <div className="absolute -bottom-1 -right-1 w-3 h-3 border-b-2 border-r-2 border-sky-500/25 dark:border-sky-400/20 group-hover:border-sky-500/60 dark:group-hover:border-sky-400/50 transition-colors pointer-events-none hidden sm:block" />
 
-            <div className="bg-white/85 dark:bg-zinc-950/85 backdrop-blur-md border border-slate-200/80 dark:border-zinc-800/80 rounded-2xl p-6 shadow-xl space-y-6 text-left">
+            <div className="bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md border border-slate-200/80 dark:border-zinc-800/80 rounded-2xl p-6 md:p-8 shadow-xl space-y-6 md:space-y-8 text-left">
               
-              {/* Category tabs */}
-              <div className="flex overflow-x-auto gap-2 pb-2 scrollbar-none justify-start border-b border-slate-100 dark:border-zinc-900 pb-4">
-                {db.categories.map((cat) => {
-                  const isActive = cat.id === heroCatId;
-                  return (
-                    <button
-                      key={cat.id}
-                      onClick={() => setHeroCatId(cat.id)}
-                      className={`px-3.5 py-1.5 rounded-xl text-xs font-extrabold whitespace-nowrap cursor-pointer transition-all flex items-center gap-1.5 border ${
-                        isActive 
-                          ? "bg-blue-600 border-blue-600 text-white shadow-sm" 
-                          : "bg-slate-50/50 dark:bg-zinc-900/40 border-slate-200/60 dark:border-zinc-800/50 text-slate-650 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-zinc-850"
-                      }`}
-                    >
-                      <span>{cat.icon}</span>
-                      <span>{locale === "th" ? cat.translations?.th || cat.name : cat.translations?.en || cat.name}</span>
-                    </button>
-                  );
-                })}
+              {/* Category Dropdown (Super easy to select & works across all screen sizes) */}
+              <div className="space-y-2">
+                <label className="block text-[11px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">
+                  {locale === "th" ? "หมวดหมู่การวัด" : "Measurement Category"}
+                </label>
+                <div className="relative">
+                  <select
+                    value={heroCatId}
+                    onChange={(e) => setHeroCatId(e.target.value)}
+                    className="w-full bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-xl px-4 py-3.5 text-base font-extrabold text-slate-800 dark:text-slate-200 outline-none cursor-pointer appearance-none focus:border-blue-500 transition-colors"
+                  >
+                    {db.categories.map((cat) => (
+                      <option key={cat.id} value={cat.id}>
+                        {cat.icon} &nbsp; {locale === "th" ? cat.translations?.th || cat.name : cat.translations?.en || cat.name}
+                      </option>
+                    ))}
+                  </select>
+                  <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none text-slate-500">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                </div>
               </div>
 
-              {/* Converter Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-11 gap-4 items-center">
-                {/* Left side: From input */}
-                <div className="md:col-span-5 space-y-2">
-                  <label className="block text-[10px] font-bold text-slate-450 dark:text-slate-500 uppercase tracking-wider">
-                    {locale === "th" ? "ค่าเริ่มต้น" : "From Value"}
+              {/* Converter Grid (Google Style Layout) */}
+              <div className="grid grid-cols-1 md:grid-cols-11 gap-6 items-center">
+                {/* Left side: From block */}
+                <div className="md:col-span-5 space-y-3">
+                  <label className="block text-[11px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">
+                    {locale === "th" ? "ค่าเริ่มต้น (แปลงจาก)" : "From"}
                   </label>
-                  <div className="relative flex items-center bg-slate-50 dark:bg-zinc-900 border border-slate-200/80 dark:border-zinc-800/80 rounded-xl px-3 focus-within:border-blue-500">
+                  <div className="space-y-2">
                     <input
                       type="text"
                       inputMode="decimal"
                       value={heroValFrom}
                       onChange={(e) => setHeroValFrom(e.target.value)}
-                      className="w-full py-3 bg-transparent text-sm font-bold text-slate-900 dark:text-slate-100 outline-none pr-2"
+                      className="w-full text-3xl md:text-4xl font-black text-slate-900 dark:text-slate-55 bg-transparent border-b border-slate-200/80 dark:border-zinc-800 pb-2 focus:border-blue-500 outline-none transition-colors"
                       placeholder="0"
                     />
-                    <select
-                      value={heroFromId}
-                      onChange={(e) => setHeroFromId(e.target.value)}
-                      className="bg-white dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 rounded-lg px-2.5 py-1 text-[11px] font-bold text-slate-650 dark:text-slate-350 outline-none cursor-pointer max-w-[130px] truncate"
-                    >
-                      {activeHeroCat.units.map((unit) => (
-                        <option key={unit.id} value={unit.id}>
-                          {unit.symbol} ({locale === "th" ? unit.translations?.th || unit.name : unit.translations?.en || unit.name})
-                        </option>
-                      ))}
-                    </select>
+                    <div className="relative">
+                      <select
+                        value={heroFromId}
+                        onChange={(e) => setHeroFromId(e.target.value)}
+                        className="w-full bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-xl px-4 py-3 text-base font-extrabold text-slate-700 dark:text-slate-300 outline-none cursor-pointer appearance-none focus:border-blue-500 transition-colors"
+                      >
+                        {activeHeroCat.units.map((unit) => (
+                          <option key={unit.id} value={unit.id}>
+                            {unit.symbol} ({locale === "th" ? unit.translations?.th || unit.name : unit.translations?.en || unit.name})
+                          </option>
+                        ))}
+                      </select>
+                      <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none text-slate-500">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
                 {/* Swap button */}
-                <div className="md:col-span-1 flex justify-center pt-4 md:pt-0">
+                <div className="md:col-span-1 flex justify-center pt-2 md:pt-6">
                   <button
                     onClick={handleHeroSwap}
-                    className={`p-2.5 rounded-full bg-slate-100 hover:bg-slate-200 dark:bg-zinc-900 dark:hover:bg-zinc-800 border border-slate-200 dark:border-zinc-800 text-slate-600 dark:text-slate-450 hover:text-blue-600 dark:hover:text-blue-400 cursor-pointer active:scale-95 transition-all shadow-2xs ${
+                    className={`p-3.5 rounded-full bg-slate-100 hover:bg-slate-200 dark:bg-zinc-900 dark:hover:bg-zinc-800 border border-slate-200/80 dark:border-zinc-800/80 text-slate-650 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 cursor-pointer active:scale-95 transition-all shadow-md ${
                       isHeroSwapping ? "rotate-180" : ""
                     } duration-300`}
                   >
-                    <svg className="w-4 h-4 transform rotate-90 md:rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 transform rotate-90 md:rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
                     </svg>
                   </button>
                 </div>
 
-                {/* Right side: To output */}
-                <div className="md:col-span-5 space-y-2">
-                  <label className="block text-[10px] font-bold text-slate-455 dark:text-slate-500 uppercase tracking-wider">
-                    {locale === "th" ? "ผลลัพธ์การแปลง" : "Converted Result"}
+                {/* Right side: To block */}
+                <div className="md:col-span-5 space-y-3">
+                  <label className="block text-[11px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">
+                    {locale === "th" ? "ผลลัพธ์ (แปลงเป็น)" : "To"}
                   </label>
-                  <div className="relative flex items-center bg-slate-50 dark:bg-zinc-900 border border-slate-200/80 dark:border-zinc-800/80 rounded-xl px-3">
+                  <div className="space-y-2">
                     <input
                       type="text"
                       readOnly
                       value={heroValTo}
-                      className="w-full py-3 bg-transparent text-sm font-extrabold text-blue-600 dark:text-blue-450 outline-none pr-2 select-all"
+                      className="w-full text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 bg-transparent border-b border-slate-200/80 dark:border-zinc-800 pb-2 outline-none select-all"
                       placeholder="0"
                     />
-                    <select
-                      value={heroToId}
-                      onChange={(e) => setHeroToId(e.target.value)}
-                      className="bg-white dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 rounded-lg px-2.5 py-1 text-[11px] font-bold text-slate-650 dark:text-slate-350 outline-none cursor-pointer max-w-[130px] truncate"
-                    >
-                      {activeHeroCat.units.map((unit) => (
-                        <option key={unit.id} value={unit.id}>
-                          {unit.symbol} ({locale === "th" ? unit.translations?.th || unit.name : unit.translations?.en || unit.name})
-                        </option>
-                      ))}
-                    </select>
+                    <div className="relative">
+                      <select
+                        value={heroToId}
+                        onChange={(e) => setHeroToId(e.target.value)}
+                        className="w-full bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-xl px-4 py-3 text-base font-extrabold text-slate-700 dark:text-slate-300 outline-none cursor-pointer appearance-none focus:border-blue-500 transition-colors"
+                      >
+                        {activeHeroCat.units.map((unit) => (
+                          <option key={unit.id} value={unit.id}>
+                            {unit.symbol} ({locale === "th" ? unit.translations?.th || unit.name : unit.translations?.en || unit.name})
+                          </option>
+                        ))}
+                      </select>
+                      <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none text-slate-500">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -390,14 +408,14 @@ export default function Home() {
                 {heroError ? (
                   <div className="text-red-500 font-bold">⚠️ {heroError}</div>
                 ) : (
-                  <div className="text-slate-400 dark:text-slate-500 font-semibold font-mono">
+                  <div className="text-slate-400 dark:text-slate-500 font-semibold font-mono text-sm">
                     {heroValFrom} {activeHeroFrom.symbol} = {heroValTo || "0"} {activeHeroTo.symbol}
                   </div>
                 )}
                 
                 <Link
                   href={`/${locale}/${activeHeroFrom.plural || activeHeroFrom.id}-to-${activeHeroTo.plural || activeHeroTo.id}?val=${heroValFrom}`.toLowerCase().replace(/\s+/g, "-")}
-                  className="px-4 py-2 bg-slate-100 hover:bg-slate-200 dark:bg-zinc-900 dark:hover:bg-zinc-850 text-blue-650 dark:text-blue-400 rounded-xl font-extrabold flex items-center gap-1 hover:underline active:scale-98"
+                  className="px-5 py-2.5 bg-slate-100 hover:bg-slate-200 dark:bg-zinc-900 dark:hover:bg-zinc-850 text-blue-650 dark:text-blue-400 rounded-xl font-extrabold flex items-center gap-1.5 hover:underline active:scale-98 text-sm"
                 >
                   {locale === "th" ? "ดูสูตรและวิธีคำนวณอย่างละเอียด" : "View Formulas & Steps"} ➔
                 </Link>
