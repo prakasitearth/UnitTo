@@ -34,6 +34,37 @@ export const ConverterForm: React.FC<ConverterFormProps> = ({
   const [fromUnit, setFromUnit] = useState<Unit>(initialFromUnit);
   const [toUnit, setToUnit] = useState<Unit>(initialToUnit);
 
+  // Support custom widget settings from query parameters
+  const [customPrimaryColor, setCustomPrimaryColor] = useState<string>("1");
+  const [customBgColor, setCustomBgColor] = useState<string>("1");
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const primaryColor = params.get("primary");
+      const bgColor = params.get("bg");
+      
+      const hexRegex = /^[0-9A-F]{6}$/i;
+      if (primaryColor && hexRegex.test(primaryColor)) {
+        setCustomPrimaryColor(`#${primaryColor}`);
+      }
+      if (bgColor && hexRegex.test(bgColor)) {
+        setCustomBgColor(`#${bgColor}`);
+      }
+    }
+  }, []);
+
+  const widgetStyles: any = {};
+  if (customPrimaryColor && customPrimaryColor !== "1") {
+    widgetStyles["--primary"] = customPrimaryColor;
+    widgetStyles["--primary-hover"] = customPrimaryColor;
+    widgetStyles["--secondary"] = customPrimaryColor;
+  }
+  if (customBgColor && customBgColor !== "1") {
+    widgetStyles["--background"] = customBgColor;
+    widgetStyles["--card-bg"] = customBgColor;
+  }
+
   const isFav = isFavorite(fromUnit.id, toUnit.id);
   const handleToggleFavorite = () => {
     const slug = `${fromUnit.plural || fromUnit.id}-to-${toUnit.plural || toUnit.id}`.toLowerCase().replace(/\s+/g, "-");
@@ -193,25 +224,32 @@ export const ConverterForm: React.FC<ConverterFormProps> = ({
   };
 
   return (
-    <div className="bg-white dark:bg-zinc-900/90 border border-slate-200/80 dark:border-zinc-800/80 rounded-2xl p-6 shadow-lg transition-colors duration-200 relative blueprint-border tick-x tick-y text-sky-500/35 dark:text-sky-400/20">
+    <div 
+      style={widgetStyles}
+      className={`bg-white dark:bg-zinc-900/90 border border-slate-200/80 dark:border-zinc-800/80 rounded-2xl p-6 shadow-lg transition-colors duration-200 relative ${
+        isWidget ? "" : "blueprint-border tick-x tick-y text-sky-500/35 dark:text-sky-400/20"
+      }`}
+    >
       
       {/* Favorite Toggle Button */}
-      <div className="absolute top-4 right-4 z-10">
-        <button
-          onClick={handleToggleFavorite}
-          className={`p-2 rounded-xl border transition-all cursor-pointer active:scale-95 hover:scale-105 duration-200 ${
-            isFav
-              ? "bg-amber-50 dark:bg-amber-950/20 border-amber-300 text-amber-500 hover:bg-amber-100 dark:border-amber-900/30"
-              : "bg-slate-50 hover:bg-slate-100 dark:bg-zinc-800/85 dark:hover:bg-zinc-850 border-slate-200 dark:border-zinc-700/60 text-slate-400 hover:text-slate-500 dark:text-slate-500 dark:hover:text-slate-400"
-          }`}
-          title={isFav ? "Remove from Favorites" : "Add to Favorites"}
-          aria-label="Toggle favorite conversion"
-        >
-          <svg className="w-4.5 h-4.5 fill-current" viewBox="0 0 24 24">
-            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-          </svg>
-        </button>
-      </div>
+      {!isWidget && (
+        <div className="absolute top-4 right-4 z-10">
+          <button
+            onClick={handleToggleFavorite}
+            className={`p-2 rounded-xl border transition-all cursor-pointer active:scale-95 hover:scale-105 duration-200 ${
+              isFav
+                ? "bg-amber-50 dark:bg-amber-950/20 border-amber-300 text-amber-500 hover:bg-amber-100 dark:border-amber-900/30"
+                : "bg-slate-50 hover:bg-slate-100 dark:bg-zinc-800/85 dark:hover:bg-zinc-850 border-slate-200 dark:border-zinc-700/60 text-slate-400 hover:text-slate-500 dark:text-slate-500 dark:hover:text-slate-400"
+            }`}
+            title={isFav ? "Remove from Favorites" : "Add to Favorites"}
+            aria-label="Toggle favorite conversion"
+          >
+            <svg className="w-4.5 h-4.5 fill-current" viewBox="0 0 24 24">
+              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+            </svg>
+          </button>
+        </div>
+      )}
       
       {/* Dynamic Error Status Banner */}
       {error && (
@@ -434,6 +472,22 @@ export const ConverterForm: React.FC<ConverterFormProps> = ({
               </button>
             </div>
           </div>
+        </div>
+      )}
+
+      {/* Widget Footer & Backlink */}
+      {isWidget && (
+        <div className="mt-4 pt-3 border-t border-slate-100 dark:border-zinc-800/80 flex items-center justify-between text-[10px] font-semibold text-slate-400 dark:text-slate-500 font-mono">
+          <span>{category.name} Converter</span>
+          <a
+            href={`https://unittogo.com/${locale}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-blue-500 hover:underline flex items-center space-x-1"
+          >
+            <span>Powered by UnitToGo</span>
+            <span>⚡</span>
+          </a>
         </div>
       )}
     </div>

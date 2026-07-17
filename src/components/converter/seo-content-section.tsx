@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { Category, Unit, ConversionDatabase } from "@/types/converter";
 import { UnitConverter } from "@/lib/converter/unit-converter";
-import { getSlugForConversion } from "@/lib/converter/slug-resolver";
+import { getSlugForConversion, getConversionRoutesForCategory } from "@/lib/converter/slug-resolver";
 import unitsDataRaw from "@/data/units.json";
 
 const db = unitsDataRaw as unknown as ConversionDatabase;
@@ -217,9 +217,42 @@ export const SeoContentSection: React.FC<SeoContentSectionProps> = ({
   // 4. Generate Silo Internal Links (Related conversions)
   const relatedUnits = category.units.filter(u => u.id !== fromUnit.id).slice(0, 6);
 
+  // 5. Generate Prev / Next conversion routes (Circular linked structure)
+  const categoryRoutes = getConversionRoutesForCategory(category);
+  const curIndex = categoryRoutes.findIndex(r => r.fromId === fromUnit.id && r.toId === toUnit.id);
+  
+  let prevRoute = null;
+  let nextRoute = null;
+  
+  if (curIndex !== -1 && categoryRoutes.length > 1) {
+    const prevIdx = (curIndex - 1 + categoryRoutes.length) % categoryRoutes.length;
+    const nextIdx = (curIndex + 1) % categoryRoutes.length;
+    
+    prevRoute = categoryRoutes[prevIdx];
+    nextRoute = categoryRoutes[nextIdx];
+  }
+
   return (
     <div className="space-y-8 mt-12 pt-8 border-t border-slate-100 dark:border-zinc-800/60">
       
+      {/* Previous / Next Page Silo Navigation */}
+      {prevRoute && nextRoute && (
+        <nav className="flex items-center justify-between border border-slate-100/80 dark:border-zinc-800/80 bg-slate-50/50 dark:bg-zinc-800/10 rounded-2xl p-4 shadow-2xs text-xs font-bold font-mono">
+          <Link
+            href={`/${locale}/${prevRoute.slug}`}
+            className="flex items-center text-blue-600 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300 transition-colors"
+          >
+            ← {locale === "th" ? "ก่อนหน้า" : "Prev"}: {tUnit(prevRoute.fromId, prevRoute.fromId)} ➔ {tUnit(prevRoute.toId, prevRoute.toId)}
+          </Link>
+          <Link
+            href={`/${locale}/${nextRoute.slug}`}
+            className="flex items-center text-blue-600 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300 transition-colors"
+          >
+            {locale === "th" ? "ถัดไป" : "Next"}: {tUnit(nextRoute.fromId, nextRoute.fromId)} ➔ {tUnit(nextRoute.toId, nextRoute.toId)} →
+          </Link>
+        </nav>
+      )}
+
       {/* section 1: What is */}
       <section className="bg-white dark:bg-zinc-900 border border-gray-100 dark:border-zinc-800/80 rounded-2xl p-6 shadow-xs" aria-labelledby="seo-whatis-heading">
         <h2 id="seo-whatis-heading" className="text-lg font-black text-gray-900 dark:text-gray-150 mb-3 flex items-center">
@@ -326,6 +359,27 @@ export const SeoContentSection: React.FC<SeoContentSectionProps> = ({
           </div>
         </div>
       </section>
+
+      {/* section 4.5: Popular conversions in this category */}
+      {category.popularConversions && category.popularConversions.length > 0 && (
+        <section className="bg-white dark:bg-zinc-900 border border-gray-100 dark:border-zinc-800/80 rounded-2xl p-6 shadow-xs" aria-labelledby="seo-popular-heading">
+          <h2 id="seo-popular-heading" className="text-lg font-black text-gray-900 dark:text-gray-150 mb-3 flex items-center">
+            <span className="mr-2">🔥</span> {locale === "th" ? `คู่คำนวณ ${localizedCat.name} ยอดนิยม` : `Popular ${localizedCat.name} Conversions`}
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+            {category.popularConversions.map((conv) => (
+              <Link
+                key={conv.slug}
+                href={`/${locale}/${conv.slug}`}
+                className="text-xs font-extrabold px-3.5 py-2.5 bg-slate-50/50 hover:bg-blue-50/80 dark:bg-zinc-800/10 dark:hover:bg-zinc-800/20 text-gray-800 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 border border-slate-250/20 dark:border-zinc-800/60 rounded-xl transition-all flex items-center justify-between"
+              >
+                <span>{tUnit(conv.from, conv.from)} ➔ {tUnit(conv.to, conv.to)}</span>
+                <span className="text-[10px] text-slate-400">⚡</span>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* section 5: Related conversions */}
       <section className="bg-white dark:bg-zinc-900 border border-gray-100 dark:border-zinc-800/80 rounded-2xl p-6 shadow-xs" aria-labelledby="seo-related-heading">

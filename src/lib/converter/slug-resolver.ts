@@ -115,6 +115,54 @@ export function getSlugForConversion(fromUnit: Unit, toUnit: Unit): string {
 }
 
 /**
+ * ดึงคู่การแปลงทั้งหมดในหมวดหมู่ที่ระบุ (เรียงตามลำดับสำหรับปุ่ม Previous / Next)
+ */
+export function getConversionRoutesForCategory(category: Category): Array<{ slug: string; fromId: string; toId: string }> {
+  const routes: Array<{ slug: string; fromId: string; toId: string }> = [];
+  const seenSlugs = new Set<string>();
+
+  const baseUnitId = category.baseUnit;
+  const baseUnit = category.units.find((u) => {
+    const uIdNormalized = u.id.replace(/_/g, " ").toLowerCase();
+    const baseNormalized = baseUnitId.replace(/_/g, " ").toLowerCase();
+    return uIdNormalized === baseNormalized;
+  });
+
+  // 1. เพิ่มคู่แปลงยอดนิยมในหมวดหมู่นี้
+  if (category.popularConversions) {
+    category.popularConversions.forEach((conv) => {
+      if (!seenSlugs.has(conv.slug)) {
+        seenSlugs.add(conv.slug);
+        routes.push({ slug: conv.slug, fromId: conv.from, toId: conv.to });
+      }
+    });
+  }
+
+  // 2. เพิ่มคู่แปลงเข้า-ออกกับ Base Unit
+  if (baseUnit) {
+    category.units.forEach((unit) => {
+      if (unit.id !== baseUnit.id) {
+        // จากหน่วยย่อย ไปยัง หน่วยฐาน
+        const forwardSlug = getSlugForConversion(unit, baseUnit);
+        if (!seenSlugs.has(forwardSlug)) {
+          seenSlugs.add(forwardSlug);
+          routes.push({ slug: forwardSlug, fromId: unit.id, toId: baseUnit.id });
+        }
+
+        // จากหน่วยฐาน ไปยัง หน่วยย่อย
+        const backwardSlug = getSlugForConversion(baseUnit, unit);
+        if (!seenSlugs.has(backwardSlug)) {
+          seenSlugs.add(backwardSlug);
+          routes.push({ slug: backwardSlug, fromId: baseUnit.id, toId: unit.id });
+        }
+      }
+    });
+  }
+
+  return routes;
+}
+
+/**
  * ดึงข้อมูลเส้นทางคู่คำนวณทั้งหมดในระบบ (Programmatic SEO)
  * รวมคู่ยอดนิยมและคู่คำนวณเข้าออกคู่กับ Base Unit ของทุกหน่วยที่มี
  */

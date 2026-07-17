@@ -140,33 +140,56 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Column 5: Company & Support */}
+          {/* Column 5: Tools & Extension */}
           <div className="space-y-3">
             <h4 className="font-bold text-gray-900 dark:text-gray-100 text-xs tracking-wider uppercase">
-              {t("company")}
+              {locale === "th" ? "เครื่องมือเพิ่มเติม" : "Tools & Extension"}
             </h4>
             <ul className="space-y-2 text-xs font-semibold">
               <li>
                 <Link 
-                  href={`/${locale}/about`} 
-                  onClick={() => trackEvent("click_footer_link", "footer", "about")}
+                  href={`/${locale}/tools/widget-generator`} 
+                  onClick={() => trackEvent("click_footer_link", "footer", "widget-generator")}
                   className="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                 >
-                  {t("aboutUs")}
+                  ⚙️ Widget Generator
                 </Link>
               </li>
               <li>
-                <span className="text-gray-300 dark:text-zinc-700 cursor-not-allowed select-none">
-                  {t("careers")} <span className="text-[9px] font-bold bg-zinc-100 dark:bg-zinc-800 text-zinc-400 dark:text-zinc-500 px-1 py-0.5 rounded ml-1">Hiring</span>
-                </span>
+                <Link 
+                  href={`/${locale}/tools/recipe-scaler`} 
+                  onClick={() => trackEvent("click_footer_link", "footer", "recipe-scaler")}
+                  className="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                >
+                  🍳 Recipe Scaler
+                </Link>
               </li>
               <li>
                 <Link 
-                  href="/sitemap.xml" 
-                  target="_blank"
+                  href={`/${locale}/tools/maps-area`} 
+                  onClick={() => trackEvent("click_footer_link", "footer", "maps-area")}
                   className="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                 >
-                  {t("sitemap")}
+                  🗺️ Global Maps Area
+                </Link>
+              </li>
+              <li>
+                <a 
+                  href="/unittogo-extension.zip" 
+                  download
+                  onClick={() => trackEvent("click_footer_link", "footer", "download-extension")}
+                  className="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                >
+                  🔌 Chrome Extension (.zip)
+                </a>
+              </li>
+              <li>
+                <Link 
+                  href={`/${locale}/guides`} 
+                  onClick={() => trackEvent("click_footer_link", "footer", "guides")}
+                  className="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                >
+                  📚 Measurement Guides
                 </Link>
               </li>
             </ul>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      width: 280px;
+      font-family: sans-serif;
+      margin: 0;
+      padding: 16px;
+      background: #f8fafc;
+      color: #0b1329;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .logo {
+      font-size: 16px;
+      font-weight: bold;
+      color: #0f4c81;
+    }
+    .tagline {
+      font-size: 10px;
+      color: #64748b;
+    }
+    .form-group {
+      margin-bottom: 10px;
+    }
+    label {
+      display: block;
+      font-size: 10px;
+      font-weight: bold;
+      color: #64748b;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+    }
+    select, input {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 8px;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 12px;
+      outline: none;
+      background: #ffffff;
+    }
+    select:focus, input:focus {
+      border-color: #0f4c81;
+    }
+    .result {
+      margin-top: 14px;
+      padding: 10px;
+      background: #0f4c81;
+      color: #ffffff;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 12px;
+      font-size: 9px;
+      color: #94a3b8;
+    }
+    .footer a {
+      color: #0ea5e9;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">🔄 UnitToGo</div>
+    <div class="tagline">High Precision Converter</div>
+  </div>
+
+  <div class="form-group">
+    <label>Type</label>
+    <select id="type-select">
+      <option value="length">Length (meters ➔ feet)</option>
+      <option value="weight">Weight (kg ➔ lbs)</option>
+      <option value="temp">Temperature (C ➔ F)</option>
+      <option value="thaiLand">Thai Land (Rai ➔ sq m)</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Value</label>
+    <input type="number" id="input-val" value="1">
+  </div>
+
+  <div class="result" id="output-val">
+    3.28 feet
+  </div>
+
+  <div class="footer">
+    Visit <a href="https://unittogo.com" target="_blank">unittogo.com</a> for more
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "UnitToGo - High Precision Unit Converter",
+  "version": "1.0",
+  "description": "Highlight text on any webpage to instantly convert units, or perform manual conversions inside the popup panel.",
+  "permissions": [],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}

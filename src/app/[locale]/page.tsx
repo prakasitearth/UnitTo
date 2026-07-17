@@ -405,6 +405,90 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 2.5 SPECIALIZED UTILITY TOOLS SECTION */}
+      <section className="py-14 md:py-20 border-b border-slate-100 dark:border-zinc-900/40" aria-labelledby="tools-heading">
+        <div className="max-w-7xl mx-auto px-4 space-y-8">
+          <div className="flex flex-col md:flex-row items-baseline justify-between border-b border-slate-200/80 dark:border-zinc-900 pb-2">
+            <h2 id="tools-heading" className="text-xl md:text-2xl font-black text-gray-900 dark:text-gray-50 font-sans tracking-tight">
+              {locale === "th" ? "เครื่องมือคำนวณและตัวช่วยเฉพาะทาง" : "Specialized Utility Tools"}
+            </h2>
+            <span className="text-[10px] text-slate-400 dark:text-slate-500 font-mono font-bold uppercase tracking-wider mt-1 md:mt-0">
+              {locale === "th" ? "[ฟีเจอร์ช่วยอำนวยความสะดวกอื่นๆ]" : "[SPECIALIZED TOOLS & EXTENSION]"}
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            {/* Tool 1: Widget Generator */}
+            <Link
+              href={`/${locale}/tools/widget-generator`}
+              className="p-6 bg-white dark:bg-zinc-950 border border-slate-200/70 dark:border-zinc-800/75 rounded-2xl space-y-3 shadow-2xs hover:shadow-md hover:border-blue-500 transition-all duration-200"
+            >
+              <div className="text-3xl">⚙️</div>
+              <h3 className="text-sm font-extrabold text-gray-900 dark:text-gray-100">
+                {locale === "th" ? "เครื่องมือสร้างวิดเจ็ตฝังเว็บ" : "Widget Embed Generator"}
+              </h3>
+              <p className="text-xs text-slate-550 dark:text-slate-400 leading-relaxed font-semibold">
+                {locale === "th" 
+                  ? "ปรับแต่งกล่องคำนวณและก็อปปี้โค้ด iframe ไปวางบนเว็บของคุณฟรี" 
+                  : "Customize and embed our calculator widgets on your website or blog."}
+              </p>
+            </Link>
+
+            {/* Tool 2: Baking Recipe Scaler */}
+            <Link
+              href={`/${locale}/tools/recipe-scaler`}
+              className="p-6 bg-white dark:bg-zinc-950 border border-slate-200/70 dark:border-zinc-800/75 rounded-2xl space-y-3 shadow-2xs hover:shadow-md hover:border-orange-500 transition-all duration-200"
+            >
+              <div className="text-3xl">🍳</div>
+              <h3 className="text-sm font-extrabold text-gray-900 dark:text-gray-100">
+                {locale === "th" ? "ตัวปรับสัดส่วนสูตรเบเกอรี่" : "Recipe Quantity Scaler"}
+              </h3>
+              <p className="text-xs text-slate-555 dark:text-slate-400 leading-relaxed font-semibold">
+                {locale === "th" 
+                  ? "ขยาย/ย่อสูตรทำขนมและอาหาร พร้อมแปลงถ้วยตวงเป็นหน่วยน้ำหนักกรัม" 
+                  : "Scale recipe ingredients up or down, and convert cups to grams instantly."}
+              </p>
+            </Link>
+
+            {/* Tool 3: Maps Land Area Calculator */}
+            <Link
+              href={`/${locale}/tools/maps-area`}
+              className="p-6 bg-white dark:bg-zinc-950 border border-slate-200/70 dark:border-zinc-800/75 rounded-2xl space-y-3 shadow-2xs hover:shadow-md hover:border-emerald-500 transition-all duration-200"
+            >
+              <div className="text-3xl">🗺️</div>
+              <h3 className="text-sm font-extrabold text-gray-900 dark:text-gray-100">
+                {locale === "th" ? "แผนที่คำนวณพื้นที่ดินทั่วโลก" : "Global Maps Area Calculator"}
+              </h3>
+              <p className="text-xs text-slate-555 dark:text-slate-400 leading-relaxed font-semibold">
+                {locale === "th" 
+                  ? "จิ้มตำแหน่งบนแผนที่โลก เพื่อคำนวณพื้นที่ดินเป็นไร่ งาน วา หรือเอเคอร์" 
+                  : "Measure properties on map and convert to acres, hectares, or Rai."}
+              </p>
+            </Link>
+
+            {/* Tool 4: Chrome Extension */}
+            <a
+              href="/unittogo-extension.zip"
+              download
+              className="p-6 bg-white dark:bg-zinc-950 border border-slate-200/70 dark:border-zinc-800/75 rounded-2xl space-y-3 shadow-2xs hover:shadow-md hover:border-sky-500 transition-all duration-200 text-left"
+            >
+              <div className="text-3xl">🔌</div>
+              <h3 className="text-sm font-extrabold text-gray-900 dark:text-gray-100 flex items-center justify-between">
+                <span>{locale === "th" ? "ส่วนขยายเบราว์เซอร์" : "Chrome Extension"}</span>
+                <span className="text-[9px] font-bold px-1.5 py-0.5 bg-sky-50 text-sky-600 rounded">ZIP</span>
+              </h3>
+              <p className="text-xs text-slate-555 dark:text-slate-400 leading-relaxed font-semibold">
+                {locale === "th" 
+                  ? "แปลงหน่วยวัดด่วนขณะท่องเว็บด้วยการลากคลุมข้อความแสดงผลทันที" 
+                  : "Highlight text on any webpage to convert units instantly in a hover tooltip."}
+              </p>
+            </a>
+
+          </div>
+        </div>
+      </section>
+
       {/* 3.5. TRADITIONAL UNITS BY COUNTRY SECTION */}
       <section className="bg-slate-50/50 dark:bg-zinc-900/10 border-b border-slate-100 dark:border-zinc-900/40 py-14 md:py-20" aria-labelledby="traditional-heading">
         <div className="max-w-7xl mx-auto px-4 space-y-8">

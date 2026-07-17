@@ -2,11 +2,14 @@
 
 import React from "react";
 import Link from "next/link";
-import { Category } from "@/types/converter";
+import { Category, ConversionDatabase } from "@/types/converter";
 import { getBreadcrumbSchema } from "@/lib/seo/metadata";
 import { useLocale } from "@/hooks/use-locale";
 import { trackEvent } from "@/lib/analytics/track";
 import { MultiUnitConverter } from "./multi-unit-converter";
+import unitsDataRaw from "@/data/units.json";
+
+const db = unitsDataRaw as unknown as ConversionDatabase;
 
 interface CategoryViewProps {
   category: Category;
@@ -128,6 +131,27 @@ export const CategoryView: React.FC<CategoryViewProps> = ({ category }) => {
               <div className="text-xs text-gray-400 mt-1 truncate">{unit.description}</div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Related Categories Navigation (Internal linking silo) */}
+      <section className="bg-zinc-50 dark:bg-zinc-800/20 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800/60 mt-8" aria-labelledby="related-categories-heading">
+        <h2 id="related-categories-heading" className="text-base font-black text-gray-800 dark:text-gray-200 mb-3">
+          {locale === "th" ? "หมวดหมู่การคำนวณแนะนำอื่นๆ" : "Other Popular Conversion Categories"}
+        </h2>
+        <div className="flex flex-wrap gap-2">
+          {db.categories.filter(cat => cat.id !== category.id).map((cat) => {
+            const localized = tCategory(cat.id, cat.name, cat.description);
+            return (
+              <Link
+                key={cat.id}
+                href={`/${locale}/${cat.id}`}
+                className="text-xs font-bold px-3 py-1.5 bg-white dark:bg-zinc-900 border border-slate-200/80 dark:border-zinc-800 text-slate-655 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 hover:border-blue-500 rounded-xl transition-all"
+              >
+                {cat.icon} {localized.name}
+              </Link>
+            );
+          })}
         </div>
       </section>
     </div>
