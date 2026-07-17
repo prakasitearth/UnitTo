@@ -82,9 +82,9 @@ const nextConfig: NextConfig = {
   // Apply security headers via sequential overrides
   async headers() {
     return [
-      // 1. Headers for ALL pages by default (deny embedding)
+      // 1. Headers for ALL pages by default (deny embedding) - Using the working original /(.*) matcher
       {
-        source: "/:path*",
+        source: "/(.*)",
         headers: getSecurityHeaders(false),
       },
       // 2. Overwrite headers for widget pages with locale path (allow embedding)
