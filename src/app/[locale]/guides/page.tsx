@@ -30,6 +30,18 @@ export default async function GuidesListPage(props: { params: Promise<{ locale: 
       icon: "🗺️"
     },
     {
+      slug: "pressure-psi-bar-pascal",
+      title: locale === "th" ? "คู่มือหน่วยแรงดัน: แปลงค่า PSI, Bar, Pascal และการเติมลมยาง" : "Pressure Units Guide: Convert PSI, Bar & Tire Inflation",
+      desc: locale === "th" ? "อธิบายสูตรและการแปลงหน่วยแรงดัน PSI, Bar, KPa พร้อมตารางเติมลมยางรถยนต์" : "Reference guide for pressure unit conversions and tire pressure tables.",
+      icon: "🏎️"
+    },
+    {
+      slug: "fuel-consumption-km-l-l-100km",
+      title: locale === "th" ? "คำนวณอัตราสิ้นเปลืองน้ำมัน: แปลง km/L เป็น L/100km และ MPG" : "Fuel Economy Guide: Convert km/L to L/100km and MPG",
+      desc: locale === "th" ? "วิธีแปลงค่าสเปกประหยัดน้ำมันรถยนต์ระหว่างระบบเอเชีย ยุโรป และอเมริกา" : "Master converting fuel efficiency numbers across metric and imperial systems.",
+      icon: "⛽"
+    },
+    {
       slug: "hong-kong-gold",
       title: locale === "th" ? "คู่มือซื้อทองคำต่างประเทศ: แปลงหน่วยตำลึงทอง (Tael)" : "Understanding gold weights: Tael vs. Baht Gold",
       desc: locale === "th" ? "เปรียบเทียบน้ำหนักทองคำเมื่อไปซื้อทองที่ฮ่องกง ไต้หวัน สิงคโปร์ แปลงตำลึงเป็นกรัม" : "Compare gold weight systems across Asian financial hubs.",
