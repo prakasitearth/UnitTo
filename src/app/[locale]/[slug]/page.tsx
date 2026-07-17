@@ -57,7 +57,7 @@ export async function generateMetadata({ params }: PageProps) {
   if (route.type === "category" && route.categoryId) {
     const category = db.categories.find((c) => c.id === route.categoryId);
     if (category) {
-      seoMetadata = getCategoryMetadata(category);
+      seoMetadata = getCategoryMetadata(category, locale);
     }
   } else if (route.type === "converter" && route.categoryId && route.fromUnitId && route.toUnitId) {
     const category = db.categories.find((c) => c.id === route.categoryId);
@@ -65,7 +65,7 @@ export async function generateMetadata({ params }: PageProps) {
     const toUnit = category?.units.find((u) => u.id === route.toUnitId);
 
     if (category && fromUnit && toUnit) {
-      seoMetadata = getConverterMetadata(category, fromUnit, toUnit);
+      seoMetadata = getConverterMetadata(category, fromUnit, toUnit, locale);
     }
   }
 

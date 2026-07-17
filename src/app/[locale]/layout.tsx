@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { MainLayout } from "@/components/layout/main-layout";
+import { getHomeMetadata } from "@/lib/seo/metadata";
 import "../globals.css";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://unittogo.com";
@@ -24,66 +25,66 @@ const LOCALES = ["th", "en", "es", "zh", "hi", "fr", "pt", "ru", "ar", "bn", "ja
 // RTL locales
 const RTL_LOCALES = new Set(["ar"]);
 
-// ===== Default Metadata (overridden per page via generateMetadata) =====
-export const metadata: Metadata = {
-  title: {
-    default: "UnittoGo | Fast, Accurate, and Free Unit Converter",
-    template: "%s | UnittoGo",
-  },
-  description:
-    "Convert any unit instantly. Free online converter for Length, Weight, Area, Temperature, Speed, Volume, Energy, and more. Fast, accurate, and 100% private.",
-  metadataBase: new URL(BASE_URL),
-  alternates: {
-    canonical: BASE_URL,
-  },
-  // ===== Open Graph =====
-  openGraph: {
-    title: "UnittoGo | Fast, Accurate, and Free Unit Converter",
-    description:
-      "Convert any unit instantly. Free online converter for Length, Weight, Area, Temperature, Speed, Volume, Energy, and more.",
-    url: BASE_URL,
-    siteName: "UnittoGo",
-    type: "website",
-    locale: "en_US",
-    images: [
-      {
-        url: `${BASE_URL}/og-image.png`,
-        width: 1200,
-        height: 630,
-        alt: "UnittoGo – Fast Unit Converter",
-      },
-    ],
-  },
-  // ===== Twitter Card =====
-  twitter: {
-    card: "summary_large_image",
-    title: "UnittoGo | Fast, Accurate, and Free Unit Converter",
-    description:
-      "Convert any unit instantly. Free online converter for Length, Weight, Area, Temperature, Speed, Volume, Energy, and more.",
-    images: [`${BASE_URL}/og-image.png`],
-  },
-  // ===== Favicon / Icons =====
-  icons: {
-    icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
-    ],
-    shortcut: "/favicon.svg",
-    apple: "/favicon.svg",
-  },
-  // ===== Robots =====
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
+// ===== Dynamic Metadata Generation per Locale =====
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const safeLocale = LOCALES.includes(locale) ? locale : "en";
+  const homeSeo = getHomeMetadata(safeLocale);
+
+  return {
+    title: {
+      default: homeSeo.title,
+      template: "%s | UnitToGo",
+    },
+    description: homeSeo.description,
+    metadataBase: new URL(BASE_URL),
+    alternates: {
+      canonical: `${BASE_URL}/${safeLocale}`,
+    },
+    openGraph: {
+      title: homeSeo.title,
+      description: homeSeo.description,
+      url: `${BASE_URL}/${safeLocale}`,
+      siteName: "UnitToGo",
+      type: "website",
+      images: [
+        {
+          url: `${BASE_URL}/og-image.png`,
+          width: 1200,
+          height: 630,
+          alt: "UnitToGo – Fast Unit Converter",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: homeSeo.title,
+      description: homeSeo.description,
+      images: [`${BASE_URL}/og-image.png`],
+    },
+    icons: {
+      icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+      shortcut: "/favicon.svg",
+      apple: "/favicon.svg",
+    },
+    robots: {
       index: true,
       follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
     },
-  },
-  manifest: "/manifest.json",
-};
+    manifest: "/manifest.json",
+  };
+}
 
 // Generate static params for all supported locales
 export function generateStaticParams() {
