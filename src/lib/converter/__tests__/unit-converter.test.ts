@@ -145,11 +145,10 @@ describe("UnitConverter Core Engine", () => {
       expect(converter.convert(8, "kilometer_per_liter", "liter_per_100km", "fuel_consumption")).toBe(12.5);
     });
 
-    it("should convert currency correctly based on static rates", () => {
-      // 1 USD = 35.5 THB
-      expect(converter.convert(1, "usd", "thb", "currency")).toBe(35.5);
-      // 35.5 THB = 1 USD
-      expect(converter.convert(35.5, "thb", "usd", "currency")).toBe(1);
+    it("should convert pressure correctly based on factors", () => {
+      // 1 bar = 100,000 pascal
+      expect(converter.convert(1, "bar", "pascal", "pressure")).toBe(100000);
+      expect(converter.convert(100000, "pascal", "bar", "pressure")).toBe(1);
     });
   });
 
